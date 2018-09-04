@@ -1,0 +1,1 @@
+dotnet publish -r win10-x64  -f netcoreapp2.1 -c debug   -o publish7

@@ -1,0 +1,1 @@
+dotnet Dcp.Net.MQ.Rabbitmq.ConsoleTest.dll

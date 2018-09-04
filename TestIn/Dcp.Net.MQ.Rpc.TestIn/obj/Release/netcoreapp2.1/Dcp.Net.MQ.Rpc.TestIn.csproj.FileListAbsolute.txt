@@ -1,0 +1,17 @@
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.TestIn.deps.json
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.TestIn.runtimeconfig.json
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.TestIn.runtimeconfig.dev.json
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.TestIn.dll
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.TestIn.pdb
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Release\netcoreapp2.1\Dcp.Net.MQ.RabbitMQ.dll
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.dll
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Release\netcoreapp2.1\Geek.Net.MQ.dll
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.pdb
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Release\netcoreapp2.1\Dcp.Net.MQ.RabbitMQ.pdb
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Release\netcoreapp2.1\Geek.Net.MQ.pdb
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\obj\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.TestIn.csprojResolveAssemblyReference.cache
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\obj\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.TestIn.csproj.CoreCompileInputs.cache
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\obj\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.TestIn.AssemblyInfoInputs.cache
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\obj\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.TestIn.AssemblyInfo.cs
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\obj\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.TestIn.dll
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\obj\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.TestIn.pdb

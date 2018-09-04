@@ -1,0 +1,15 @@
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\bin\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.deps.json
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\bin\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.dll
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\obj\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.csprojResolveAssemblyReference.cache
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\obj\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.csproj.CoreCompileInputs.cache
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\obj\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.AssemblyInfoInputs.cache
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\obj\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.AssemblyInfo.cs
+D:\WorkSpace\opensource\feifu\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\bin\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.deps.json
+D:\WorkSpace\opensource\feifu\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\bin\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.dll
+D:\WorkSpace\opensource\feifu\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\bin\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.pdb
+D:\WorkSpace\opensource\feifu\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\obj\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.csprojResolveAssemblyReference.cache
+D:\WorkSpace\opensource\feifu\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\obj\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.csproj.CoreCompileInputs.cache
+D:\WorkSpace\opensource\feifu\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\obj\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.AssemblyInfoInputs.cache
+D:\WorkSpace\opensource\feifu\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\obj\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.AssemblyInfo.cs
+D:\WorkSpace\opensource\feifu\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\obj\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.dll
+D:\WorkSpace\opensource\feifu\Dcp.Lib\MicroService\Dcp.Net.MicroService.Consul\obj\Debug\netstandard2.0\Dcp.Net.MicroService.Consul.pdb

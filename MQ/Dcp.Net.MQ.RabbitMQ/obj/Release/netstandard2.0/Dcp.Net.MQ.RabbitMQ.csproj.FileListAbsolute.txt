@@ -1,0 +1,11 @@
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\bin\Release\netstandard2.0\Geek.Net.MQ.dll
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\bin\Release\netstandard2.0\Geek.Net.MQ.pdb
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\obj\Release\netstandard2.0\Dcp.Net.MQ.RabbitMQ.csprojResolveAssemblyReference.cache
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\obj\Release\netstandard2.0\Dcp.Net.MQ.RabbitMQ.csproj.CoreCompileInputs.cache
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\obj\Release\netstandard2.0\Dcp.Net.MQ.RabbitMQ.AssemblyInfoInputs.cache
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\obj\Release\netstandard2.0\Dcp.Net.MQ.RabbitMQ.AssemblyInfo.cs
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\bin\Release\netstandard2.0\Dcp.Net.MQ.RabbitMQ.deps.json
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\bin\Release\netstandard2.0\Dcp.Net.MQ.RabbitMQ.dll
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\bin\Release\netstandard2.0\Dcp.Net.MQ.RabbitMQ.pdb
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\obj\Release\netstandard2.0\Dcp.Net.MQ.RabbitMQ.dll
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\obj\Release\netstandard2.0\Dcp.Net.MQ.RabbitMQ.pdb

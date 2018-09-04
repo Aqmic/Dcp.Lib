@@ -1,0 +1,1 @@
+dotnet publish -r ubuntu.16.04-x64  -f netcoreapp2.1 -c debug   -o publish

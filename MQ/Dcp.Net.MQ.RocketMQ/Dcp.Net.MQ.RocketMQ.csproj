@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Company>dynamic</Company>
+    <Copyright>opensoure,huajunsoft</Copyright>
+    <Product>rocketmq .net core</Product>
+    <Description>rocketmq c#
+注：只支持X64架构</Description>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+    <Version>1.0.0.1</Version>
+    <Authors>huajunsoft</Authors>
+    <PackageTags>netcore RocketMQ组件</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyName>Dcp.Net.MQ.RocketMQ</AssemblyName>
+    <RootNamespace>Dcp.Net.MQ.RocketMQ</RootNamespace>
+    <PackageProjectUrl>https://github.com/DynamicBlue/Dcp.Lib.git</PackageProjectUrl>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <DefineConstants>$(DefineConstants);CORE</DefineConstants>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Remove="DynamicLib\libonsclient4cpp.so" />
+    <None Remove="libonsclient4cpp.so" />
+    <None Remove="ONSClient4CPP.dll" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Include="DynamicLib\libonsclient4cpp.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DynamicLib\ONSClient4CPP.dll">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Dcp.Net\Dcp.Net.csproj" />
+    <ProjectReference Include="..\Geek.Net.MQ\Geek.Net.MQ.csproj" />
+  </ItemGroup>
+
+</Project>

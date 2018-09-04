@@ -1,0 +1,13 @@
+D:\WorkSpace\opensource\feifu\Dcp.Lib\Rpc\Dcp.Net..MQ.Rpc\obj\Debug\netstandard2.0\Dcp.Net..MQ.Rpc.csprojResolveAssemblyReference.cache
+D:\WorkSpace\opensource\feifu\Dcp.Lib\Rpc\Dcp.Net..MQ.Rpc\obj\Debug\netstandard2.0\Dcp.Net..MQ.Rpc.csproj.CoreCompileInputs.cache
+D:\WorkSpace\opensource\feifu\Dcp.Lib\Rpc\Dcp.Net..MQ.Rpc\obj\Debug\netstandard2.0\Dcp.Net..MQ.Rpc.AssemblyInfoInputs.cache
+D:\WorkSpace\opensource\feifu\Dcp.Lib\Rpc\Dcp.Net..MQ.Rpc\obj\Debug\netstandard2.0\Dcp.Net..MQ.Rpc.AssemblyInfo.cs
+D:\WorkSpace\opensource\feifu\Dcp.Lib\Rpc\Dcp.Net..MQ.Rpc\bin\Debug\netstandard2.0\Dcp.Net..MQ.Rpc.deps.json
+D:\WorkSpace\opensource\feifu\Dcp.Lib\Rpc\Dcp.Net..MQ.Rpc\bin\Debug\netstandard2.0\Dcp.Net..MQ.Rpc.dll
+D:\WorkSpace\opensource\feifu\Dcp.Lib\Rpc\Dcp.Net..MQ.Rpc\bin\Debug\netstandard2.0\Dcp.Net..MQ.Rpc.pdb
+D:\WorkSpace\opensource\feifu\Dcp.Lib\Rpc\Dcp.Net..MQ.Rpc\bin\Debug\netstandard2.0\Dcp.Net.MQ.RabbitMQ.dll
+D:\WorkSpace\opensource\feifu\Dcp.Lib\Rpc\Dcp.Net..MQ.Rpc\bin\Debug\netstandard2.0\Geek.Net.MQ.dll
+D:\WorkSpace\opensource\feifu\Dcp.Lib\Rpc\Dcp.Net..MQ.Rpc\bin\Debug\netstandard2.0\Dcp.Net.MQ.RabbitMQ.pdb
+D:\WorkSpace\opensource\feifu\Dcp.Lib\Rpc\Dcp.Net..MQ.Rpc\bin\Debug\netstandard2.0\Geek.Net.MQ.pdb
+D:\WorkSpace\opensource\feifu\Dcp.Lib\Rpc\Dcp.Net..MQ.Rpc\obj\Debug\netstandard2.0\Dcp.Net..MQ.Rpc.dll
+D:\WorkSpace\opensource\feifu\Dcp.Lib\Rpc\Dcp.Net..MQ.Rpc\obj\Debug\netstandard2.0\Dcp.Net..MQ.Rpc.pdb

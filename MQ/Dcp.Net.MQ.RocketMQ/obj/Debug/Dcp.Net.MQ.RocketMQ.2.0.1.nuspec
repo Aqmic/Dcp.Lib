@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Dcp.Net.MQ.RocketMQ</id>
+    <version>2.0.1</version>
+    <authors>steden</authors>
+    <owners>steden</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>包括：RocketMQ组件</description>
+    <copyright>http://www.fsgit.com</copyright>
+    <tags>RocketMQ组件</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Dcp.Net" version="2.0.1" exclude="Build,Analyzers" />
+        <dependency id="Geek.Net.MQ" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RocketMQ\bin\Debug\netstandard2.0\Dcp.Net.MQ.RocketMQ.dll" target="lib\netstandard2.0\Dcp.Net.MQ.RocketMQ.dll" />
+  </files>
+</package>

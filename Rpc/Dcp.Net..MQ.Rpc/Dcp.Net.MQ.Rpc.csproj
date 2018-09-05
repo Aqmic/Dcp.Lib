@@ -5,15 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="obj\Debug\netstandard2.0\Dcp.Net..MQ.Rpc.AssemblyInfo.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="obj\Debug\Dcp.Net.MQ.Rpc.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\netstandard2.0\Dcp.Net..MQ.Rpc.AssemblyInfoInputs.cache" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\MQ\Dcp.Net.MQ.RabbitMQ\Dcp.Net.MQ.RabbitMQ.csproj" />
   </ItemGroup>
 

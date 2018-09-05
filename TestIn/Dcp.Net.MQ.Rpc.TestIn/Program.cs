@@ -15,7 +15,7 @@
         private static RpcClient _rpcClient;
         private static RpcServer _rpcServer;
 
-        private static string _mqAddress = File.ReadAllText(@"D:\mqaddress.txt");
+        private static string _mqAddress = File.ReadAllText(@"mqaddress.txt");
 
 
         private static void _rpcClient_ReciveMsgedEvent(MQMessage mQMessage)

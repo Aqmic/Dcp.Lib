@@ -12,4 +12,7 @@
     <PackageReference Include="Dynamic.Core" Version="2.1.5.3" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);NU1605</NoWarn>
+  </PropertyGroup>
 </Project>

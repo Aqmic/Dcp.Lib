@@ -1565,19 +1565,6 @@
           "ref/netstandard1.2/System.Threading.Timer.dll": {}
         }
       },
-      "Dcp.Net..MQ.Rpc/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Dcp.Net.MQ.RabbitMQ": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Dcp.Net..MQ.Rpc.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Dcp.Net..MQ.Rpc.dll": {}
-        }
-      },
       "Dcp.Net.MQ.RabbitMQ/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1590,6 +1577,19 @@
         },
         "runtime": {
           "bin/placeholder/Dcp.Net.MQ.RabbitMQ.dll": {}
+        }
+      },
+      "Dcp.Net.MQ.Rpc/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Dcp.Net.MQ.RabbitMQ": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Dcp.Net.MQ.Rpc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Dcp.Net.MQ.Rpc.dll": {}
         }
       },
       "Geek.Net.MQ/1.0.0": {
@@ -5366,15 +5366,15 @@
         "system.threading.timer.nuspec"
       ]
     },
-    "Dcp.Net..MQ.Rpc/1.0.0": {
-      "type": "project",
-      "path": "../../Rpc/Dcp.Net..MQ.Rpc/Dcp.Net..MQ.Rpc.csproj",
-      "msbuildProject": "../../Rpc/Dcp.Net..MQ.Rpc/Dcp.Net..MQ.Rpc.csproj"
-    },
     "Dcp.Net.MQ.RabbitMQ/1.0.0": {
       "type": "project",
       "path": "../../MQ/Dcp.Net.MQ.RabbitMQ/Dcp.Net.MQ.RabbitMQ.csproj",
       "msbuildProject": "../../MQ/Dcp.Net.MQ.RabbitMQ/Dcp.Net.MQ.RabbitMQ.csproj"
+    },
+    "Dcp.Net.MQ.Rpc/1.0.0": {
+      "type": "project",
+      "path": "../../Rpc/Dcp.Net..MQ.Rpc/Dcp.Net.MQ.Rpc.csproj",
+      "msbuildProject": "../../Rpc/Dcp.Net..MQ.Rpc/Dcp.Net.MQ.Rpc.csproj"
     },
     "Geek.Net.MQ/1.0.0": {
       "type": "project",
@@ -5384,7 +5384,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "Dcp.Net..MQ.Rpc >= 1.0.0",
+      "Dcp.Net.MQ.Rpc >= 1.0.0",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
@@ -5399,11 +5399,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\TestIn\\Dcp.Net.MQ.Rpc.TestIn\\Dcp.Net.MQ.Rpc.TestIn.csproj",
+      "projectUniqueName": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\TestIn\\Dcp.Net.MQ.Rpc.TestIn\\Dcp.Net.MQ.Rpc.TestIn.csproj",
       "projectName": "Dcp.Net.MQ.Rpc.TestIn",
-      "projectPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\TestIn\\Dcp.Net.MQ.Rpc.TestIn\\Dcp.Net.MQ.Rpc.TestIn.csproj",
+      "projectPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\TestIn\\Dcp.Net.MQ.Rpc.TestIn\\Dcp.Net.MQ.Rpc.TestIn.csproj",
       "packagesPath": "C:\\Users\\coder\\.nuget\\packages\\",
-      "outputPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\TestIn\\Dcp.Net.MQ.Rpc.TestIn\\obj\\",
+      "outputPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\TestIn\\Dcp.Net.MQ.Rpc.TestIn\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
@@ -5425,8 +5425,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\Rpc\\Dcp.Net..MQ.Rpc\\Dcp.Net..MQ.Rpc.csproj": {
-              "projectPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\Rpc\\Dcp.Net..MQ.Rpc\\Dcp.Net..MQ.Rpc.csproj"
+            "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\Rpc\\Dcp.Net..MQ.Rpc\\Dcp.Net.MQ.Rpc.csproj": {
+              "projectPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\Rpc\\Dcp.Net..MQ.Rpc\\Dcp.Net.MQ.Rpc.csproj"
             }
           }
         }

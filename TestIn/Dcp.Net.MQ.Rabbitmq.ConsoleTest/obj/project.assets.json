@@ -5381,11 +5381,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\TestIn\\Dcp.Net.MQ.Rabbitmq.ConsoleTest\\Dcp.Net.MQ.Rabbitmq.ConsoleTest.csproj",
+      "projectUniqueName": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\TestIn\\Dcp.Net.MQ.Rabbitmq.ConsoleTest\\Dcp.Net.MQ.Rabbitmq.ConsoleTest.csproj",
       "projectName": "Dcp.Net.MQ.Rabbitmq.ConsoleTest",
-      "projectPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\TestIn\\Dcp.Net.MQ.Rabbitmq.ConsoleTest\\Dcp.Net.MQ.Rabbitmq.ConsoleTest.csproj",
+      "projectPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\TestIn\\Dcp.Net.MQ.Rabbitmq.ConsoleTest\\Dcp.Net.MQ.Rabbitmq.ConsoleTest.csproj",
       "packagesPath": "C:\\Users\\coder\\.nuget\\packages\\",
-      "outputPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\TestIn\\Dcp.Net.MQ.Rabbitmq.ConsoleTest\\obj\\",
+      "outputPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\TestIn\\Dcp.Net.MQ.Rabbitmq.ConsoleTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
@@ -5407,8 +5407,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RabbitMQ\\Dcp.Net.MQ.RabbitMQ.csproj": {
-              "projectPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RabbitMQ\\Dcp.Net.MQ.RabbitMQ.csproj"
+            "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RabbitMQ\\Dcp.Net.MQ.RabbitMQ.csproj": {
+              "projectPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RabbitMQ\\Dcp.Net.MQ.RabbitMQ.csproj"
             }
           }
         }

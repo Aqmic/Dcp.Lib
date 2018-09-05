@@ -8,12 +8,12 @@
     using System.Runtime.CompilerServices;
     using System.Threading;
 
-    public class RpcServer
+    public class RpcServer:RpcBase
     {
         
-        public event ReciveMQMessageHandler ReciveMsgedEvent;
+        public override event ReciveMQMessageHandler ReciveMsgedEvent;
 
-        public RpcServer(DistributedMQConfig distributedMQConfig)
+        public RpcServer(DistributedMQConfig distributedMQConfig):base(distributedMQConfig)
         {
             this.MQConfig = distributedMQConfig;
             this.MsgQueue = MQFactory.Create(distributedMQConfig, null, MessageQueueTypeEnum.RabbitMq);
@@ -39,9 +39,7 @@
             this.MsgQueue.Send(mQMessage, null);
         }
 
-        public DistributedMQConfig MQConfig { get; set; }
-
-        public IMessageQueue MsgQueue { get; private set; }
+      
     }
 }
 

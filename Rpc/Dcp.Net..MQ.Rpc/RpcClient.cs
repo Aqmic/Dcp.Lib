@@ -18,17 +18,11 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    public class RpcClient
+    public class RpcClient: RpcBase
     {
-        private readonly object _LockObj = new object();
-        private IDataList<MQMessage> _lstDeviceDataQueue = new DataList<MQMessage>();
        
-     
 
-        [field: CompilerGenerated, DebuggerBrowsable(0)]
-        public event ReciveMQMessageHandler ReciveMsgedEvent;
-
-        public RpcClient(DistributedMQConfig distributedMQConfig, MQMsgRequest mQMsgRequest = null)
+        public RpcClient(DistributedMQConfig distributedMQConfig, MQMsgRequest mQMsgRequest = null):base(distributedMQConfig)
         {
             this.MQConfig = distributedMQConfig;
             this.MsgQueue = MQFactory.Create(this.MQConfig, ((int) Process.GetCurrentProcess().Id).ToString(), MessageQueueTypeEnum.RabbitMq);
@@ -57,6 +51,8 @@
                 this._mQMsgRequest = mQMsgRequest;
             }
         }
+
+        public override event ReciveMQMessageHandler ReciveMsgedEvent;
 
         public T Call<T>(object sendObj, int timeoutMilliseconds) where T: class
         {
@@ -145,10 +141,7 @@
         public MQMsgRequest _mQMsgRequest { get; private set; }
 
         public MQMsgResponse _mQMsgResponse { get; private set; }
-
-        public DistributedMQConfig MQConfig { get; set; }
-
-        public IMessageQueue MsgQueue { get; private set; }
+        
     }
 }
 

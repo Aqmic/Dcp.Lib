@@ -6,17 +6,13 @@
     using Geek.Net.MQ.Config;
     using System;
     using System.Diagnostics;
-    using System.IO;
     using System.Net.Http;
     using System.Text;
 
-    internal class Program
+    internal class Program_test
     {
         private static RpcClient _rpcClient;
         private static RpcServer _rpcServer;
-
-        private static string _mqAddress = File.ReadAllText(@"D:\mqaddress.txt");
-
 
         private static void _rpcClient_ReciveMsgedEvent(MQMessage mQMessage)
         {
@@ -24,7 +20,7 @@
 
         private static RpcClient GetClient() => 
             new RpcClient(new DistributedMQConfig { 
-                ServerAddress = _mqAddress,
+                ServerAddress = "amqp连接地址",
                 Topic = "RPC_EXCHANGE",
                 ProducerID = "Rpc_Response_Queue",
                 ConsumerID = "Rpc_Response_RouteKey",
@@ -32,7 +28,7 @@
                 IsDurable = false
             }, null);
 
-        private static void Main(string[] args)
+        private static void Main2(string[] args)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -42,8 +38,8 @@
             Console.WriteLine(stopwatch.ElapsedMilliseconds);
             _rpcServer = StartServer();
             _rpcClient = GetClient();
-            _rpcClient.ReciveMsgedEvent -= new ReciveMQMessageHandler(Program._rpcClient_ReciveMsgedEvent);
-            _rpcClient.ReciveMsgedEvent += new ReciveMQMessageHandler(Program._rpcClient_ReciveMsgedEvent);
+            _rpcClient.ReciveMsgedEvent -= new ReciveMQMessageHandler(Program_test._rpcClient_ReciveMsgedEvent);
+            _rpcClient.ReciveMsgedEvent += new ReciveMQMessageHandler(Program_test._rpcClient_ReciveMsgedEvent);
             int num = 0;
             while (Console.ReadLine() != "0")
             {
@@ -79,7 +75,7 @@
         private static RpcServer StartServer()
         {
             DistributedMQConfig distributedMQConfig = new DistributedMQConfig {
-                ServerAddress = _mqAddress,
+                ServerAddress = "amqp连接地址",
                 Topic = "RPC_EXCHANGE",
                 ProducerID = "Rpc_Request_Queque",
                 ConsumerID = "Rpc_Request_RouteKey",
@@ -87,8 +83,8 @@
                 IsDurable = false
             };
             RpcServer server = new RpcServer(distributedMQConfig);
-            server.ReciveMsgedEvent -= new ReciveMQMessageHandler(Program.RpcServer_ReciveMsgedEvent);
-            server.ReciveMsgedEvent += new ReciveMQMessageHandler(Program.RpcServer_ReciveMsgedEvent);
+            server.ReciveMsgedEvent -= new ReciveMQMessageHandler(Program_test.RpcServer_ReciveMsgedEvent);
+            server.ReciveMsgedEvent += new ReciveMQMessageHandler(Program_test.RpcServer_ReciveMsgedEvent);
             return server;
         }
     }

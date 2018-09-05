@@ -4748,11 +4748,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MicroService\\Dcp.Net.MicroService.Consul\\Dcp.Net.MicroService.Consul.csproj",
+      "projectUniqueName": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MicroService\\Dcp.Net.MicroService.Consul\\Dcp.Net.MicroService.Consul.csproj",
       "projectName": "Dcp.Net.MicroService.Consul",
-      "projectPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MicroService\\Dcp.Net.MicroService.Consul\\Dcp.Net.MicroService.Consul.csproj",
+      "projectPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MicroService\\Dcp.Net.MicroService.Consul\\Dcp.Net.MicroService.Consul.csproj",
       "packagesPath": "C:\\Users\\coder\\.nuget\\packages\\",
-      "outputPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MicroService\\Dcp.Net.MicroService.Consul\\obj\\",
+      "outputPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MicroService\\Dcp.Net.MicroService.Consul\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Rpc\Dcp.Net..MQ.Rpc\Dcp.Net..MQ.Rpc.csproj" />
+    <ProjectReference Include="..\..\Rpc\Dcp.Net..MQ.Rpc\Dcp.Net.MQ.Rpc.csproj" />
   </ItemGroup>
 
 </Project>

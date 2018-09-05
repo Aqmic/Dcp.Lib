@@ -7858,11 +7858,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\TestIn\\Dcp.Mq.TestIn\\Dcp.Mq.TestIn.csproj",
+      "projectUniqueName": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\TestIn\\Dcp.Mq.TestIn\\Dcp.Mq.TestIn.csproj",
       "projectName": "Dcp.Mq.TestIn",
-      "projectPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\TestIn\\Dcp.Mq.TestIn\\Dcp.Mq.TestIn.csproj",
+      "projectPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\TestIn\\Dcp.Mq.TestIn\\Dcp.Mq.TestIn.csproj",
       "packagesPath": "C:\\Users\\coder\\.nuget\\packages\\",
-      "outputPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\TestIn\\Dcp.Mq.TestIn\\obj\\",
+      "outputPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\TestIn\\Dcp.Mq.TestIn\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
@@ -7884,11 +7884,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RabbitMQ\\Dcp.Net.MQ.RabbitMQ.csproj": {
-              "projectPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RabbitMQ\\Dcp.Net.MQ.RabbitMQ.csproj"
+            "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RabbitMQ\\Dcp.Net.MQ.RabbitMQ.csproj": {
+              "projectPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RabbitMQ\\Dcp.Net.MQ.RabbitMQ.csproj"
             },
-            "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RocketMQ\\Dcp.Net.MQ.RocketMQ.csproj": {
-              "projectPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RocketMQ\\Dcp.Net.MQ.RocketMQ.csproj"
+            "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RocketMQ\\Dcp.Net.MQ.RocketMQ.csproj": {
+              "projectPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RocketMQ\\Dcp.Net.MQ.RocketMQ.csproj"
             }
           }
         }

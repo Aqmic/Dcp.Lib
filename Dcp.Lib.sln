@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dcp.Net.MicroService.Consul
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dcp.Net.MQ.Rpc.TestIn", "TestIn\Dcp.Net.MQ.Rpc.TestIn\Dcp.Net.MQ.Rpc.TestIn.csproj", "{D7066C7D-40D1-4F57-8384-0CA668995BF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dcp.Net..MQ.Rpc", "Rpc\Dcp.Net..MQ.Rpc\Dcp.Net..MQ.Rpc.csproj", "{94751C9C-4195-46AB-B710-AFBF2E6565B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dcp.Net.MQ.Rpc", "Rpc\Dcp.Net..MQ.Rpc\Dcp.Net.MQ.Rpc.csproj", "{94751C9C-4195-46AB-B710-AFBF2E6565B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

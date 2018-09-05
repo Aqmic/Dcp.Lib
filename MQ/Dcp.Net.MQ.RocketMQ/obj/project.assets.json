@@ -5286,11 +5286,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RocketMQ\\Dcp.Net.MQ.RocketMQ.csproj",
+      "projectUniqueName": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RocketMQ\\Dcp.Net.MQ.RocketMQ.csproj",
       "projectName": "Dcp.Net.MQ.RocketMQ",
-      "projectPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RocketMQ\\Dcp.Net.MQ.RocketMQ.csproj",
+      "projectPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RocketMQ\\Dcp.Net.MQ.RocketMQ.csproj",
       "packagesPath": "C:\\Users\\coder\\.nuget\\packages\\",
-      "outputPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RocketMQ\\obj\\",
+      "outputPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Dcp.Net.MQ.RocketMQ\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
@@ -5312,11 +5312,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MQ\\Dcp.Net\\Dcp.Net.csproj": {
-              "projectPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MQ\\Dcp.Net\\Dcp.Net.csproj"
+            "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Dcp.Net\\Dcp.Net.csproj": {
+              "projectPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Dcp.Net\\Dcp.Net.csproj"
             },
-            "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MQ\\Geek.Net.MQ\\Geek.Net.MQ.csproj": {
-              "projectPath": "D:\\WorkSpace\\opensource\\feifu\\Dcp.Lib\\MQ\\Geek.Net.MQ\\Geek.Net.MQ.csproj"
+            "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Geek.Net.MQ\\Geek.Net.MQ.csproj": {
+              "projectPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Geek.Net.MQ\\Geek.Net.MQ.csproj"
             }
           }
         }

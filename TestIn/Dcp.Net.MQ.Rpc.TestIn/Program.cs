@@ -1,6 +1,7 @@
 ﻿namespace Dcp.Net.MQ.Rpc.TestIn
 {
     using Dcp.Net.MQ.Rpc;
+    using Dcp.Net.MQ.Rpc.TestIn.RpcTest;
     using Dynamic.Core.Comm;
     using Geek.Net.MQ;
     using Geek.Net.MQ.Config;
@@ -15,11 +16,12 @@
         private static RpcClient _rpcClient;
         private static RpcServer _rpcServer;
 
-        private static string _mqAddress = File.ReadAllText(@"mqaddress.txt");
+        private static string _mqAddress = File.ReadAllText(@"d:\mqaddress.txt");
 
 
         private static void _rpcClient_ReciveMsgedEvent(MQMessage mQMessage)
         {
+
         }
 
         private static RpcClient GetClient() => 
@@ -34,6 +36,12 @@
 
         private static void Main(string[] args)
         {
+            RpcDemo rpcDemo = new RpcDemo();
+            rpcDemo.TestIn();
+
+
+            return;
+
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             HttpClient client = new HttpClient();

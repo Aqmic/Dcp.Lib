@@ -13,6 +13,20 @@
         
         public override event ReciveMQMessageHandler ReciveMsgedEvent;
 
+        public static RpcServer GetDefault(string mqAddress)
+        {
+            DistributedMQConfig distributedMQConfig = new DistributedMQConfig
+            {
+                ServerAddress = mqAddress,
+                Topic = "RPC_EXCHANGE",
+                ProducerID = "Rpc_Request_Queque",
+                ConsumerID = "Rpc_Request_RouteKey",
+                MsgSendType = MessageSendType.P2P,
+                IsDurable = false
+            };
+            RpcServer server = new RpcServer(distributedMQConfig);
+            return server;
+        }
         public RpcServer(DistributedMQConfig distributedMQConfig):base(distributedMQConfig)
         {
             this.MQConfig = distributedMQConfig;

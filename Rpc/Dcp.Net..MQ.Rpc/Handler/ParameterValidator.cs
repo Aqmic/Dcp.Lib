@@ -6,6 +6,7 @@ using System.Text;
 
 
 using System.Linq;
+using System.Reflection;
 
 namespace Dcp.Net.MQ.Rpc.Handler
 {

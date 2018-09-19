@@ -4,10 +4,18 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;JIT;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="publish\**" />
     <EmbeddedResource Remove="publish\**" />
     <None Remove="publish\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
   </ItemGroup>
 
  

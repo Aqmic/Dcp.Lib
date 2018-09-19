@@ -33,12 +33,18 @@
                 MsgSendType = MessageSendType.P2P,
                 IsDurable = false
             }, null);
-
+        static async void RunIUserApi() {
+            while (Console.ReadLine() != "exit")
+            {
+                RpcDemo rpcDemo = new RpcDemo();
+                await rpcDemo.TestIn();
+            }
+        }
         private static void Main(string[] args)
         {
-            RpcDemo rpcDemo = new RpcDemo();
-            rpcDemo.TestIn();
 
+            RunIUserApi();
+           
 
             return;
 

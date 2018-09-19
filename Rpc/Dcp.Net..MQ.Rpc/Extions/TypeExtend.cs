@@ -127,7 +127,7 @@ namespace Dcp.Net.MQ.Rpc.Extions
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static Type GetTypeInfo(this Type type)
+        public static Type GetTypeInfo2(this Type type)
         {
             return type;
         }

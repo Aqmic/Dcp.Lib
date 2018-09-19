@@ -80,7 +80,7 @@ namespace Dcp.Net.MQ.Rpc.Handler
         /// <returns></returns>
         private static ApiParameterDescriptor GetParameterDescriptor(this ParameterInfo parameter)
         {
-            
+
             var parameterType = parameter.ParameterType;
             var parameterAlias = parameter.GetCustomAttribute(typeof(NamingAttribute)) as NamingAttribute;
             var parameterName = parameterAlias == null ? parameter.Name : parameterAlias.Name;
@@ -130,14 +130,14 @@ namespace Dcp.Net.MQ.Rpc.Handler
             }
 
             var dataType = method.ReturnType.GetGenericArguments().FirstOrDefault();
-            var descriptor = new ApiReturnDescriptor
-            {
-                Attribute = returnAttribute,
-                ReturnType = method.ReturnType,
-                DataType = dataType,
-                IsITaskDefinition = method.ReturnType.GetGenericTypeDefinition() == typeof(ITask<>),
-                ITaskCtor = ApiTask.GetITaskConstructor(dataType),
-            };
+            var descriptor = new ApiReturnDescriptor();
+
+            descriptor.Attribute = returnAttribute;
+            descriptor.ReturnType = method.ReturnType;
+            descriptor.DataType = dataType;
+            descriptor.IsITaskDefinition = method.ReturnType.GetGenericTypeDefinition() == typeof(ITask<>);
+            descriptor.ITaskCtor = ApiTask.GetITaskConstructor(dataType);
+
             return descriptor;
         }
 

@@ -2,11 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Dcp.Net.MQ.Rpc.TestIn.Constract
 {
     public interface IRpcTestApi: IDcpApi
     {
-        void ConsoleTest();
+       Task<string> ConsoleTest();
     }
 }

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "59e047525014da4d60fb6c00f4b2c87e1c9ebc46"
+    "signature": "e1b7b5b964a686b5840ff9e78005b91ac38edd72"
   },
   "compilationOptions": {},
   "targets": {
@@ -384,7 +384,7 @@
           "System.Linq.Expressions": "4.1.1",
           "System.ObjectModel": "4.0.12",
           "System.Reflection": "4.3.0",
-          "System.Reflection.Emit": "4.0.1",
+          "System.Reflection.Emit": "4.3.0",
           "System.Reflection.Emit.ILGeneration": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
           "System.Reflection.TypeExtensions": "4.3.0",
@@ -464,7 +464,7 @@
           "System.Linq": "4.3.0",
           "System.ObjectModel": "4.0.12",
           "System.Reflection": "4.3.0",
-          "System.Reflection.Emit": "4.0.1",
+          "System.Reflection.Emit": "4.3.0",
           "System.Reflection.Emit.ILGeneration": "4.3.0",
           "System.Reflection.Emit.Lightweight": "4.3.0",
           "System.Reflection.Extensions": "4.3.0",
@@ -574,7 +574,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Reflection.Emit/4.0.1": {
+      "System.Reflection.Emit/4.3.0": {
         "dependencies": {
           "System.IO": "4.3.0",
           "System.Reflection": "4.3.0",
@@ -953,7 +953,8 @@
       },
       "Dcp.Net.MQ.Rpc/1.0.0": {
         "dependencies": {
-          "Dcp.Net.MQ.RabbitMQ": "1.0.0"
+          "Dcp.Net.MQ.RabbitMQ": "1.0.0",
+          "System.Reflection.Emit": "4.3.0"
         },
         "runtime": {
           "Dcp.Net.MQ.Rpc.dll": {}
@@ -1353,12 +1354,12 @@
       "path": "system.reflection/4.3.0",
       "hashPath": "system.reflection.4.3.0.nupkg.sha512"
     },
-    "System.Reflection.Emit/4.0.1": {
+    "System.Reflection.Emit/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-P2wqAj72fFjpP6wb9nSfDqNBMab+2ovzSDzUZK7MVIm54tBJEPr9jWfSjjoTpPwj1LeKcmX3vr0ttyjSSFM47g==",
-      "path": "system.reflection.emit/4.0.1",
-      "hashPath": "system.reflection.emit.4.0.1.nupkg.sha512"
+      "sha512": "sha512-lXnYtO967NSPdUd+xXkVZFXoTopO0QbF/JlX/oMdmymK7WOWcVjMM8HzvbhDb3pIaLTYKwSl3EipcDXJUWjugQ==",
+      "path": "system.reflection.emit/4.3.0",
+      "hashPath": "system.reflection.emit.4.3.0.nupkg.sha512"
     },
     "System.Reflection.Emit.ILGeneration/4.3.0": {
       "type": "package",

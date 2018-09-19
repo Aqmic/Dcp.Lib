@@ -127,11 +127,12 @@ namespace Dcp.Net.MQ.Rpc.Core
             }
 
             /// <summary>
-            /// 执行一次请求
+            /// 执行一次请求,远程提交
             /// </summary>
             /// <returns></returns>
             private async Task<TResult> RequestAsync()
             {
+                //这
                 var context = new ApiActionContext
                 {
                     ApiActionDescriptor = this.apiActionDescriptor,

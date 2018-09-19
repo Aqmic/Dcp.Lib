@@ -8,5 +8,9 @@ namespace Dcp.Net.MQ.Rpc.Handler
     {
         public string Content { get; set; }
         public string RequestUri { get; set; }
+
+        public byte[] Body { get; set; }
+
+
     }
 }

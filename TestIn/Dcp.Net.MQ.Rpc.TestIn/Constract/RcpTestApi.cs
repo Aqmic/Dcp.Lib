@@ -1,4 +1,5 @@
 ﻿using Dynamic.Core.Auxiliary;
+using Dynamic.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,13 +11,26 @@ namespace Dcp.Net.MQ.Rpc.TestIn.Constract
     {
         public Task<string> ConsoleTest()
         {
-           IOHelper.WriteLine($"{DateTime.Now}=>我被调用了");
+            IOHelper.WriteLine($"{DateTime.Now}=>我被调用了");
             return null;
         }
 
         public void Dispose()
         {
-          //  throw new NotImplementedException();
+            //  throw new NotImplementedException();
+        }
+
+        public Task<ResultModel> WriteLine(string contentStr)
+        {
+            return (new TaskFactory()).StartNew<ResultModel>(() =>
+            {
+                ResultModel resultModel = new ResultModel();
+                Console.WriteLine(contentStr);
+                resultModel.state = true;
+                resultModel.msg = "ok";
+                return resultModel;
+            });
+
         }
     }
 }

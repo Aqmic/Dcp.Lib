@@ -34,10 +34,12 @@
                 IsDurable = false
             }, null);
         static async void RunIUserApi() {
+            _rpcServer = StartServer();
+          
             while (Console.ReadLine() != "exit")
             {
                 RpcDemo rpcDemo = new RpcDemo();
-                await rpcDemo.TestIn();
+                await rpcDemo.TestIn() ;
             }
         }
         private static void Main(string[] args)

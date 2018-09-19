@@ -103,9 +103,9 @@ namespace Dcp.Net.MQ.Rpc.Core
             {
                 var apiAction = this.ApiActionDescriptor;
                 var client = this.ApiConfig.ApiClient;
-
+                this.RequestMessage.Body=Dynamic.Core.Runtime.SerializationUtility.ToBytes(apiAction);
                 this.ResponseMessage = client.Call<DcpResponseMessage>(this.RequestMessage,1000); // await ApiClient.SendAsync(this.RequestMessage).ConfigureAwait(false);
-                //this.Result = await apiAction.Return.Attribute.GetTaskResult(this).ConfigureAwait(false);
+                this.Result = await apiAction.Return.Attribute.GetTaskResult(this).ConfigureAwait(false);
                 return true;
             }
             catch (Exception ex)

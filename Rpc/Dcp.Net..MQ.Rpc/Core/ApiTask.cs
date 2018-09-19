@@ -14,19 +14,12 @@ namespace Dcp.Net.MQ.Rpc.Core
     /// </summary>
     abstract class ApiTask
     {
-#if NET45
-        /// <summary>
-        /// 完成的任务
-        /// </summary>
-        /// <returns></returns>
-        public static readonly Task CompletedTask = Task.FromResult<object>(null);
-#else
+
         /// <summary>
         /// 完成的任务
         /// </summary>
         /// <returns></returns>
         public static readonly Task CompletedTask = Task.CompletedTask;
-#endif
 
         /// <summary>
         /// 获取ITaskOf(dataType)的构造器

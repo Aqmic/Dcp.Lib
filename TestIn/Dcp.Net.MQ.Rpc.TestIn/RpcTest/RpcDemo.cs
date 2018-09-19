@@ -1,6 +1,7 @@
 ﻿using Dcp.Net.MQ.Rpc.Contract;
 using Dcp.Net.MQ.Rpc.Handler.Internal;
 using Dcp.Net.MQ.Rpc.TestIn.Constract;
+using Dynamic.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,10 +15,10 @@ namespace Dcp.Net.MQ.Rpc.TestIn.RpcTest
         {
          
         }
-        public async Task<string> TestIn()
+        public async Task<ResultModel> TestIn()
         {
             var rpcTestApi = DcpApiClient.Create<IRpcTestApi>();
-            return await rpcTestApi.ConsoleTest();
+            return await rpcTestApi.WriteLine("测试WriteLine方法=》"+DateTime.Now);
         }
     }
 }

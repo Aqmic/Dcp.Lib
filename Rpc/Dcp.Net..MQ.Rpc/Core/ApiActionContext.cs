@@ -1,4 +1,5 @@
 ﻿using Dcp.Net.MQ.Rpc.Aop;
+using Dcp.Net.MQ.Rpc.Extions;
 using Dcp.Net.MQ.Rpc.Handler;
 using Dcp.Net.MQ.Rpc.Models;
 using System;
@@ -17,7 +18,6 @@ namespace Dcp.Net.MQ.Rpc.Core
         /// 自定义数据的存储和访问容器
         /// </summary>
         private Tags tags;
-
         /// <summary>
         /// 获取本次请求相关的自定义数据的存储和访问容器
         /// </summary>
@@ -37,12 +37,10 @@ namespace Dcp.Net.MQ.Rpc.Core
         /// 获取关联的HttpApiConfig
         /// </summary>
         public DcpApiConfig ApiConfig { get; internal set; }
-
         /// <summary>
         /// 获取关联的ApiActionDescriptor
         /// </summary>
         public ApiActionDescriptor ApiActionDescriptor { get; internal set; }
-
         /// <summary>
         /// 获取关联的HttpRequestMessage
         /// </summary>
@@ -62,8 +60,7 @@ namespace Dcp.Net.MQ.Rpc.Core
         /// 获取调用Api产生的异常
         /// </summary>
         public Exception Exception { get; internal set; }
-
-
+        
         /// <summary>
         /// 准备请求数据
         /// </summary>
@@ -77,12 +74,10 @@ namespace Dcp.Net.MQ.Rpc.Core
             {
                  ParameterValidator.Validate(parameter, validateProperty);
             }
-
             foreach (var actionAttribute in apiAction.Attributes)
             {
                 await actionAttribute.BeforeRequestAsync(this).ConfigureAwait(false);
             }
-
             foreach (var parameter in apiAction.Parameters)
             {
                 foreach (var parameterAttribute in parameter.Attributes)
@@ -103,7 +98,7 @@ namespace Dcp.Net.MQ.Rpc.Core
             {
                 var apiAction = this.ApiActionDescriptor;
                 var client = this.ApiConfig.ApiClient;
-                this.RequestMessage.Body=Dynamic.Core.Runtime.SerializationUtility.ToBytes(apiAction);
+                this.RequestMessage.ActionInfo=apiAction.ToActionSerDes();
                 this.ResponseMessage = client.Call<DcpResponseMessage>(this.RequestMessage,1000); // await ApiClient.SendAsync(this.RequestMessage).ConfigureAwait(false);
                 this.Result = await apiAction.Return.Attribute.GetTaskResult(this).ConfigureAwait(false);
                 return true;
@@ -126,7 +121,6 @@ namespace Dcp.Net.MQ.Rpc.Core
             {
                 await funcSelector(filter)(this).ConfigureAwait(false);
             }
-
             foreach (var filter in this.ApiActionDescriptor.Filters)
             {
                 await funcSelector(filter)(this).ConfigureAwait(false);

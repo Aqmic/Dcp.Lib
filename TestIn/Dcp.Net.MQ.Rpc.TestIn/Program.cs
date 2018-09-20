@@ -1,8 +1,10 @@
 ﻿namespace Dcp.Net.MQ.Rpc.TestIn
 {
     using Dcp.Net.MQ.Rpc;
+    using Dcp.Net.MQ.Rpc.Handler;
     using Dcp.Net.MQ.Rpc.TestIn.RpcTest;
     using Dynamic.Core.Comm;
+    using Dynamic.Core.Models;
     using Geek.Net.MQ;
     using Geek.Net.MQ.Config;
     using System;
@@ -39,7 +41,7 @@
             while (Console.ReadLine() != "exit")
             {
                 RpcDemo rpcDemo = new RpcDemo();
-                await rpcDemo.TestIn() ;
+                var abc=await rpcDemo.TestIn() ;
             }
         }
         private static void Main(string[] args)
@@ -86,10 +88,21 @@
 
         private static void RpcServer_ReciveMsgedEvent(MQMessage mQMessage)
         {
-            byte[] bytes = Encoding.UTF8.GetBytes(Encoding.UTF8.GetString(mQMessage.Body) + "_我是服务端的回复哈");
-            mQMessage.Body = bytes;
+            //byte[] bytes = Encoding.UTF8.GetBytes(Encoding.UTF8.GetString(mQMessage.Body) + "_我是服务端的回复哈");
+
+            var msgRequest = Dynamic.Core.Runtime.SerializationUtility.BytesToObject<DcpRequestMessage>(mQMessage.Body);
+            DcpResponseMessage dcpResponseMessage = new DcpResponseMessage() {
+                RemotingException = new Exceptions.RpcRemotingException() {
+                    Source = "测试异常",
+                },
+                Result = new ResultModel() {
+                    data = "测试",
+                    state = true
+                },
+            };
+            mQMessage.Body = Dynamic.Core.Runtime.SerializationUtility.ToBytes(dcpResponseMessage);
             _rpcServer.Send(mQMessage);
-            Console.WriteLine("RpcServer收到消息！");
+            Console.WriteLine(msgRequest.ActionInfo.MethodName);
         }
 
         private static RpcServer StartServer()

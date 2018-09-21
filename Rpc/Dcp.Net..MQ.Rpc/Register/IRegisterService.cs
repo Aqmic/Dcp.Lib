@@ -1,7 +1,10 @@
-﻿namespace Dcp.Net.MQ.Rpc.Register
+﻿using System.Reflection;
+
+namespace Dcp.Net.MQ.Rpc.Register
 {
     internal interface IRegisterService
     {
+        void RegisterAssembly(Assembly assembly);
     }
 }
 

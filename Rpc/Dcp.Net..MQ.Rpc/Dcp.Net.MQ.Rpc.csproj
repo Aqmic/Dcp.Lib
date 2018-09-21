@@ -24,4 +24,10 @@
     <ProjectReference Include="..\..\MQ\Dcp.Net.MQ.RabbitMQ\Dcp.Net.MQ.RabbitMQ.csproj" />
   </ItemGroup>
 
+ 
+
+  <ItemGroup>
+    <Folder Include="Service\" />
+  </ItemGroup>
+
 </Project>

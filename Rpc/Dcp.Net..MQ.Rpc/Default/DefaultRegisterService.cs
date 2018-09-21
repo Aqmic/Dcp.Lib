@@ -21,9 +21,10 @@ namespace Dcp.Net.MQ.Rpc.Default
            var rpcAssemblyTypes=assemblyTypes.Where(f => !f.IsAbstract && !f.IsInterface && typeof(IDcpApi).IsAssignableFrom(f));
             foreach (var item in rpcAssemblyTypes)
             {
-               // IocUnity.AddSingleton<iem>
-
-               //IocUnity.AddTransient()
+                var iocType = typeof(IocUnity);
+                var methodInfo = iocType.GetMethod("AddTransient");
+                methodInfo = methodInfo.MakeGenericMethod(item);
+                methodInfo.Invoke(null, null);
             }
         }
         

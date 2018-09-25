@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "d2851aba713c4fa2b53efc51189f0a25f50a2d6b"
+    "signature": "7f0f402c839c96abb549a691c42837f69a0a7e0f"
   },
   "compilationOptions": {},
   "targets": {
@@ -41,7 +41,7 @@
           }
         }
       },
-      "Dynamic.Core/2.1.5.3": {
+      "Dynamic.Core/2.1.5.4": {
         "dependencies": {
           "CacheManager.Microsoft.Extensions.Caching.Memory": "1.1.2",
           "Microsoft.CSharp": "4.4.1",
@@ -56,8 +56,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/Dynamic.Core.dll": {
-            "assemblyVersion": "2.1.5.3",
-            "fileVersion": "2.1.5.3"
+            "assemblyVersion": "2.1.5.4",
+            "fileVersion": "2.1.5.4"
           }
         }
       },
@@ -989,7 +989,7 @@
       },
       "Geek.Net.MQ/1.0.0": {
         "dependencies": {
-          "Dynamic.Core": "2.1.5.3"
+          "Dynamic.Core": "2.1.5.4"
         },
         "runtime": {
           "Geek.Net.MQ.dll": {}
@@ -1017,12 +1017,12 @@
       "path": "cachemanager.microsoft.extensions.caching.memory/1.1.2",
       "hashPath": "cachemanager.microsoft.extensions.caching.memory.1.1.2.nupkg.sha512"
     },
-    "Dynamic.Core/2.1.5.3": {
+    "Dynamic.Core/2.1.5.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-E7PlFzLoP8J+gVFR7gtU+v7H7ysvPKy9yXS0UWi58zsTGLmY69UOkg5WqIuxRHFQxnvf9d+LkXxwPVVu4ibOzw==",
-      "path": "dynamic.core/2.1.5.3",
-      "hashPath": "dynamic.core.2.1.5.3.nupkg.sha512"
+      "sha512": "sha512-HGgIOccu3mjeTNFvbOatDYor24o5Vh17ME7ha7Gx7joZpUZ+qyVGRWiSj9akofEUZpHBp2vuZP2+eoKCTnK9OQ==",
+      "path": "dynamic.core/2.1.5.4",
+      "hashPath": "dynamic.core.2.1.5.4.nupkg.sha512"
     },
     "Microsoft.CSharp/4.4.1": {
       "type": "package",

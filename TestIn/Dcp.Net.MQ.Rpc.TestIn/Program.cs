@@ -1,10 +1,13 @@
 ﻿namespace Dcp.Net.MQ.Rpc.TestIn
 {
     using Dcp.Net.MQ.Rpc;
+    using Dcp.Net.MQ.Rpc.Default;
     using Dcp.Net.MQ.Rpc.Handler;
+    using Dcp.Net.MQ.Rpc.TestIn.Constract;
     using Dcp.Net.MQ.Rpc.TestIn.RpcTest;
     using Dynamic.Core.Comm;
     using Dynamic.Core.Models;
+    using Dynamic.Core.Service;
     using Geek.Net.MQ;
     using Geek.Net.MQ.Config;
     using System;
@@ -41,14 +44,25 @@
             while (Console.ReadLine() != "exit")
             {
                 RpcDemo rpcDemo = new RpcDemo();
+
                 var abc=await rpcDemo.TestIn() ;
             }
         }
         private static void Main(string[] args)
         {
+            IocUnity.AddTransient<RcpTestApi>();
+            var abc = IocUnity.Get<IRpcTestApi>();
 
-            RunIUserApi();
+            DefaultRegisterService defaultRegisterService = new DefaultRegisterService();
+            defaultRegisterService.RegisterAssembly(typeof(Program).Assembly);
+            defaultRegisterService.Call(new ActionSerDes() {
+                TypeFullName= typeof(IRpcTestApi).FullName,
+                MethodName= "WriteLine",
+               
+            });
            
+            RunIUserApi();
+
 
             return;
 

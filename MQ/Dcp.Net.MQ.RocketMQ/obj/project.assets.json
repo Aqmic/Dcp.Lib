@@ -66,7 +66,7 @@
           "lib/netstandard1.6/Castle.Windsor.dll": {}
         }
       },
-      "Dynamic.Core/2.1.5.3": {
+      "Dynamic.Core/2.1.5.4": {
         "type": "package",
         "dependencies": {
           "CacheManager.Microsoft.Extensions.Caching.Memory": "1.1.2",
@@ -1504,7 +1504,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Dynamic.Core": "2.1.5.3"
+          "Dynamic.Core": "2.1.5.4"
         },
         "compile": {
           "bin/placeholder/Geek.Net.MQ.dll": {}
@@ -1578,13 +1578,13 @@
         "readme.txt"
       ]
     },
-    "Dynamic.Core/2.1.5.3": {
-      "sha512": "E7PlFzLoP8J+gVFR7gtU+v7H7ysvPKy9yXS0UWi58zsTGLmY69UOkg5WqIuxRHFQxnvf9d+LkXxwPVVu4ibOzw==",
+    "Dynamic.Core/2.1.5.4": {
+      "sha512": "HGgIOccu3mjeTNFvbOatDYor24o5Vh17ME7ha7Gx7joZpUZ+qyVGRWiSj9akofEUZpHBp2vuZP2+eoKCTnK9OQ==",
       "type": "package",
-      "path": "dynamic.core/2.1.5.3",
+      "path": "dynamic.core/2.1.5.4",
       "files": [
         ".signature.p7s",
-        "dynamic.core.2.1.5.3.nupkg.sha512",
+        "dynamic.core.2.1.5.4.nupkg.sha512",
         "dynamic.core.nuspec",
         "lib/netstandard2.0/Dynamic.Core.dll"
       ]

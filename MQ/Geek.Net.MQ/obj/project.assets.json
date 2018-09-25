@@ -28,7 +28,7 @@
           "lib/netstandard1.3/CacheManager.Microsoft.Extensions.Caching.Memory.dll": {}
         }
       },
-      "Dynamic.Core/2.1.5.3": {
+      "Dynamic.Core/2.1.5.4": {
         "type": "package",
         "dependencies": {
           "CacheManager.Microsoft.Extensions.Caching.Memory": "1.1.2",
@@ -698,13 +698,13 @@
         "lib/netstandard1.3/CacheManager.Microsoft.Extensions.Caching.Memory.xml"
       ]
     },
-    "Dynamic.Core/2.1.5.3": {
-      "sha512": "E7PlFzLoP8J+gVFR7gtU+v7H7ysvPKy9yXS0UWi58zsTGLmY69UOkg5WqIuxRHFQxnvf9d+LkXxwPVVu4ibOzw==",
+    "Dynamic.Core/2.1.5.4": {
+      "sha512": "HGgIOccu3mjeTNFvbOatDYor24o5Vh17ME7ha7Gx7joZpUZ+qyVGRWiSj9akofEUZpHBp2vuZP2+eoKCTnK9OQ==",
       "type": "package",
-      "path": "dynamic.core/2.1.5.3",
+      "path": "dynamic.core/2.1.5.4",
       "files": [
         ".signature.p7s",
-        "dynamic.core.2.1.5.3.nupkg.sha512",
+        "dynamic.core.2.1.5.4.nupkg.sha512",
         "dynamic.core.nuspec",
         "lib/netstandard2.0/Dynamic.Core.dll"
       ]
@@ -2815,7 +2815,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Dynamic.Core >= 2.1.5.3",
+      "Dynamic.Core >= 2.1.5.4",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -2872,7 +2872,7 @@
         "dependencies": {
           "Dynamic.Core": {
             "target": "Package",
-            "version": "[2.1.5.3, )"
+            "version": "[2.1.5.4, )"
           },
           "NETStandard.Library": {
             "suppressParent": "All",

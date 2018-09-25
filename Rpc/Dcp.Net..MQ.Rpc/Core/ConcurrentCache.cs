@@ -48,5 +48,9 @@ namespace Dcp.Net.MQ.Rpc.Core
                 .GetOrAdd(key, k => new Lazy<TValue>(() => valueFactory(k), LazyThreadSafetyMode.ExecutionAndPublication))
                 .Value;
         }
+        public TValue Get(TKey key) {
+
+            return this.dictionary[key].Value;
+        }
     }
 }

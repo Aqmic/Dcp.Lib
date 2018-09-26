@@ -37,6 +37,7 @@ namespace Dcp.Net.MQ.Rpc.Aop
         public virtual object Intercept(object target, MethodInfo method, object[] parameters)
         {
             var apiActionDescripter = this.GetApiActionDescriptor(method, parameters);
+            apiActionDescripter.TargetTypeFullName = target.GetType().FullName;
             var apiTask = ApiTask.CreateInstance(this.ApiConfig, apiActionDescripter);
 
             if (apiActionDescripter.Return.IsITaskDefinition == true)

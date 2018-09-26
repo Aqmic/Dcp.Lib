@@ -100,7 +100,6 @@ namespace Dcp.Net.MQ.Rpc.Core
             {
                 return this.RequestAsync().ConfigureAwait(continueOnCapturedContext);
             }
-
             /// <summary>
             /// 创建请求任务
             /// </summary>
@@ -125,7 +124,7 @@ namespace Dcp.Net.MQ.Rpc.Core
             /// <returns></returns>
             private async Task<TResult> RequestAsync()
             {
-                //这
+                //
                 var context = new ApiActionContext
                 {
                     ApiActionDescriptor = this.apiActionDescriptor,
@@ -135,7 +134,6 @@ namespace Dcp.Net.MQ.Rpc.Core
                     Exception = null,
                     Result = null
                 };
-
                 await context.PrepareRequestAsync().ConfigureAwait(false);
                 await context.ExecFiltersAsync(filter => filter.OnBeginRequestAsync).ConfigureAwait(false);
                 var state = await context.ExecRequestAsync().ConfigureAwait(false);

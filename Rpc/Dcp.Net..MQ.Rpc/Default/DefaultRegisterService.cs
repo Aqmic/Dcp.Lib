@@ -8,46 +8,60 @@ using Dcp.Net.MQ.Rpc.Contract;
 using Dynamic.Core.Service;
 using Dcp.Net.MQ.Rpc.Core;
 using Dcp.Net.MQ.Rpc.Handler;
+using Dcp.Net.MQ.Rpc.Extions;
 
 namespace Dcp.Net.MQ.Rpc.Default
 {
     public class DefaultRegisterService : IRegisterService
-    {        /// <summary>
-             /// 接口对应的代理类型的构造器缓存
-             /// </summary>
-        private static readonly ConcurrentCache<Type, ConstructorInfo> DcpApiTypeCtorCache = new ConcurrentCache<Type, ConstructorInfo>();
+    {
         private static readonly ConcurrentCache<string, Type> ConstractInterfaceCache = new ConcurrentCache<string, Type>();
+        private static readonly ConcurrentCache<string, MethodInfo> ActionMethodInfoCache = new ConcurrentCache<string, MethodInfo>();
         public void RegisterAssembly(Assembly assembly)
         {
-           var assemblyTypes=assembly.GetTypes();
-           var rpcAssemblyTypes=assemblyTypes.Where(f =>typeof(IDcpApi).IsAssignableFrom(f));
-            var arrary = rpcAssemblyTypes.ToArray();
-            foreach (var item in rpcAssemblyTypes)
+            var assemblyTypes = assembly.GetTypes();
+            var rpcAssemblyTypes = assemblyTypes.Where(f => typeof(IDcpApi).IsAssignableFrom(f));
+            var interfaceConstractTypeList = rpcAssemblyTypes.Where(f => f.IsInterface);
+            var contractServertypeList = rpcAssemblyTypes.Where(f => !f.IsAbstract && !f.IsInterface);
+            foreach (var item in interfaceConstractTypeList)
             {
-                if (!item.IsAbstract&&!item.IsInterface)
+                var constractService = contractServertypeList.FirstOrDefault(f => item.IsAssignableFrom(f));
+                if (constractService != null)
                 {
-                    var iocType = typeof(IocUnity);
-                    var methodInfo = iocType.GetMethod("AddTransient");
-                    methodInfo = methodInfo.MakeGenericMethod(item);
-                    methodInfo.Invoke(null, null);
-                }
-                else
-                {
-                    ConstractInterfaceCache.GetOrAdd(item.FullName, (key) => {
+                    IocUnity.AddTransient(item, constractService);
+                    ConstractInterfaceCache.GetOrAdd(item.FullName, key =>
+                    {
                         return item;
                     });
                 }
-                
             }
         }
-        public void Call(ActionSerDes actionDes)
+        public object CallAction(ActionSerDes actionDes)
         {
-            Type actionType = ConstractInterfaceCache.Get(actionDes.TypeFullName);
-            var iocType = typeof(IocUnity);
-            var methodInfo = iocType.GetMethod("Get");
-            methodInfo = methodInfo.MakeGenericMethod(actionType);
-            methodInfo.Invoke(null, null);
+            MethodInfo callMethodInfo = null;
+            Type actionType = ConstractInterfaceCache.Get(actionDes.TargetTypeFullName);
+            var serviceValue = IocUnity.Get(actionType);
+            string actionKey = actionDes.GetRouteAddress();
+            callMethodInfo = ActionMethodInfoCache.GetOrAdd(actionKey, key =>
+             {
+                 var sameNameMethodList = actionType.GetMethods(BindingFlags.Instance | BindingFlags.Public).Where(f => f.Name == actionDes.MethodName).ToList();
+                 MethodInfo methodInfo = null;
+                 //只区分参数个数不区分类型
+                 if (sameNameMethodList.Count == 1)
+                 {
+                     methodInfo = sameNameMethodList.FirstOrDefault();
+                 }
+                 else
+                 {
+                     methodInfo = sameNameMethodList.FirstOrDefault(f => f.GetParameters().Length == actionDes.ParamterInfoArray.Length);
+                 }
+                 return methodInfo;
+             });
+            if (callMethodInfo == null)
+            {
+                throw new KeyNotFoundException($"路由地址没有找到【{actionKey}】！");
+            }
+            var rtnObj = callMethodInfo.Invoke(serviceValue, new object[1]);
+            return rtnObj;
         }
-        
     }
 }

@@ -99,7 +99,7 @@ namespace Dcp.Net.MQ.Rpc.Core
                 var apiAction = this.ApiActionDescriptor;
                 var client = this.ApiConfig.ApiClient;
                 this.RequestMessage.ActionInfo=apiAction.ToActionSerDes();
-                this.ResponseMessage = client.Call<DcpResponseMessage>(this.RequestMessage,1000); // await ApiClient.SendAsync(this.RequestMessage).ConfigureAwait(false);
+                this.ResponseMessage = client.Call<DcpResponseMessage>(this.RequestMessage,this.ApiConfig.TimeOut); // await ApiClient.SendAsync(this.RequestMessage).ConfigureAwait(false);
                 this.Result = await apiAction.Return.Attribute.GetTaskResult(this).ConfigureAwait(false);
                 return true;
             }

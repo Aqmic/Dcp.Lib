@@ -50,16 +50,14 @@
         }
         private static void Main(string[] args)
         {
-            IocUnity.AddTransient<RcpTestApi>();
-            var abc = IocUnity.Get<IRpcTestApi>();
-
             DefaultRegisterService defaultRegisterService = new DefaultRegisterService();
             defaultRegisterService.RegisterAssembly(typeof(Program).Assembly);
-            defaultRegisterService.Call(new ActionSerDes() {
-                TypeFullName= typeof(IRpcTestApi).FullName,
-                MethodName= "WriteLine",
-               
-            });
+            //defaultRegisterService.CallAction(new ActionSerDes() {
+            //    TypeFullName= typeof(IRpcTestApi).FullName,
+            //    MethodName= "WriteLine",
+            //});
+            IocUnity.AddSingleton< DefaultRegisterService>(defaultRegisterService);
+            Console.ReadLine();
            
             RunIUserApi();
 
@@ -102,9 +100,16 @@
 
         private static void RpcServer_ReciveMsgedEvent(MQMessage mQMessage)
         {
-            //byte[] bytes = Encoding.UTF8.GetBytes(Encoding.UTF8.GetString(mQMessage.Body) + "_我是服务端的回复哈");
-
             var msgRequest = Dynamic.Core.Runtime.SerializationUtility.BytesToObject<DcpRequestMessage>(mQMessage.Body);
+            DefaultRegisterService defaultRegisterService=IocUnity.Get<DefaultRegisterService>();
+            try
+            {
+                defaultRegisterService.CallAction(msgRequest.ActionInfo);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
             DcpResponseMessage dcpResponseMessage = new DcpResponseMessage() {
                 RemotingException = new Exceptions.RpcRemotingException() {
                     Source = "测试异常",

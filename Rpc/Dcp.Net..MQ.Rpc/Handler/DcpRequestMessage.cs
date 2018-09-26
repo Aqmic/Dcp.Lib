@@ -43,7 +43,7 @@ namespace Dcp.Net.MQ.Rpc.Handler
         /// <summary>
         /// 远程执行类
         /// </summary>
-        public string TypeFullName { get; set; }
+        public string TargetTypeFullName { get; set; }
         /// <summary>
         /// 远程执行方法
         /// </summary>

@@ -15,6 +15,7 @@ namespace Dcp.Net.MQ.Rpc.Aop
     [DebuggerDisplay("Name = {Name}")]
     public class ApiActionDescriptor
     {
+        public string TargetTypeFullName { get; set; }
         /// <summary>
         /// 获取Api名称
         /// </summary>
@@ -53,6 +54,7 @@ namespace Dcp.Net.MQ.Rpc.Aop
         {
             return new ApiActionDescriptor
             {
+                TargetTypeFullName=this.TargetTypeFullName,
                 Name = this.Name,
                 Member = this.Member,
                 Return = this.Return,

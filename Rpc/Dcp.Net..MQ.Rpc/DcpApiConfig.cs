@@ -9,7 +9,12 @@ namespace Dcp.Net.MQ.Rpc
 {
     public class DcpApiConfig : IDisposable
     {
+        public DcpApiConfig()
+        {
+            this.TimeOut = 30 * 1000;
+        }
         private static string _mqAddress = File.ReadAllText(@"d:\mqaddress.txt");
+        public int TimeOut { get; set; }
         /// <summary>
         /// 获取全局过滤器集合
         /// 非线程安全类型

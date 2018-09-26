@@ -15,6 +15,7 @@ namespace Dcp.Net.MQ.Rpc.Extions
             if (apiActionDescriptor != null)
             {
                 actionSerDes = new ActionSerDes();
+                actionSerDes.TargetTypeFullName = apiActionDescriptor.TargetTypeFullName;
                 actionSerDes.MethodName = apiActionDescriptor.Member.Name;
                 if (apiActionDescriptor.Parameters != null)
                 {

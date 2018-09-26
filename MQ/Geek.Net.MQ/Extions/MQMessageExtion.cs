@@ -15,7 +15,6 @@ namespace Geek.Net.MQ.Extions
             buffer = SerializationUtility.ToBytes(message);
             return buffer;
         }
-
         
         public static MQMessage ToMessage(this byte[] data)
         {

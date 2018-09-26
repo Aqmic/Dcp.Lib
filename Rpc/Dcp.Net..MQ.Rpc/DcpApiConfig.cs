@@ -1,4 +1,5 @@
 ﻿using Dcp.Net.MQ.Rpc.Handler;
+using Dynamic.Core.Service;
 using Geek.Net.MQ.Config;
 using System;
 using System.Collections.Generic;
@@ -26,26 +27,20 @@ namespace Dcp.Net.MQ.Rpc
         }
         private RpcClient GetDcpApiClientSafeSync()
         {
-
-            //DistributedMQConfig distributedMQConfig = new DistributedMQConfig
-            //{
-            //    ServerAddress = _mqAddress,
-            //    Topic = "RPC_EXCHANGE",
-            //    ProducerID = "Rpc_Request_Queque",
-            //    ConsumerID = "Rpc_Request_RouteKey",
-            //    MsgSendType = MessageSendType.P2P,
-            //    IsDurable = false
-            //};
-
-            var rpcClient=new RpcClient(new DistributedMQConfig
-           {
-               ServerAddress = _mqAddress,
-               Topic = "RPC_EXCHANGE",
-               ProducerID = "Rpc_Response_Queue",
-               ConsumerID = "Rpc_Response_RouteKey",
-               MsgSendType = MessageSendType.P2P,
-               IsDurable = false
-           }, null);
+            var rpcClient=IocUnity.Get<RpcClient>();
+            if (rpcClient == null)
+            {
+                rpcClient = new RpcClient(new DistributedMQConfig
+                {
+                    ServerAddress = _mqAddress,
+                    Topic = "RPC_EXCHANGE",
+                    ProducerID = "Rpc_Response_Queue",
+                    ConsumerID = "Rpc_Response_RouteKey",
+                    MsgSendType = MessageSendType.P2P,
+                    IsDurable = false
+                }, null);
+                IocUnity.AddSingleton<RpcClient>(rpcClient);
+            }
             return rpcClient;
         }
         /// <summary>

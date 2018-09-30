@@ -40,62 +40,81 @@
             }, null);
         static async void RunIUserApi() {
             _rpcServer = StartServer();
-          
+            RpcDemo rpcDemo = new RpcDemo();
+            var abc = await rpcDemo.TestIn();
+
             while (Console.ReadLine() != "exit")
             {
-                RpcDemo rpcDemo = new RpcDemo();
-
-                var abc=await rpcDemo.TestIn() ;
+                for (int i = 0; i < 10; i++)
+                {
+                     rpcDemo = new RpcDemo();
+                     abc = await rpcDemo.TestIn();
+                }
+                
             }
         }
         private static void Main(string[] args)
         {
-            DefaultRegisterService defaultRegisterService = new DefaultRegisterService();
-            defaultRegisterService.RegisterAssembly(typeof(Program).Assembly);
-            //defaultRegisterService.CallAction(new ActionSerDes() {
-            //    TypeFullName= typeof(IRpcTestApi).FullName,
-            //    MethodName= "WriteLine",
-            //});
-            IocUnity.AddSingleton< DefaultRegisterService>(defaultRegisterService);
-            Console.ReadLine();
-           
-            RunIUserApi();
-
-
-            return;
-
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            HttpClient client = new HttpClient();
-            client.GetStringAsync("http://www.baidu.com").Wait();
-            stopwatch.Stop();
-            Console.WriteLine(stopwatch.ElapsedMilliseconds);
-            _rpcServer = StartServer();
-            _rpcClient = GetClient();
-            _rpcClient.ReciveMsgedEvent -= new ReciveMQMessageHandler(Program._rpcClient_ReciveMsgedEvent);
-            _rpcClient.ReciveMsgedEvent += new ReciveMQMessageHandler(Program._rpcClient_ReciveMsgedEvent);
-            int num = 0;
-            while (Console.ReadLine() != "0")
+            try
             {
-                int num2 = 100;
-                Stopwatch stopwatch2 = new Stopwatch();
-                stopwatch2.Start();
-                for (int i = 0; i < num2; i++)
+                //if (framework.IsDesktop() && compilerOptions.EmitEntryPoint.GetValueOrDefault())
+                //{
+                //    OutputExtension = FileNameSuffixes.DotNet.Exe;
+                //}
+
+                DefaultRegisterService defaultRegisterService = new DefaultRegisterService();
+                defaultRegisterService.RegisterAssembly(typeof(Program).Assembly);
+                //defaultRegisterService.CallAction(new ActionSerDes() {
+                //    TypeFullName= typeof(IRpcTestApi).FullName,
+                //    MethodName= "WriteLine",
+                //});
+                IocUnity.AddSingleton<DefaultRegisterService>(defaultRegisterService);
+               // Console.ReadLine();
+
+                RunIUserApi();
+
+
+                return;
+
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
+                HttpClient client = new HttpClient();
+                client.GetStringAsync("http://www.baidu.com").Wait();
+                stopwatch.Stop();
+                Console.WriteLine(stopwatch.ElapsedMilliseconds);
+                _rpcServer = StartServer();
+                _rpcClient = GetClient();
+                _rpcClient.ReciveMsgedEvent -= new ReciveMQMessageHandler(Program._rpcClient_ReciveMsgedEvent);
+                _rpcClient.ReciveMsgedEvent += new ReciveMQMessageHandler(Program._rpcClient_ReciveMsgedEvent);
+                int num = 0;
+                while (Console.ReadLine() != "0")
                 {
-                    Stopwatch stopwatch3 = new Stopwatch();
-                    stopwatch3.Start();
-                    Console.WriteLine($"{(int) _rpcClient.GetReplyCount()}_{(int) num}");
-                    string sendObj = "我是测试数据" + IdentityHelper.NewSequentialGuid().ToString("N");
-                    string str2 = _rpcClient.Call<string>(sendObj, 0x3e8);
-                    stopwatch3.Stop();
-                    Console.WriteLine($"exucte time {(long) stopwatch3.ElapsedMilliseconds}");
-                    Console.WriteLine($"发送数据=》【{sendObj}】" + ((int) i));
-                    Console.WriteLine($"接收数据=>【{str2}】" + ((int) i));
+                    int num2 = 100;
+                    Stopwatch stopwatch2 = new Stopwatch();
+                    stopwatch2.Start();
+                    for (int i = 0; i < num2; i++)
+                    {
+                        Stopwatch stopwatch3 = new Stopwatch();
+                        stopwatch3.Start();
+                        Console.WriteLine($"{(int)_rpcClient.GetReplyCount()}_{(int)num}");
+                        string sendObj = "我是测试数据" + IdentityHelper.NewSequentialGuid().ToString("N");
+                        string str2 = _rpcClient.Call<string>(sendObj, 0x3e8);
+                        stopwatch3.Stop();
+                        Console.WriteLine($"exucte time {(long)stopwatch3.ElapsedMilliseconds}");
+                        Console.WriteLine($"发送数据=》【{sendObj}】" + ((int)i));
+                        Console.WriteLine($"接收数据=>【{str2}】" + ((int)i));
+                    }
+                    stopwatch2.Stop();
+                    Console.WriteLine($"{(int)num2}执行耗时{(long)stopwatch2.ElapsedMilliseconds}");
                 }
-                stopwatch2.Stop();
-                Console.WriteLine($"{(int) num2}执行耗时{(long) stopwatch2.ElapsedMilliseconds}");
+                Console.WriteLine("Hello World!");
+
             }
-            Console.WriteLine("Hello World!");
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+          
         }
 
         private static void RpcServer_ReciveMsgedEvent(MQMessage mQMessage)

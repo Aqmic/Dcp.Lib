@@ -14,7 +14,7 @@ namespace Dcp.Net.MQ.Rpc
         {
             this.TimeOut = 30 * 1000;
         }
-        private static string _mqAddress = File.ReadAllText(@"d:\mqaddress.txt");
+        private static string _mqAddress = "amqp://icb:icb158@220.167.101.49:13043/"; //File.ReadAllText(@"mqaddress.txt");
         public int TimeOut { get; set; }
         /// <summary>
         /// 获取全局过滤器集合

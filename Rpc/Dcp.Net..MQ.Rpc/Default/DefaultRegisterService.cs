@@ -60,7 +60,7 @@ namespace Dcp.Net.MQ.Rpc.Default
             {
                 throw new KeyNotFoundException($"路由地址没有找到【{actionKey}】！");
             }
-            var rtnObj = callMethodInfo.Invoke(serviceValue, new object[1]);
+            var rtnObj = callMethodInfo.Invoke(serviceValue, actionDes.GetParamters());
             return rtnObj;
         }
     }

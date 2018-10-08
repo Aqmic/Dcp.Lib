@@ -4,6 +4,7 @@
     using Geek.Net.MQ;
     using Geek.Net.MQ.Config;
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Runtime.CompilerServices;
     using System.Threading;
@@ -13,24 +14,22 @@
         
         public override event ReciveMQMessageHandler ReciveMsgedEvent;
 
-        public static RpcServer GetDefault(string mqAddress)
+        public static RpcServer GetDefault(string mqAddress, IList<string> routeKeyList)
         {
             DistributedMQConfig distributedMQConfig = new DistributedMQConfig
             {
                 ServerAddress = mqAddress,
-                Topic = "RPC_EXCHANGE",
-                ProducerID = "Rpc_Request_Queque",
-                ConsumerID = "Rpc_Request_RouteKey",
-                MsgSendType = MessageSendType.P2P,
+                Exchange = "RPC_EXCHANGE",
+                MsgSendType = MessageSendType.Router,
                 IsDurable = false
             };
-            RpcServer server = new RpcServer(distributedMQConfig);
+            RpcServer server = new RpcServer(distributedMQConfig,routeKeyList);
             return server;
         }
-        public RpcServer(DistributedMQConfig distributedMQConfig):base(distributedMQConfig)
+        public RpcServer(DistributedMQConfig distributedMQConfig,IList<string> routeKeyList):base(distributedMQConfig)
         {
             this.MQConfig = distributedMQConfig;
-            this.MsgQueue = MQFactory.Create(distributedMQConfig, null, MessageQueueTypeEnum.RabbitMq);
+            this.MsgQueue = MQFactory.Create(distributedMQConfig,MessageQueueTypeEnum.RabbitMq,routeKeyList,null);
             this.MsgQueue.ReceiveMQ(delegate (MQMessage msg) {
                 if ((msg != null) && (msg.Response !=null))
                 {

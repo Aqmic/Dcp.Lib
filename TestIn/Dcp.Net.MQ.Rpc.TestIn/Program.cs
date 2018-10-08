@@ -32,10 +32,10 @@
         private static RpcClient GetClient() => 
             new RpcClient(new DistributedMQConfig { 
                 ServerAddress = _mqAddress,
-                Topic = "RPC_EXCHANGE",
+                Exchange = "RPC_EXCHANGE",
                 ProducerID = "Rpc_Response_Queue",
                 ConsumerID = "Rpc_Response_RouteKey",
-                MsgSendType = MessageSendType.P2P,
+                MsgSendType = MessageSendType.Worker,
                 IsDurable = false
             }, null);
         static async void RunIUserApi() {
@@ -45,7 +45,7 @@
 
             while (Console.ReadLine() != "exit")
             {
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 1; i++)
                 {
                      rpcDemo = new RpcDemo();
                      abc = await rpcDemo.TestIn();
@@ -147,13 +147,14 @@
         {
             DistributedMQConfig distributedMQConfig = new DistributedMQConfig {
                 ServerAddress = _mqAddress,
-                Topic = "RPC_EXCHANGE",
-                ProducerID = "Rpc_Request_Queque",
-                ConsumerID = "Rpc_Request_RouteKey",
-                MsgSendType = MessageSendType.P2P,
+                Exchange = "RPC_EXCHANGE",
+                ProducerID = "Rpc_Service_Queque" +"123",
+                //ConsumerID = "Rpc_Request_RouteKey",
+                MsgSendType = MessageSendType.Router,
                 IsDurable = false
             };
-            RpcServer server = new RpcServer(distributedMQConfig);
+            var routeKeyList= IocUnity.Get<DefaultRegisterService>().GetRouteKeyList();
+            RpcServer server = new RpcServer(distributedMQConfig, routeKeyList);
             server.ReciveMsgedEvent -= new ReciveMQMessageHandler(Program.RpcServer_ReciveMsgedEvent);
             server.ReciveMsgedEvent += new ReciveMQMessageHandler(Program.RpcServer_ReciveMsgedEvent);
             return server;

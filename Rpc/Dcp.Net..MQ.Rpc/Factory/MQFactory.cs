@@ -3,19 +3,25 @@
     using Dcp.Net.MQ.RabbitMQ;
     using Geek.Net.MQ;
     using Geek.Net.MQ.Config;
+    using Geek.Net.MQ.Factory;
     using System;
+    using System.Collections.Generic;
     using System.Runtime.InteropServices;
 
     public static class MQFactory
     {
-        public static IMessageQueue Create(DistributedMQConfig distributedMQConfig, string applicationId = null, MessageQueueTypeEnum messageQueueTypeEnum = 0)
+        public static IMessageQueue Create(DistributedMQConfig distributedMQConfig, MessageQueueTypeEnum messageQueueTypeEnum = 0, IList<string> routeKeyList=null, string applicationId = null)
         {
+            IMqFactory mqFactory = null;
             switch (messageQueueTypeEnum)
             {
                 case MessageQueueTypeEnum.RabbitMq:
-                    return new RabbitMqMessageQueue(distributedMQConfig, applicationId);
+                    {
+                        mqFactory = new RabbitMQ.Factory.RabbitMqFactory(distributedMQConfig, applicationId, routeKeyList);
+                    };break;
+                   // return new RouterMQ(distributedMQConfig,applicationId, routeKeyList);
             }
-            return null;
+           return mqFactory.CreateRabbitFactory();
         }
     }
 }

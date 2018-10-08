@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 
 using System.Linq;
+using Geek.Net.MQ;
+using Dynamic.Core.Runtime;
+using Dynamic.Core.Comm;
 
 namespace Dcp.Net.MQ.Rpc.Extions
 {
@@ -57,5 +60,7 @@ namespace Dcp.Net.MQ.Rpc.Extions
             }
             return paramterList.ToArray();
         }
+
+       
     }
 }

@@ -14,8 +14,15 @@ namespace Dcp.Net.MQ.Rpc.Default
 {
     public class DefaultRegisterService : IRegisterService
     {
+        private static readonly object _lockRouteObj = new object();
+        private static readonly IList<string> ActionRouteKeyList = new List<string>();
         private static readonly ConcurrentCache<string, Type> ConstractInterfaceCache = new ConcurrentCache<string, Type>();
         private static readonly ConcurrentCache<string, MethodInfo> ActionMethodInfoCache = new ConcurrentCache<string, MethodInfo>();
+
+        public IList<string> GetRouteKeyList()
+        {
+            return ActionRouteKeyList;
+        }
         public void RegisterAssembly(Assembly assembly)
         {
             var assemblyTypes = assembly.GetTypes();
@@ -32,6 +39,17 @@ namespace Dcp.Net.MQ.Rpc.Default
                     {
                         return item;
                     });
+                }
+                AddRouteKey(item.FullName);
+            }
+        }
+        private void AddRouteKey(string routeKey)
+        {
+            lock (_lockRouteObj)
+            {
+                if (!ActionRouteKeyList.Contains(routeKey))
+                {
+                    ActionRouteKeyList.Add(routeKey);
                 }
             }
         }

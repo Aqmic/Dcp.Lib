@@ -122,6 +122,16 @@ namespace Geek.Net.MQ
         {
             throw new NotImplementedException();
         }
+
+        public void BindConfig(string queue, IList<string> routeKey)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CreateMQ(IList<string> routeKeyList = null)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

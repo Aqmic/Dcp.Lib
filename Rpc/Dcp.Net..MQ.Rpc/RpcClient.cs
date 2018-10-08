@@ -25,16 +25,21 @@
         public RpcClient(DistributedMQConfig distributedMQConfig, MQMsgRequest mQMsgRequest = null) : base(distributedMQConfig)
         {
             this.MQConfig = distributedMQConfig;
-            this.MsgQueue = MQFactory.Create(this.MQConfig, ((int)Process.GetCurrentProcess().Id).ToString(), MessageQueueTypeEnum.RabbitMq);
-            this.MsgQueue.DeleteMQ(this.MQConfig.ProducerID, true, true);
-            string str = IdentityHelper.NewSequentialGuid().ToString("N");
-            if (string.IsNullOrEmpty(this.MQConfig.Topic))
+            this.MsgQueue = MQFactory.Create(this.MQConfig, MessageQueueTypeEnum.RabbitMq, null, ((int)Process.GetCurrentProcess().Id).ToString());
+
+            if (!string.IsNullOrEmpty(this.MQConfig.ProducerID))
             {
-                this.MQConfig.Topic = MQDefaultSetting._Exchange;
+                this.MsgQueue.DeleteMQ(this.MQConfig.ProducerID, true, true);
+            }
+            
+            string str = IdentityHelper.NewSequentialGuid().ToString("N");
+            if (string.IsNullOrEmpty(this.MQConfig.Exchange))
+            {
+                this.MQConfig.Exchange = MQDefaultSetting._Exchange;
             }
             MQMsgResponse response1 = new MQMsgResponse
             {
-                Exchange = this.MQConfig.Topic,
+                Exchange = this.MQConfig.Exchange,
                 ResponseQueue = MQDefaultSetting._prefixQueue + "-" + str,
                 ResponseRouteKey = str
             };
@@ -43,7 +48,7 @@
             {
                 MQMsgRequest request1 = new MQMsgRequest
                 {
-                    Exchange = this.MQConfig.Topic,
+                    Exchange = this.MQConfig.Exchange,
                     RequestRouteKey = MQDefaultSetting._RequestRouteKey
                 };
                 this._mQMsgRequest = request1;
@@ -80,8 +85,36 @@
             {
                 requestMsg.Body = bytes;
                 requestMsg.MsgId = IdentityHelper.NewSequentialGuid().ToString("N");
+
                 this.Send(requestMsg);
                 DataItem<MQMessage> item = this._lstDeviceDataQueue.Pull(f => f.Data != null && f.Data.MsgId == requestMsg.MsgId, TimeSpan.FromMilliseconds((double)timeoutMilliseconds));
+                if (((item != null) && (item.Data != null)) && (item.Data.Body != null))
+                {
+                    if (flag)
+                    {
+                        local = Encoding.UTF8.GetString(item.Data.Body) as T;
+                    }
+                    else
+                    {
+                        local = SerializationUtility.BytesToObject<T>(item.Data.Body);
+                    }
+                }
+                return local;
+            }
+        }
+
+        public T Call<T>(MQMessage sendMsg, int timeoutMilliseconds) where T : class
+        {
+            bool flag = false;
+            Type type = typeof(T);
+
+            T local = default(T);
+
+            object obj2 = this._LockObj;
+            lock (obj2)
+            {
+                this.Send(sendMsg);
+                DataItem<MQMessage> item = this._lstDeviceDataQueue.Pull(f => f.Data != null && f.Data.MsgId == sendMsg.MsgId, TimeSpan.FromMilliseconds((double)timeoutMilliseconds));
                 if (((item != null) && (item.Data != null)) && (item.Data.Body != null))
                 {
                     if (flag)
@@ -109,7 +142,7 @@
                 {
                     MQMsgResponse response1 = new MQMsgResponse
                     {
-                        Exchange = this.MQConfig.Topic
+                        Exchange = this.MQConfig.Exchange
                     };
                     mQMessage.Response = response1;
                 }

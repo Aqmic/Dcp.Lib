@@ -25,7 +25,7 @@ namespace Geek.Net.MQ
         public abstract void Send(byte[] body, string label = null);
 
 
-        public abstract bool CreateMQ();
+        public abstract bool CreateMQ(IList<string> routeKeyList=null);
 
         public abstract bool CloseMQ();
 
@@ -71,18 +71,22 @@ namespace Geek.Net.MQ
 
         public abstract void ReceiveBinary(Action<byte[]> action);
 
-        public abstract void BindConfig(string queue, string routeKey);
-
+       
 
         public abstract void Send(MQMessage mQMessage,Action<MQMessage> callBackAction);
 
         public abstract bool DeleteMQ(string queue, bool ifUnused, bool ifEmpty);
-       
 
+        public virtual void BindConfig(string queue, string routeKey)
+        {
+            throw new NotSupportedException();
+        }
 
-
-
-
+        public virtual void BindConfig(string queue, IList<string> routeKeyList)
+        {
+            throw new NotSupportedException();
+        }
+        
         #endregion
         #endregion
     }

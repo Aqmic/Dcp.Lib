@@ -102,7 +102,7 @@
             get; set;
         }
 
-        public string Topic
+        public string Exchange
         {
             get; set;
         }

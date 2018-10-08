@@ -10,16 +10,25 @@
         {
             switch (messageSendType)
             {
-                case MessageSendType.P2P:
-                    return "direct";
-
-                case MessageSendType.RadioBroadcast:
+                case MessageSendType.PublishOrder:
                     return "fanout";
-
-                case MessageSendType.Topic:
+                case MessageSendType.Router:
+                    return "direct";
+                case MessageSendType.TopicLike:
                     return "topic";
             }
             return null;
+        }
+        public static bool IsNeedExhange(this MessageSendType messageSendType)
+        {
+            if (messageSendType == MessageSendType.PublishOrder || messageSendType == MessageSendType.Router || messageSendType == MessageSendType.TopicLike)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -33,10 +33,8 @@ namespace Dcp.Net.MQ.Rpc
                 rpcClient = new RpcClient(new DistributedMQConfig
                 {
                     ServerAddress = _mqAddress,
-                    Topic = "RPC_EXCHANGE",
-                    ProducerID = "Rpc_Response_Queue",
-                    ConsumerID = "Rpc_Response_RouteKey",
-                    MsgSendType = MessageSendType.P2P,
+                    Exchange = "RPC_EXCHANGE",
+                    MsgSendType = MessageSendType.Worker,
                     IsDurable = false
                 }, null);
                 IocUnity.AddSingleton<RpcClient>(rpcClient);

@@ -25,7 +25,7 @@
 
 
 
-        public RouterMQ(DistributedMQConfig mqConfig,string applicationId = null, IList<string> routeKeyList = null) : base(mqConfig)
+        public RouterMQ(DistributedMQConfig mqConfig, string applicationId = null, IList<string> routeKeyList = null) : base(mqConfig)
         {
             this._encoding = mqConfig.DefaultEncoding;
             ConnectionFactory factory1 = new ConnectionFactory();
@@ -40,7 +40,7 @@
             this.CreateMQ(routeKeyList);
         }
 
-    
+
 
         private void CallBack(object obj, BasicDeliverEventArgs ea, Action<MQMessage> callAction)
         {
@@ -50,25 +50,19 @@
                 {
                     MQMessage message = ea.Body.ToMessage();
                     message.MsgId = ea.BasicProperties.MessageId;
-                    if (string.IsNullOrEmpty(this._ApplicationCode) || (!string.IsNullOrEmpty(this._ApplicationCode) && (this._ApplicationCode == ea.BasicProperties.CorrelationId)))
+
+                    message.Label = ea.BasicProperties.CorrelationId;
+                    message.MsgId = ea.BasicProperties.MessageId;
+                    if (message.Response != null)
                     {
-                        message.Label = ea.BasicProperties.CorrelationId;
-                        message.MsgId = ea.BasicProperties.MessageId;
-                        if (message.Response != null)
+                        MQMsgRequest request1 = new MQMsgRequest
                         {
-                            MQMsgRequest request1 = new MQMsgRequest
-                            {
-                                Exchange = message.Response.Exchange,
-                                RequestRouteKey = message.Response.ResponseRouteKey
-                            };
-                            message.Request = request1;
-                        }
-                        callAction(message);
+                            Exchange = message.Response.Exchange,
+                            RequestRouteKey = message.Response.ResponseRouteKey
+                        };
+                        message.Request = request1;
                     }
-                    else
-                    {
-                        IOHelper.WriteLine("没有匹配到路由！", (ConsoleColor)ConsoleColor.Red);
-                    }
+                    callAction(message);
                 }
                 catch (Exception exception)
                 {

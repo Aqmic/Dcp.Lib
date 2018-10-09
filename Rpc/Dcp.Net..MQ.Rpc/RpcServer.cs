@@ -14,7 +14,7 @@
         
         public override event ReciveMQMessageHandler ReciveMsgedEvent;
 
-        public static RpcServer GetDefault(string mqAddress, IList<string> routeKeyList)
+        public static RpcServer GetDefault(string mqAddress, IList<string> routeKeyList,string applicationId)
         {
             DistributedMQConfig distributedMQConfig = new DistributedMQConfig
             {
@@ -23,13 +23,13 @@
                 MsgSendType = MessageSendType.Router,
                 IsDurable = false
             };
-            RpcServer server = new RpcServer(distributedMQConfig,routeKeyList);
+            RpcServer server = new RpcServer(distributedMQConfig,routeKeyList,applicationId);
             return server;
         }
-        public RpcServer(DistributedMQConfig distributedMQConfig,IList<string> routeKeyList):base(distributedMQConfig)
+        public RpcServer(DistributedMQConfig distributedMQConfig,IList<string> routeKeyList,string applicationId):base(distributedMQConfig)
         {
             this.MQConfig = distributedMQConfig;
-            this.MsgQueue = MQFactory.Create(distributedMQConfig,MessageQueueTypeEnum.RabbitMq,routeKeyList,null);
+            this.MsgQueue = MQFactory.Create(distributedMQConfig,MessageQueueTypeEnum.RabbitMq,routeKeyList, applicationId);
             this.MsgQueue.ReceiveMQ(delegate (MQMessage msg) {
                 if ((msg != null) && (msg.Response !=null))
                 {

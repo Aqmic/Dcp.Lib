@@ -22,10 +22,11 @@
     {
 
 
-        public RpcClient(DistributedMQConfig distributedMQConfig, MQMsgRequest mQMsgRequest = null) : base(distributedMQConfig)
+        public RpcClient(DistributedMQConfig distributedMQConfig, MQMsgRequest mQMsgRequest = null,string applicationId=null) : base(distributedMQConfig)
         {
+            this.ApplicationId = applicationId;
             this.MQConfig = distributedMQConfig;
-            this.MsgQueue = MQFactory.Create(this.MQConfig, MessageQueueTypeEnum.RabbitMq, null, ((int)Process.GetCurrentProcess().Id).ToString());
+            this.MsgQueue = MQFactory.Create(this.MQConfig, MessageQueueTypeEnum.RabbitMq, null, applicationId);
 
             if (!string.IsNullOrEmpty(this.MQConfig.ProducerID))
             {
@@ -154,7 +155,7 @@
                 }
                 if (string.IsNullOrEmpty(mQMessage.Label))
                 {
-                    mQMessage.Label = ((int)Process.GetCurrentProcess().Id).ToString();
+                    mQMessage.Label = this.ApplicationId;
                 }
                 this.MsgQueue.BindConfig(this._mQMsgResponse.ResponseQueue, this._mQMsgResponse.ResponseRouteKey);
                 this.MsgQueue.Send(mQMessage, (msg) =>

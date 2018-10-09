@@ -17,6 +17,7 @@ namespace Dcp.Net.MQ.Rpc
 
         public abstract event ReciveMQMessageHandler ReciveMsgedEvent;
 
+        public string ApplicationId { get;protected set; }
 
         public DistributedMQConfig MQConfig { get; set; }
 

@@ -45,7 +45,7 @@
 
             while (Console.ReadLine() != "exit")
             {
-                for (int i = 0; i < 1; i++)
+                for (int i = 0; i < 10; i++)
                 {
                      rpcDemo = new RpcDemo();
                      abc = await rpcDemo.TestIn();
@@ -148,13 +148,13 @@
             DistributedMQConfig distributedMQConfig = new DistributedMQConfig {
                 ServerAddress = _mqAddress,
                 Exchange = "RPC_EXCHANGE",
-                ProducerID = "Rpc_Service_Queque" +"123",
+                ProducerID = "Rpc_Service_Queque" +"1233333",
                 //ConsumerID = "Rpc_Request_RouteKey",
                 MsgSendType = MessageSendType.Router,
                 IsDurable = false
             };
             var routeKeyList= IocUnity.Get<DefaultRegisterService>().GetRouteKeyList();
-            RpcServer server = new RpcServer(distributedMQConfig, routeKeyList);
+            RpcServer server = new RpcServer(distributedMQConfig, routeKeyList, "testRpcServer_7AEEEE78-D076-4047-8992-229D96263CBD");
             server.ReciveMsgedEvent -= new ReciveMQMessageHandler(Program.RpcServer_ReciveMsgedEvent);
             server.ReciveMsgedEvent += new ReciveMQMessageHandler(Program.RpcServer_ReciveMsgedEvent);
             return server;

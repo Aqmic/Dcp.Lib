@@ -50,7 +50,7 @@
         public override void BindConfig(string queue, string routeKey = null)
         {
             this.Channel.QueueDeclare(queue, base.MQConfig.IsDurable, false, base.MQConfig.AutoDelete, null);
-            IModelExensions.QueueBind(this.Channel, queue, base.MQConfig.Exchange,routeKey, null);
+            IModelExensions.QueueBind(this.Channel, queue, base.MQConfig.Exchange, routeKey, null);
         }
 
         private void CallBack(object obj, BasicDeliverEventArgs ea, Action<MQMessage> callAction)
@@ -61,25 +61,18 @@
                 {
                     MQMessage message = ea.Body.ToMessage();
                     message.MsgId = ea.BasicProperties.MessageId;
-                    if (string.IsNullOrEmpty(this._ApplicationCode) || (!string.IsNullOrEmpty(this._ApplicationCode) && (this._ApplicationCode == ea.BasicProperties.CorrelationId)))
+                    message.Label = ea.BasicProperties.CorrelationId;
+                    message.MsgId = ea.BasicProperties.MessageId;
+                    if (message.Response != null)
                     {
-                        message.Label = ea.BasicProperties.CorrelationId;
-                        message.MsgId = ea.BasicProperties.MessageId;
-                        if (message.Response != null)
+                        MQMsgRequest request1 = new MQMsgRequest
                         {
-                            MQMsgRequest request1 = new MQMsgRequest
-                            {
-                                Exchange = message.Response.Exchange,
-                                RequestRouteKey = message.Response.ResponseRouteKey
-                            };
-                            message.Request = request1;
-                        }
-                        callAction(message);
+                            Exchange = message.Response.Exchange,
+                            RequestRouteKey = message.Response.ResponseRouteKey
+                        };
+                        message.Request = request1;
                     }
-                    else
-                    {
-                        IOHelper.WriteLine("没有匹配到路由！", (ConsoleColor)ConsoleColor.Red);
-                    }
+                    callAction(message);
                 }
                 catch (Exception exception)
                 {
@@ -187,7 +180,7 @@
             {
                 routeKey = mQMessage.Request.RequestRouteKey;
             }
-            IModelExensions.BasicPublish(this.Channel,exchange , routeKey, properties, mQMessage.ToData());
+            IModelExensions.BasicPublish(this.Channel, exchange, routeKey, properties, mQMessage.ToData());
             if ((mQMessage.Response != null) && (this.Consumer == null))
             {
                 this.Consumer = new EventingBasicConsumer(this.Channel);
@@ -220,7 +213,7 @@
             {
                 properties.CorrelationId = label;
             }
-            IModelExensions.BasicPublish(this.Channel,null,null,properties, body);
+            IModelExensions.BasicPublish(this.Channel, null, null, properties, body);
         }
 
         public override void SendAsync(string message, string label)

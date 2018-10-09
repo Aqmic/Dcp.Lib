@@ -41,14 +41,16 @@
         static async void RunIUserApi() {
             _rpcServer = StartServer();
             RpcDemo rpcDemo = new RpcDemo();
-            var abc = await rpcDemo.TestIn();
+            var abc = await rpcDemo.TestIn("-1");
 
             while (Console.ReadLine() != "exit")
             {
-                for (int i = 0; i < 10; i++)
+                Console.Clear();
+                for (int i = 0; i < 1000; i++)
                 {
+                    Console.WriteLine(i+"SEND");
                      rpcDemo = new RpcDemo();
-                     abc = await rpcDemo.TestIn();
+                     abc = await rpcDemo.TestIn(i.ToString());
                 }
                 
             }

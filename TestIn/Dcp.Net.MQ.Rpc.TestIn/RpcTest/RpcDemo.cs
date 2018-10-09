@@ -15,10 +15,10 @@ namespace Dcp.Net.MQ.Rpc.TestIn.RpcTest
         {
          
         }
-        public async Task<ResultModel> TestIn()
+        public async Task<ResultModel> TestIn(string content)
         {
             var rpcTestApi = DcpApiClient.Create<IRpcTestApi>();
-            return await rpcTestApi.WriteLine("测试WriteLine方法22=》"+DateTime.Now);
+            return await rpcTestApi.WriteLine(content+"测试WriteLine方法=》" +DateTime.Now);
         }
     }
 }

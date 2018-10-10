@@ -21,7 +21,8 @@
         private static RpcClient _rpcClient;
         private static RpcServer _rpcServer;
 
-        private static string _mqAddress = File.ReadAllText(@"d:\mqaddress.txt");
+        //private static string _mqAddress = "amqp://icb:icb158@10.10.10.2:13043/";// "amqp://icb:icb158@220.167.101.49:13043/";// File.ReadAllText(@"d:\mqaddress.txt");
+        private static string _mqAddress = "amqp://icb:icb158@220.167.101.49:13043/";// File.ReadAllText(@"d:\mqaddress.txt");
 
 
         private static void _rpcClient_ReciveMsgedEvent(MQMessage mQMessage)
@@ -40,17 +41,22 @@
             }, null);
         static async void RunIUserApi() {
             _rpcServer = StartServer();
+            Console.WriteLine("start-server-ok");
             RpcDemo rpcDemo = new RpcDemo();
             var abc = await rpcDemo.TestIn("-1");
 
             while (Console.ReadLine() != "exit")
             {
                 Console.Clear();
+                Stopwatch stopwatch = new Stopwatch();
                 for (int i = 0; i < 1000; i++)
                 {
-                    Console.WriteLine(i+"SEND");
+                    stopwatch.Reset();
+                    stopwatch.Start();
                      rpcDemo = new RpcDemo();
                      abc = await rpcDemo.TestIn(i.ToString());
+                    stopwatch.Stop();
+                    Console.WriteLine(i + "SEND:"+stopwatch.ElapsedMilliseconds);
                 }
                 
             }
@@ -59,57 +65,53 @@
         {
             try
             {
-                //if (framework.IsDesktop() && compilerOptions.EmitEntryPoint.GetValueOrDefault())
-                //{
-                //    OutputExtension = FileNameSuffixes.DotNet.Exe;
-                //}
-
+                Console.WriteLine(DateTime.Now);
+                Console.ReadLine();
+              
                 DefaultRegisterService defaultRegisterService = new DefaultRegisterService();
                 defaultRegisterService.RegisterAssembly(typeof(Program).Assembly);
-                //defaultRegisterService.CallAction(new ActionSerDes() {
-                //    TypeFullName= typeof(IRpcTestApi).FullName,
-                //    MethodName= "WriteLine",
-                //});
+
+               
+
                 IocUnity.AddSingleton<DefaultRegisterService>(defaultRegisterService);
-               // Console.ReadLine();
-
+                // Console.ReadLine();
+                Console.WriteLine("=======================22222");
                 RunIUserApi();
+                
+                //return;
 
-
-                return;
-
-                Stopwatch stopwatch = new Stopwatch();
-                stopwatch.Start();
-                HttpClient client = new HttpClient();
-                client.GetStringAsync("http://www.baidu.com").Wait();
-                stopwatch.Stop();
-                Console.WriteLine(stopwatch.ElapsedMilliseconds);
-                _rpcServer = StartServer();
-                _rpcClient = GetClient();
-                _rpcClient.ReciveMsgedEvent -= new ReciveMQMessageHandler(Program._rpcClient_ReciveMsgedEvent);
-                _rpcClient.ReciveMsgedEvent += new ReciveMQMessageHandler(Program._rpcClient_ReciveMsgedEvent);
-                int num = 0;
-                while (Console.ReadLine() != "0")
-                {
-                    int num2 = 100;
-                    Stopwatch stopwatch2 = new Stopwatch();
-                    stopwatch2.Start();
-                    for (int i = 0; i < num2; i++)
-                    {
-                        Stopwatch stopwatch3 = new Stopwatch();
-                        stopwatch3.Start();
-                        Console.WriteLine($"{(int)_rpcClient.GetReplyCount()}_{(int)num}");
-                        string sendObj = "我是测试数据" + IdentityHelper.NewSequentialGuid().ToString("N");
-                        string str2 = _rpcClient.Call<string>(sendObj, 0x3e8);
-                        stopwatch3.Stop();
-                        Console.WriteLine($"exucte time {(long)stopwatch3.ElapsedMilliseconds}");
-                        Console.WriteLine($"发送数据=》【{sendObj}】" + ((int)i));
-                        Console.WriteLine($"接收数据=>【{str2}】" + ((int)i));
-                    }
-                    stopwatch2.Stop();
-                    Console.WriteLine($"{(int)num2}执行耗时{(long)stopwatch2.ElapsedMilliseconds}");
-                }
-                Console.WriteLine("Hello World!");
+                //Stopwatch stopwatch = new Stopwatch();
+                //stopwatch.Start();
+                //HttpClient client = new HttpClient();
+                //client.GetStringAsync("http://www.baidu.com").Wait();
+                //stopwatch.Stop();
+                //Console.WriteLine(stopwatch.ElapsedMilliseconds);
+                //_rpcServer = StartServer();
+                //_rpcClient = GetClient();
+                //_rpcClient.ReciveMsgedEvent -= new ReciveMQMessageHandler(Program._rpcClient_ReciveMsgedEvent);
+                //_rpcClient.ReciveMsgedEvent += new ReciveMQMessageHandler(Program._rpcClient_ReciveMsgedEvent);
+                //int num = 0;
+                //while (Console.ReadLine() != "0")
+                //{
+                //    int num2 = 100;
+                //    Stopwatch stopwatch2 = new Stopwatch();
+                //    stopwatch2.Start();
+                //    for (int i = 0; i < num2; i++)
+                //    {
+                //        Stopwatch stopwatch3 = new Stopwatch();
+                //        stopwatch3.Start();
+                //        Console.WriteLine($"{(int)_rpcClient.GetReplyCount()}_{(int)num}");
+                //        string sendObj = "我是测试数据" + IdentityHelper.NewSequentialGuid().ToString("N");
+                //        string str2 = _rpcClient.Call<string>(sendObj, 0x3e8);
+                //        stopwatch3.Stop();
+                //        Console.WriteLine($"exucte time {(long)stopwatch3.ElapsedMilliseconds}");
+                //        Console.WriteLine($"发送数据=》【{sendObj}】" + ((int)i));
+                //        Console.WriteLine($"接收数据=>【{str2}】" + ((int)i));
+                //    }
+                //    stopwatch2.Stop();
+                //    Console.WriteLine($"{(int)num2}执行耗时{(long)stopwatch2.ElapsedMilliseconds}");
+                //}
+                //Console.WriteLine("Hello World!");
 
             }
             catch (Exception ex)

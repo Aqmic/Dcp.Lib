@@ -13,7 +13,9 @@ namespace Dcp.Net.MQ.Rpc.TestIn.RpcTest
     {
         public RpcDemo()
         {
-         
+            DcpApiClient.Init(new DcpApiConfig() {
+                MqAddress = "amqp://icb:icb158@220.167.101.49:13043/",
+            });
         }
         public async Task<ResultModel> TestIn(string content)
         {

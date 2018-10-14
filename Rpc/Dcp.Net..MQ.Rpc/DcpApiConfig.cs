@@ -10,11 +10,13 @@ namespace Dcp.Net.MQ.Rpc
 {
     public class DcpApiConfig : IDisposable
     {
+        public string MqAddress { get; set; }
+        public string Exchange { get; set; }
         public DcpApiConfig()
         {
             this.TimeOut = 30 * 1000;
+            this.Exchange = "RPC_EXCHANGE";
         }
-        private static string _mqAddress = "amqp://icb:icb158@220.167.101.49:13043/"; //File.ReadAllText(@"mqaddress.txt");
         public int TimeOut { get; set; }
         /// <summary>
         /// 获取全局过滤器集合
@@ -32,8 +34,8 @@ namespace Dcp.Net.MQ.Rpc
             {
                 rpcClient = new RpcClient(new DistributedMQConfig
                 {
-                    ServerAddress = _mqAddress,
-                    Exchange = "RPC_EXCHANGE",
+                    ServerAddress = MqAddress,
+                    Exchange = this.Exchange,
                     MsgSendType = MessageSendType.Worker,
                     IsDurable = false
                 }, null);

@@ -1,5 +1,6 @@
 ﻿using Dcp.Net.MQ.Rpc.Aop;
 using Dcp.Net.MQ.Rpc.Core;
+using Dcp.Net.MQ.Rpc.Extions;
 using Dcp.Net.MQ.Rpc.Handler.Internal;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,24 @@ namespace Dcp.Net.MQ.Rpc.Contract
     /// </summary>
     public partial class DcpApiClient
     {
+        private static DcpApiConfig _DefaultConfig;
+      
+        public static void Init(DcpApiConfig dcpApiConfig)
+        {
+            _DefaultConfig = dcpApiConfig;
+            if (_DefaultConfig == null)
+            {
+                _DefaultConfig = new DcpApiConfig();
+            }
+            if (string.IsNullOrEmpty(_DefaultConfig.Exchange))
+            {
+                throw new ArgumentNullException("Exhange交换机值不能为空！");
+            }
+            if (string.IsNullOrEmpty(_DefaultConfig.MqAddress))
+            {
+                throw new ArgumentNullException("MqAddress不能为空！");
+            }
+        }
         /// <summary>
         /// 一个站点内的默认连接数限制
         /// </summary>
@@ -73,6 +92,7 @@ namespace Dcp.Net.MQ.Rpc.Contract
         public static TInterface Create<TInterface>() where TInterface : class, IDcpApi
         {
             var config = new DcpApiConfig();
+            config.BatInitProperty(_DefaultConfig);
             return Create<TInterface>(config);
         }
 
@@ -89,6 +109,7 @@ namespace Dcp.Net.MQ.Rpc.Contract
         public static TInterface Create<TInterface>(string httpHost) where TInterface : class, IDcpApi
         {
             var config = new DcpApiConfig();
+            config.BatInitProperty(_DefaultConfig);
             if (string.IsNullOrEmpty(httpHost) == false)
             {
                 config.HttpHost = new Uri(httpHost, UriKind.Absolute);

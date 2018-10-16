@@ -1,5 +1,6 @@
 ﻿using Dcp.Net.MQ.Rpc.Aop;
 using Dcp.Net.MQ.Rpc.Models;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -106,7 +107,8 @@ namespace Dcp.Net.MQ.Rpc.Core
             /// <returns></returns>
             public override Task InvokeAsync()
             {
-                return this.RequestAsync();
+                var taskResult=this.RequestAsync();
+                return taskResult;
             }
 
             /// <summary>
@@ -138,7 +140,12 @@ namespace Dcp.Net.MQ.Rpc.Core
                 await context.ExecFiltersAsync(filter => filter.OnBeginRequestAsync).ConfigureAwait(false);
                 var state = await context.ExecRequestAsync().ConfigureAwait(false);
                 await context.ExecFiltersAsync(filter => filter.OnEndRequestAsync).ConfigureAwait(false);
-
+                JObject jResult = context.Result as JObject;
+                if (jResult != null)
+                {
+                   return Dynamic.Core.Runtime.SerializationUtility.JsonToObject<TResult>(jResult.ToString());
+                }
+               
                 return state ? (TResult)context.Result : throw context.Exception;
             }
         }

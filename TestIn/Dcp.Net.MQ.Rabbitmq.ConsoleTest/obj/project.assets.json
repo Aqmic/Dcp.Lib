@@ -28,7 +28,7 @@
           "lib/netstandard1.3/CacheManager.Microsoft.Extensions.Caching.Memory.dll": {}
         }
       },
-      "Dynamic.Core/2.1.5.6": {
+      "Dynamic.Core/2.1.5.7": {
         "type": "package",
         "dependencies": {
           "CacheManager.Microsoft.Extensions.Caching.Memory": "1.1.2",
@@ -1583,7 +1583,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Dynamic.Core": "2.1.5.6"
+          "Dynamic.Core": "2.1.5.7"
         },
         "compile": {
           "bin/placeholder/Geek.Net.MQ.dll": {}
@@ -1623,13 +1623,13 @@
         "lib/netstandard1.3/CacheManager.Microsoft.Extensions.Caching.Memory.xml"
       ]
     },
-    "Dynamic.Core/2.1.5.6": {
-      "sha512": "bL4nrkcinXXjAPFQrOlzR4tdiOgZ+4FNEgQpQB/Yx5MdUvq8o9Z/Q/GmPvC9/GFS5s1MaXJJkyaELQ2GcruRvg==",
+    "Dynamic.Core/2.1.5.7": {
+      "sha512": "UVkBxwU29j34GJ7N4DpKStdO2z1TG/JlEdDChPSGjRdBjsJ1SNPWPHleCxz6VixlIV77EdqRXzgpxnamkfPalg==",
       "type": "package",
-      "path": "dynamic.core/2.1.5.6",
+      "path": "dynamic.core/2.1.5.7",
       "files": [
         ".signature.p7s",
-        "dynamic.core.2.1.5.6.nupkg.sha512",
+        "dynamic.core.2.1.5.7.nupkg.sha512",
         "dynamic.core.nuspec",
         "lib/netstandard2.0/Dynamic.Core.dll"
       ]

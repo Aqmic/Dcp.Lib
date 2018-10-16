@@ -2,6 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0.2</Version>
+    <Description>RpcManager rpcManager = new RpcManager(_mqAddress, "demo测试131243");
+                rpcManager.RegisterAssembly(typeof(Program).Assembly);
+                rpcManager.StartServer();
+                rpcManager.CreateClient();
+                var rpcTestApi = DcpApiClientProxy.Create&lt;IRpcTestApi&gt;();
+
+                while (Console.ReadLine()!="exit")
+                {
+                  var result=rpcTestApi.WriteLine("测试WriteLine方法=》" + DateTime.Now).Result;
+                  Console.WriteLine("client"+result.data);
+                }</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

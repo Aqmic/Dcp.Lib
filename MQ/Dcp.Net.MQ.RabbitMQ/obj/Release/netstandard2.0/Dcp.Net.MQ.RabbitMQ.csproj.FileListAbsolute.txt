@@ -13,5 +13,4 @@ D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\publish\Dcp.Net.MQ.Ra
 D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\publish\Dcp.Net.MQ.RabbitMQ.pdb
 D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\publish\Geek.Net.MQ.dll
 D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\publish\Geek.Net.MQ.pdb
-D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\obj\release\netstandard2.0\Dcp.Net.MQ.RabbitMQ.csprojAssemblyReference.cache
-D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\obj\release\netstandard2.0\Dcp.Net.MQ.RabbitMQ.csproj.CopyComplete
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\MQ\Dcp.Net.MQ.RabbitMQ\obj\Release\netstandard2.0\Dcp.Net.MQ.RabbitMQ.csprojResolveAssemblyReference.cache

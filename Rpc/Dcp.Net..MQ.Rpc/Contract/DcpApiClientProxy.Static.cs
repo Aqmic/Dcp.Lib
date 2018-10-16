@@ -12,7 +12,7 @@ namespace Dcp.Net.MQ.Rpc.Contract
     /// 表示HttpApi客户端
     /// 提供创建HttpApiClient实例的方法
     /// </summary>
-    public partial class DcpApiClient
+    public partial class DcpApiClientProxy
     {
         private static DcpApiConfig _DefaultConfig;
       
@@ -174,7 +174,7 @@ namespace Dcp.Net.MQ.Rpc.Contract
                 throw new ArgumentNullException(nameof(apiInterceptor));
             }
 
-            return DcpApiClientProxy.CreateInstance(interfaceType, apiInterceptor);
+            return DcpApiClient.CreateInstance(interfaceType, apiInterceptor);
         }
     }
 }

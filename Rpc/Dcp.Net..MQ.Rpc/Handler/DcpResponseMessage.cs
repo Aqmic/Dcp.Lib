@@ -15,7 +15,7 @@ namespace Dcp.Net.MQ.Rpc.Handler
         }
         public HttpStatusCode StatusCode { get; set; }
 
-        public ResultModel Result { get; set; }
+        public Object Result { get; set; }
 
         public RpcRemotingException RemotingException { get; set; }
     }

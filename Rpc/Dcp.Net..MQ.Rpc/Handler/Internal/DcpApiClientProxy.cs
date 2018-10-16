@@ -20,7 +20,7 @@ namespace Dcp.Net.MQ.Rpc.Handler.Internal
     /// 不支持泛型方法的接口
     /// 不支持ref/out参数的接口
     /// </summary>
-    static class DcpApiClientProxy
+    static class DcpApiClient
     {
         /// <summary>
         /// IApiInterceptor的Intercept方法
@@ -30,7 +30,7 @@ namespace Dcp.Net.MQ.Rpc.Handler.Internal
         /// <summary>
         /// HttpApiClient的构造器
         /// </summary>
-        private static readonly ConstructorInfo baseConstructor = typeof(DcpApiClient).GetConstructor(new Type[] { typeof(IApiInterceptor) });
+        private static readonly ConstructorInfo baseConstructor = typeof(DcpApiClientProxy).GetConstructor(new Type[] { typeof(IApiInterceptor) });
 
         /// <summary>
         /// 代理类型的构造器的参数类型
@@ -93,7 +93,7 @@ namespace Dcp.Net.MQ.Rpc.Handler.Internal
                 .DefineDynamicModule(moduleName);
             });
 
-            var builder = moduleBuilder.DefineType(interfaceType.FullName, TypeAttributes.Class, typeof(DcpApiClient));
+            var builder = moduleBuilder.DefineType(interfaceType.FullName, TypeAttributes.Class, typeof(DcpApiClientProxy));
             builder.AddInterfaceImplementation(interfaceType);
             return builder.BuildProxyType(apiMethods);
         }

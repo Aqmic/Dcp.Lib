@@ -11,7 +11,7 @@ namespace Dcp.Net.MQ.Rpc.Contract
     /// 提供创建HttpApiClient实例的方法
     /// </summary>
     [DebuggerTypeProxy(typeof(DebugView))]
-    public abstract partial class DcpApiClient : IDcpApiClient, IDcpApi, IDisposable
+    public abstract partial class DcpApiClientProxy : IDcpApiClient, IDcpApi, IDisposable
     {
         /// <summary>
         /// 获取Api拦截器
@@ -23,7 +23,7 @@ namespace Dcp.Net.MQ.Rpc.Contract
         /// </summary>
         /// <param name="apiInterceptor">拦截器</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public DcpApiClient(IApiInterceptor apiInterceptor)
+        public DcpApiClientProxy(IApiInterceptor apiInterceptor)
         {
             this.ApiInterceptor = apiInterceptor ?? throw new ArgumentNullException(nameof(apiInterceptor));
         }
@@ -39,13 +39,13 @@ namespace Dcp.Net.MQ.Rpc.Contract
         /// <summary>
         /// 调试视图
         /// </summary>
-        private class DebugView : DcpApiClient
+        private class DebugView : DcpApiClientProxy
         {
             /// <summary>
             /// 调试视图
             /// </summary>
             /// <param name="target">查看的对象</param>
-            public DebugView(DcpApiClient target)
+            public DebugView(DcpApiClientProxy target)
                 : base(target.ApiInterceptor)
             {
             }

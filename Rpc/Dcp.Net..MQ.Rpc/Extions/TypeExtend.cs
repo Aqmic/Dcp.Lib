@@ -56,7 +56,7 @@ namespace Dcp.Net.MQ.Rpc.Extions
             }
 
             var apiMethods = new[] { interfaceType }.Concat(interfaceType.GetInterfaces())
-                .Except(typeof(DcpApiClient).GetInterfaces())
+                .Except(typeof(DcpApiClientProxy).GetInterfaces())
                 .SelectMany(item => item.GetMethods())
 #if JIT
                 .Select(item => item.EnsureApiMethod())

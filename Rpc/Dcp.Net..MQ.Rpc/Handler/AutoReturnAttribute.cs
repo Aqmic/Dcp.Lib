@@ -25,7 +25,7 @@ namespace Dcp.Net.MQ.Rpc.Handler
         /// <returns></returns>
         protected override async Task<object> GetTaskResult(ApiActionContext context)
         {
-            return null;
+            return context.ResponseMessage.Result;
             //var response = context.ResponseMessage;
             //var dataType = context.ApiActionDescriptor.Return.DataType;
 

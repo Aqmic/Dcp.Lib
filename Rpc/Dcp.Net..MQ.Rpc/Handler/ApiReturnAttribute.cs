@@ -28,13 +28,14 @@ namespace Dcp.Net.MQ.Rpc.Handler
         /// <returns></returns>
         Task<object> IApiReturnAttribute.GetTaskResult(ApiActionContext context)
         {
-            if (this.EnsureSuccessStatusCode == true)
+            if (this.EnsureSuccessStatusCode)
             {
                 var statusCode = context.ResponseMessage.StatusCode;
-                if (this.IsSuccessStatusCode(statusCode) == false)
+
+                if (context.ResponseMessage.RemotingException != null)
                 {
-                    //throw new HttpStatusFailureException(context.ApiConfig, context.ResponseMessage);
-                }
+                    throw context.ResponseMessage.RemotingException;
+                }   
             }
             return this.GetTaskResult(context);
         }

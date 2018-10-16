@@ -26,6 +26,7 @@ namespace Dcp.Net.MQ.Rpc.TestIn.Constract
             {
                 ResultModel resultModel = new ResultModel();
                 Console.WriteLine(contentStr);
+                resultModel.data = "来看看测试结果";
                 resultModel.state = true;
                 resultModel.msg = "ok";
                 return resultModel;

@@ -2468,7 +2468,7 @@
           "bin/placeholder/Dcp.Net.dll": {}
         }
       },
-      "Dcp.Net.MQ.RabbitMQ/1.0.0": {
+      "Dcp.Net.MQ.RabbitMQ/1.0.0.3": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -7820,7 +7820,7 @@
       "path": "../../MQ/Dcp.Net/Dcp.Net.csproj",
       "msbuildProject": "../../MQ/Dcp.Net/Dcp.Net.csproj"
     },
-    "Dcp.Net.MQ.RabbitMQ/1.0.0": {
+    "Dcp.Net.MQ.RabbitMQ/1.0.0.3": {
       "type": "project",
       "path": "../../MQ/Dcp.Net.MQ.RabbitMQ/Dcp.Net.MQ.RabbitMQ.csproj",
       "msbuildProject": "../../MQ/Dcp.Net.MQ.RabbitMQ/Dcp.Net.MQ.RabbitMQ.csproj"
@@ -7838,7 +7838,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "Dcp.Net.MQ.RabbitMQ >= 1.0.0",
+      "Dcp.Net.MQ.RabbitMQ >= 1.0.0.3",
       "Dcp.Net.MQ.RocketMQ >= 1.0.0.1",
       "MSTest.TestAdapter >= 1.2.1",
       "MSTest.TestFramework >= 1.2.1",

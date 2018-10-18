@@ -1,6 +1,7 @@
 ﻿namespace Dcp.Net.MQ.Rpc.TestIn
 {
     using Dcp.Net.MQ.Rpc;
+    using Dcp.Net.MQ.Rpc.Config;
     using Dcp.Net.MQ.Rpc.Contract;
     using Dcp.Net.MQ.Rpc.Default;
     using Dcp.Net.MQ.Rpc.Exceptions;
@@ -30,7 +31,13 @@
         {
             try
             {
-                RpcManager rpcManager = new RpcManager(_mqAddress, "demo测试131243");
+                MqRpcConfig mqRpcConfig = new MqRpcConfig() {
+                    MqAddress=_mqAddress,
+                    ApplicationId= "demo测试131243",
+                    RequestTimeOut=30*1000
+                };
+                RpcManager rpcManager = new RpcManager(mqRpcConfig);
+                rpcManager.RegisterAssembly(typeof(Program).Assembly);
                 rpcManager.RegisterAssembly(typeof(Program).Assembly);
                 rpcManager.StartServer();
                 rpcManager.CreateClient();

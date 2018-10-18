@@ -14,5 +14,6 @@
 
   <PropertyGroup>
     <NoWarn>$(NoWarn);NU1605</NoWarn>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 </Project>

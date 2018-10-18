@@ -1,4 +1,5 @@
-﻿using Dcp.Net.MQ.Rpc.Contract;
+﻿using Dcp.Net.MQ.Rpc.Config;
+using Dcp.Net.MQ.Rpc.Contract;
 using Dcp.Net.MQ.Rpc.Default;
 using Dcp.Net.MQ.Rpc.Exceptions;
 using Dcp.Net.MQ.Rpc.Handler;
@@ -17,8 +18,7 @@ namespace Dcp.Net.MQ.Rpc
 {
     public class RpcManager
     {
-        public string Exchange { get;protected set; }
-        public string MqAddress { get;protected set; }
+        public MqRpcConfig MqRpcConfig { get; set; }
         public string ApplicationId { get;protected set; }
         public RpcServer CurrentRpcServer { get;private set; }
         /// <summary>
@@ -27,27 +27,34 @@ namespace Dcp.Net.MQ.Rpc
         /// <param name="mqAddress">mq连接地址</param>
         /// <param name="applicationId">当前应用id</param>
         /// <param name="exchange">交换机可以不填，默认RPC_EXCHANGE</param>
-        public RpcManager(string mqAddress,string applicationId,string exchange=null)
+        public RpcManager(MqRpcConfig mqRpcConfig)
         {
-            if (string.IsNullOrEmpty(applicationId))
+            if (mqRpcConfig == null)
             {
-                throw new ArgumentNullException("applicationId【业务应用id不能为空】应用id不能为空！");
+                throw new ArgumentNullException("MqRpcConfig不能为空！");
             }
-            if (string.IsNullOrEmpty(mqAddress))
+            this.MqRpcConfig = mqRpcConfig;
+            if (string.IsNullOrEmpty(mqRpcConfig.ApplicationId))
             {
-                throw new ArgumentNullException("mqAddress【MQ访问连接】应用id不能为空！");
+                throw new ArgumentNullException("ApplicationId【业务应用id不能为空】应用id不能为空！");
             }
-            this.MqAddress = mqAddress;
-            if (string.IsNullOrEmpty(exchange))
+            if (string.IsNullOrEmpty(mqRpcConfig.MqAddress))
             {
-                this.Exchange = "RPC_EXCHANGE";
+                throw new ArgumentNullException("MqAddress【MQ访问连接】应用id不能为空！");
             }
+          
+            if (string.IsNullOrEmpty(this.MqRpcConfig.Exchange))
+            {
+                this.MqRpcConfig.Exchange = "RPC_EXCHANGE";
+            }
+            this.ApplicationId = this.MqRpcConfig.ApplicationId;
         }
         public  void CreateClient()
         {
             DcpApiClientProxy.Init(new DcpApiConfig()
             {
-                MqAddress = this.MqAddress
+                MqAddress = this.MqRpcConfig.MqAddress,
+                TimeOut=this.MqRpcConfig.RequestTimeOut
             });
         }
         public void RegisterAssembly(Assembly dcpContractAssembly)
@@ -62,14 +69,14 @@ namespace Dcp.Net.MQ.Rpc
         }
         public  string GetCurrentServerRpcName()
         {
-            return $"Rpc_Service_Queque_{ApplicationId}";
+            return $"Rpc_Service_Queque-{ApplicationId}";
         }
         public  RpcServer StartServer()
         {
             DistributedMQConfig distributedMQConfig = new DistributedMQConfig
             {
-                ServerAddress = this.MqAddress,
-                Exchange = this.Exchange,
+                ServerAddress = this.MqRpcConfig.MqAddress,
+                Exchange = this.MqRpcConfig.Exchange,
                 ProducerID=GetCurrentServerRpcName(),
                 MsgSendType = MessageSendType.Router,
                 IsDurable = false

@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v2.1": {
       "Dcp.Net.MQ.Rpc.TestIn/1.0.0": {
         "dependencies": {
-          "Dcp.Net.MQ.Rpc": "1.0.0"
+          "Dcp.Net.MQ.Rpc": "1.0.0.4"
         },
         "runtime": {
           "Dcp.Net.MQ.Rpc.TestIn.dll": {}
@@ -942,7 +942,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "Dcp.Net.MQ.RabbitMQ/1.0.0": {
+      "Dcp.Net.MQ.RabbitMQ/1.0.0.3": {
         "dependencies": {
           "Geek.Net.MQ": "1.0.0",
           "RabbitMQ.Client": "5.1.0"
@@ -951,9 +951,9 @@
           "Dcp.Net.MQ.RabbitMQ.dll": {}
         }
       },
-      "Dcp.Net.MQ.Rpc/1.0.0": {
+      "Dcp.Net.MQ.Rpc/1.0.0.4": {
         "dependencies": {
-          "Dcp.Net.MQ.RabbitMQ": "1.0.0",
+          "Dcp.Net.MQ.RabbitMQ": "1.0.0.3",
           "System.Reflection.Emit": "4.3.0"
         },
         "runtime": {
@@ -1578,12 +1578,12 @@
       "path": "system.threading.timer/4.3.0",
       "hashPath": "system.threading.timer.4.3.0.nupkg.sha512"
     },
-    "Dcp.Net.MQ.RabbitMQ/1.0.0": {
+    "Dcp.Net.MQ.RabbitMQ/1.0.0.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Dcp.Net.MQ.Rpc/1.0.0": {
+    "Dcp.Net.MQ.Rpc/1.0.0.4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

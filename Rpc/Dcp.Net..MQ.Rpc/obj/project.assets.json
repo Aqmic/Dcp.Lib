@@ -1397,7 +1397,7 @@
           "ref/netstandard1.2/System.Threading.Timer.dll": {}
         }
       },
-      "Dcp.Net.MQ.RabbitMQ/1.0.0": {
+      "Dcp.Net.MQ.RabbitMQ/1.0.0.3": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -4879,7 +4879,7 @@
         "system.threading.timer.nuspec"
       ]
     },
-    "Dcp.Net.MQ.RabbitMQ/1.0.0": {
+    "Dcp.Net.MQ.RabbitMQ/1.0.0.3": {
       "type": "project",
       "path": "../../MQ/Dcp.Net.MQ.RabbitMQ/Dcp.Net.MQ.RabbitMQ.csproj",
       "msbuildProject": "../../MQ/Dcp.Net.MQ.RabbitMQ/Dcp.Net.MQ.RabbitMQ.csproj"
@@ -4892,7 +4892,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Dcp.Net.MQ.RabbitMQ >= 1.0.0",
+      "Dcp.Net.MQ.RabbitMQ >= 1.0.0.3",
       "NETStandard.Library >= 2.0.3",
       "System.Reflection.Emit >= 4.3.0"
     ]
@@ -4903,7 +4903,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.0.2",
+    "version": "1.0.0.5",
     "restoreSettings": {
       "hideWarningsAndErrors": true
     },

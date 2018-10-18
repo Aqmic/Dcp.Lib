@@ -10,6 +10,7 @@ namespace Dcp.Net.MQ.Rpc.Extions
         {
             dcpApiConfig.Exchange = dcpApiConfigNew.Exchange;
             dcpApiConfig.MqAddress = dcpApiConfigNew.MqAddress;
+            dcpApiConfig.TimeOut = dcpApiConfigNew.TimeOut;
         }
     }
 }

@@ -19,8 +19,8 @@ namespace Dcp.Net.MQ.Rpc
     public class RpcManager
     {
         public MqRpcConfig MqRpcConfig { get; set; }
-        public string ApplicationId { get;protected set; }
-        public RpcServer CurrentRpcServer { get;private set; }
+        public string ApplicationId { get; protected set; }
+        public RpcServer CurrentRpcServer { get; private set; }
         /// <summary>
         /// Rpc入口管理
         /// </summary>
@@ -42,24 +42,34 @@ namespace Dcp.Net.MQ.Rpc
             {
                 throw new ArgumentNullException("MqAddress【MQ访问连接】应用id不能为空！");
             }
-          
+
             if (string.IsNullOrEmpty(this.MqRpcConfig.Exchange))
             {
                 this.MqRpcConfig.Exchange = "RPC_EXCHANGE";
             }
             this.ApplicationId = this.MqRpcConfig.ApplicationId;
         }
-        public  void CreateClient()
+        public void CreateClient()
         {
             DcpApiClientProxy.Init(new DcpApiConfig()
             {
                 MqAddress = this.MqRpcConfig.MqAddress,
-                TimeOut=this.MqRpcConfig.RequestTimeOut
+                TimeOut = this.MqRpcConfig.RequestTimeOut
             });
+        }
+        public void RegisterType(Type interfaceConstract, Type constractService)
+        {
+            var defaultRegisterService = IocUnity.Get<DefaultRegisterService>();
+            if (defaultRegisterService == null)
+            {
+                defaultRegisterService = new DefaultRegisterService();
+                IocUnity.AddSingleton<DefaultRegisterService>(defaultRegisterService);
+            }
+            defaultRegisterService.RegisterType(interfaceConstract,constractService);
         }
         public void RegisterAssembly(Assembly dcpContractAssembly)
         {
-            var defaultRegisterService=IocUnity.Get<DefaultRegisterService>();
+            var defaultRegisterService = IocUnity.Get<DefaultRegisterService>();
             if (defaultRegisterService == null)
             {
                 defaultRegisterService = new DefaultRegisterService();
@@ -67,17 +77,17 @@ namespace Dcp.Net.MQ.Rpc
             }
             defaultRegisterService.RegisterAssembly(dcpContractAssembly);
         }
-        public  string GetCurrentServerRpcName()
+        public string GetCurrentServerRpcName()
         {
             return $"Rpc_Service_Queque-{ApplicationId}";
         }
-        public  RpcServer StartServer()
+        public RpcServer StartServer()
         {
             DistributedMQConfig distributedMQConfig = new DistributedMQConfig
             {
                 ServerAddress = this.MqRpcConfig.MqAddress,
                 Exchange = this.MqRpcConfig.Exchange,
-                ProducerID=GetCurrentServerRpcName(),
+                ProducerID = GetCurrentServerRpcName(),
                 MsgSendType = MessageSendType.Router,
                 IsDurable = false
             };
@@ -88,7 +98,7 @@ namespace Dcp.Net.MQ.Rpc
             CurrentRpcServer = server;
             return server;
         }
-        private  void RpcServer_ReciveMsgedEvent(MQMessage mQMessage)
+        private void RpcServer_ReciveMsgedEvent(MQMessage mQMessage)
         {
             var msgRequest = Dynamic.Core.Runtime.SerializationUtility.BytesToObject<DcpRequestMessage>(mQMessage.Body);
             DefaultRegisterService defaultRegisterService = IocUnity.Get<DefaultRegisterService>();

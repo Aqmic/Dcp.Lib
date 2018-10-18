@@ -71,7 +71,7 @@ namespace Dcp.Net.MQ.Rpc.Default
            
             if (constractService != null&&interfaceConstract!=null)
             {
-                if (!constractService.IsAbstract && !constractService.IsInterface)
+                if (!constractService.IsAbstract && !constractService.IsInterface&&interfaceConstract.IsAssignableFrom(constractService))
                 {
                     IocUnity.AddTransient(interfaceConstract, constractService);
                     ConstractInterfaceCache.GetOrAdd(interfaceConstract.FullName, key =>

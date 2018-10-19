@@ -14,22 +14,48 @@ namespace Dcp.Net.MQ.Rpc.Contract
     /// </summary>
     public partial class DcpApiClientProxy
     {
+        private static readonly object _lockObj = new object();
         private static DcpApiConfig _DefaultConfig;
-      
+
+        static volatile  bool IsInitSuccess;
+
+        /// <summary>
+        /// 判断代理客户段是否进行了初始化操作
+        /// </summary>
+        /// <returns></returns>
+        public static bool GetInitStatus()
+        {
+            return IsInitSuccess;
+        }
+        public static void Reset()
+        {
+            lock (_lockObj)
+            {
+                IsInitSuccess = false;
+            }
+        }
         public static void Init(DcpApiConfig dcpApiConfig)
         {
-            _DefaultConfig = dcpApiConfig;
-            if (_DefaultConfig == null)
+            lock (_lockObj)
             {
-                _DefaultConfig = new DcpApiConfig();
-            }
-            if (string.IsNullOrEmpty(_DefaultConfig.Exchange))
-            {
-                throw new ArgumentNullException("Exhange交换机值不能为空！");
-            }
-            if (string.IsNullOrEmpty(_DefaultConfig.MqAddress))
-            {
-                throw new ArgumentNullException("MqAddress不能为空！");
+                if (IsInitSuccess)
+                {
+                    return;
+                }
+                _DefaultConfig = dcpApiConfig;
+                if (_DefaultConfig == null)
+                {
+                    _DefaultConfig = new DcpApiConfig();
+                }
+                if (string.IsNullOrEmpty(_DefaultConfig.Exchange))
+                {
+                    throw new ArgumentNullException("Exhange交换机值不能为空！");
+                }
+                if (string.IsNullOrEmpty(_DefaultConfig.MqAddress))
+                {
+                    throw new ArgumentNullException("MqAddress不能为空！");
+                }
+                IsInitSuccess = true;
             }
         }
         /// <summary>

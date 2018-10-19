@@ -47,13 +47,19 @@
 
 
                 var jsqApi = DcpApiClientProxy.Create<IPolicyCalculatorConstract>();
-                var abc= jsqApi.GetAllBusinessPackage();
-
+             
 
 
                 while (Console.ReadLine()!="exit")
                 {
-                  var result=rpcTestApi.WriteLine("测试WriteLine方法=》" + DateTime.Now).Result;
+                    var abc = jsqApi.GetAllBusinessPackage().Result;
+
+                    foreach (var item in abc.Data)
+                    {
+                        Console.WriteLine(item.NiceName + $"【{item.Id}】");
+                    }
+                    Console.WriteLine();
+                    var result=rpcTestApi.WriteLine("测试WriteLine方法=》" + DateTime.Now).Result;
                   Console.WriteLine("client"+result.data);
                 }
                 

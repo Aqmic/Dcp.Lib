@@ -15,3 +15,5 @@ D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\obj\Release\net
 D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\obj\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.TestIn.AssemblyInfo.cs
 D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\obj\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.TestIn.dll
 D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\obj\Release\netcoreapp2.1\Dcp.Net.MQ.Rpc.TestIn.pdb
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Release\netcoreapp2.1\PolicyCalculator.Plugin.Contract.dll
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Release\netcoreapp2.1\PolicyCalculator.Plugin.Contract.pdb

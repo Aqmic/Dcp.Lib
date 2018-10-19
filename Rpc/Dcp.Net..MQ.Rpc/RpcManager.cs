@@ -49,13 +49,18 @@ namespace Dcp.Net.MQ.Rpc
             }
             this.ApplicationId = this.MqRpcConfig.ApplicationId;
         }
+        /// <summary>
+        /// 创建代理客户端，可以多次会自动判断，是否已经初始化过
+        /// </summary>
         public void CreateClient()
         {
+
             DcpApiClientProxy.Init(new DcpApiConfig()
             {
                 MqAddress = this.MqRpcConfig.MqAddress,
                 TimeOut = this.MqRpcConfig.RequestTimeOut
             });
+
         }
         public void RegisterType(Type interfaceConstract, Type constractService)
         {
@@ -65,7 +70,7 @@ namespace Dcp.Net.MQ.Rpc
                 defaultRegisterService = new DefaultRegisterService();
                 IocUnity.AddSingleton<DefaultRegisterService>(defaultRegisterService);
             }
-            defaultRegisterService.RegisterType(interfaceConstract,constractService);
+            defaultRegisterService.RegisterType(interfaceConstract, constractService);
         }
         public void RegisterAssembly(Assembly dcpContractAssembly)
         {

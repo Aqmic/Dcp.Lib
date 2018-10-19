@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "Dcp.Net.MQ.RabbitMQ/1.0.0.3": {
+      "Dcp.Net.MQ.RabbitMQ/1.0.0.5": {
         "dependencies": {
           "Geek.Net.MQ": "1.0.0",
           "NETStandard.Library": "2.0.3",
@@ -998,7 +998,7 @@
     }
   },
   "libraries": {
-    "Dcp.Net.MQ.RabbitMQ/1.0.0.3": {
+    "Dcp.Net.MQ.RabbitMQ/1.0.0.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

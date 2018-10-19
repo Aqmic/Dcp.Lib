@@ -121,10 +121,10 @@ namespace Dcp.Net.MQ.Rpc.Core
                 return this.RequestAsync();
             }
 
-            private Task<TResult> ExecuteNativeMethod()
-            {
-               IocUnity.Get(Type.)
-            }
+            //private Task<TResult> ExecuteNativeMethod()
+            //{
+            //   IocUnity.Get(Type.)
+            //}
             /// <summary>
             /// 执行一次请求,远程提交
             /// </summary>

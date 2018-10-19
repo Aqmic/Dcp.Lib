@@ -13,6 +13,7 @@
     using Dynamic.Core.Service;
     using Geek.Net.MQ;
     using Geek.Net.MQ.Config;
+    using PolicyCalculator.Plugin.Contract;
     using System;
     using System.Diagnostics;
     using System.IO;
@@ -42,6 +43,13 @@
                 rpcManager.StartServer();
                 rpcManager.CreateClient();
                 var rpcTestApi = DcpApiClientProxy.Create<IRpcTestApi>();
+
+
+
+                var jsqApi = DcpApiClientProxy.Create<IPolicyCalculatorConstract>();
+                var abc= jsqApi.GetAllBusinessPackage();
+
+
 
                 while (Console.ReadLine()!="exit")
                 {

@@ -28,7 +28,7 @@
           "lib/netstandard1.3/CacheManager.Microsoft.Extensions.Caching.Memory.dll": {}
         }
       },
-      "Dynamic.Core/2.1.5.7": {
+      "Dynamic.Core/2.1.5.8": {
         "type": "package",
         "dependencies": {
           "CacheManager.Microsoft.Extensions.Caching.Memory": "1.1.2",
@@ -1565,7 +1565,7 @@
           "ref/netstandard1.2/System.Threading.Timer.dll": {}
         }
       },
-      "Dcp.Net.MQ.RabbitMQ/1.0.0.3": {
+      "Dcp.Net.MQ.RabbitMQ/1.0.0.5": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1583,7 +1583,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Dcp.Net.MQ.RabbitMQ": "1.0.0.3",
+          "Dcp.Net.MQ.RabbitMQ": "1.0.0.5",
           "System.Reflection.Emit": "4.3.0"
         },
         "compile": {
@@ -1597,7 +1597,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Dynamic.Core": "2.1.5.7"
+          "Dynamic.Core": "2.1.5.8"
         },
         "compile": {
           "bin/placeholder/Geek.Net.MQ.dll": {}
@@ -1637,13 +1637,12 @@
         "lib/netstandard1.3/CacheManager.Microsoft.Extensions.Caching.Memory.xml"
       ]
     },
-    "Dynamic.Core/2.1.5.7": {
-      "sha512": "UVkBxwU29j34GJ7N4DpKStdO2z1TG/JlEdDChPSGjRdBjsJ1SNPWPHleCxz6VixlIV77EdqRXzgpxnamkfPalg==",
+    "Dynamic.Core/2.1.5.8": {
+      "sha512": "1W40yfpEk68fuSfaBMf7NQZYRYclMUoR6pmzido4IKbz1s2BSAxKOXFvSZV2ObQCuDr4ng4nf02A3b3OjObqdA==",
       "type": "package",
-      "path": "dynamic.core/2.1.5.7",
+      "path": "dynamic.core/2.1.5.8",
       "files": [
-        ".signature.p7s",
-        "dynamic.core.2.1.5.7.nupkg.sha512",
+        "dynamic.core.2.1.5.8.nupkg.sha512",
         "dynamic.core.nuspec",
         "lib/netstandard2.0/Dynamic.Core.dll"
       ]
@@ -5371,7 +5370,7 @@
         "system.threading.timer.nuspec"
       ]
     },
-    "Dcp.Net.MQ.RabbitMQ/1.0.0.3": {
+    "Dcp.Net.MQ.RabbitMQ/1.0.0.5": {
       "type": "project",
       "path": "../../MQ/Dcp.Net.MQ.RabbitMQ/Dcp.Net.MQ.RabbitMQ.csproj",
       "msbuildProject": "../../MQ/Dcp.Net.MQ.RabbitMQ/Dcp.Net.MQ.RabbitMQ.csproj"
@@ -5424,7 +5423,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://192.168.0.110:82/nuget/": {},
+        "http://192.168.0.251:8877": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

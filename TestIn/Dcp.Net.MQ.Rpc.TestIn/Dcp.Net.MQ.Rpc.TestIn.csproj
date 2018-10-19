@@ -9,4 +9,10 @@
     <ProjectReference Include="..\..\Rpc\Dcp.Net..MQ.Rpc\Dcp.Net.MQ.Rpc.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="PolicyCalculator.Plugin.Contract">
+      <HintPath>bin\Debug\netcoreapp2.1\PolicyCalculator.Plugin.Contract.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

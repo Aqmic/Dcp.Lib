@@ -1,5 +1,6 @@
 ﻿using Dcp.Net.MQ.Rpc.Aop;
 using Dcp.Net.MQ.Rpc.Models;
+using Dynamic.Core.Service;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -120,13 +121,17 @@ namespace Dcp.Net.MQ.Rpc.Core
                 return this.RequestAsync();
             }
 
+            private Task<TResult> ExecuteNativeMethod()
+            {
+               IocUnity.Get(Type.)
+            }
             /// <summary>
             /// 执行一次请求,远程提交
             /// </summary>
             /// <returns></returns>
             private async Task<TResult> RequestAsync()
             {
-                //
+               
                 var context = new ApiActionContext
                 {
                     ApiActionDescriptor = this.apiActionDescriptor,
@@ -145,7 +150,6 @@ namespace Dcp.Net.MQ.Rpc.Core
                 {
                    return Dynamic.Core.Runtime.SerializationUtility.JsonToObject<TResult>(jResult.ToString());
                 }
-               
                 return state ? (TResult)context.Result : throw context.Exception;
             }
         }

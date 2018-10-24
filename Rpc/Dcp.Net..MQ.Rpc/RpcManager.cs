@@ -4,6 +4,7 @@ using Dcp.Net.MQ.Rpc.Default;
 using Dcp.Net.MQ.Rpc.Exceptions;
 using Dcp.Net.MQ.Rpc.Handler;
 using Dcp.Net.MQ.Rpc.Models;
+using Dynamic.Core.Log;
 using Dynamic.Core.Models;
 using Dynamic.Core.Service;
 using Geek.Net.MQ;
@@ -18,6 +19,7 @@ namespace Dcp.Net.MQ.Rpc
 {
     public class RpcManager
     {
+        ILogger _logger = LoggerManager.GetLogger("RpcManager");
         public MqRpcConfig MqRpcConfig { get; set; }
         public string ApplicationId { get; protected set; }
         public RpcServer CurrentRpcServer { get; private set; }
@@ -135,7 +137,11 @@ namespace Dcp.Net.MQ.Rpc
             }
             catch (Exception ex)
             {
-                RpcRemotingException rpcRemotingException = new RpcRemotingException();
+                _logger.Error(ex.ToString());
+                RpcRemotingException rpcRemotingException = new RpcRemotingException() {
+                    CallInfo= msgRequest.ActionInfo,                    
+                    Source = ex.ToString(),
+                };
                 dcpResponseMessage.RemotingException = rpcRemotingException;
                 dcpResponseMessage.StatusCode = System.Net.HttpStatusCode.InternalServerError;
             }

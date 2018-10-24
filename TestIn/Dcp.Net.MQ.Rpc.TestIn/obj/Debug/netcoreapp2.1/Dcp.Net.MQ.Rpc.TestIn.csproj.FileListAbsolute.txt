@@ -32,4 +32,3 @@ D:\WorkSpace\opensource\feifu\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Debug\net
 D:\WorkSpace\opensource\feifu\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Debug\netcoreapp2.1\Geek.Net.MQ.pdb
 D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Debug\netcoreapp2.1\Dcp.Net.MQ.Rpc.dll
 D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Debug\netcoreapp2.1\Dcp.Net.MQ.Rpc.pdb
-D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Net.MQ.Rpc.TestIn\bin\Debug\netcoreapp2.1\PolicyCalculator.Plugin.Contract.pdb

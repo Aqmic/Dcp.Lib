@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="PolicyCalculator.Plugin.Contract">
-      <HintPath>bin\Debug\netcoreapp2.1\PolicyCalculator.Plugin.Contract.dll</HintPath>
+    <Reference Include="Acb.Plugin.PrivilegeManage.Constract">
+      <HintPath>..\..\..\..\..\ICB\ACB\Acb.Library.Framework\Acb.MiddleWare\WebApi\Acb.MiddleWare.Web\publish\DynamicLib\Acb.Plugin.PrivilegeManage.Constract.dll</HintPath>
     </Reference>
   </ItemGroup>
 

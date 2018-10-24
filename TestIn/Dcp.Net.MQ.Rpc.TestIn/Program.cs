@@ -1,5 +1,6 @@
 ﻿namespace Dcp.Net.MQ.Rpc.TestIn
 {
+    using Acb.Plugin.PrivilegeManage.Constract;
     using Dcp.Net.MQ.Rpc;
     using Dcp.Net.MQ.Rpc.Config;
     using Dcp.Net.MQ.Rpc.Contract;
@@ -9,11 +10,12 @@
     using Dcp.Net.MQ.Rpc.TestIn.Constract;
     using Dcp.Net.MQ.Rpc.TestIn.RpcTest;
     using Dynamic.Core.Comm;
+    using Dynamic.Core.Log;
     using Dynamic.Core.Models;
     using Dynamic.Core.Service;
     using Geek.Net.MQ;
     using Geek.Net.MQ.Config;
-    using PolicyCalculator.Plugin.Contract;
+    
     using System;
     using System.Diagnostics;
     using System.IO;
@@ -30,6 +32,7 @@
    
         private  static void Main(string[] args)
         {
+            LoggerManager.InitLogger(new LogConfig() { });
             try
             {
                 MqRpcConfig mqRpcConfig = new MqRpcConfig() {
@@ -46,18 +49,19 @@
 
 
 
-                var jsqApi = DcpApiClientProxy.Create<IPolicyCalculatorConstract>();
-             
+                var jsqApi = DcpApiClientProxy.Create<IPrivilegeManageConstract>();
 
+               
 
                 while (Console.ReadLine()!="exit")
                 {
-                    var abc = jsqApi.GetAllBusinessPackage().Result;
+                    var jjj = jsqApi.GetSubOrganizationAsPage("2792bab385f8cf2ed8ae08d639059b59", 1, 100);
+                    //var abc = jsqApi.GetSubOrganization().Result;
 
-                    foreach (var item in abc.Data)
-                    {
-                        Console.WriteLine(item.NiceName + $"【{item.Id}】");
-                    }
+                    //foreach (var item in abc.Data)
+                    //{
+                    //    Console.WriteLine(item.NiceName + $"【{item.Id}】");
+                    //}
                     Console.WriteLine();
                     var result=rpcTestApi.WriteLine("测试WriteLine方法=》" + DateTime.Now).Result;
                   Console.WriteLine("client"+result.data);

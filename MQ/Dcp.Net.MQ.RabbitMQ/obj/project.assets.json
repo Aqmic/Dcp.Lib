@@ -28,7 +28,7 @@
           "lib/netstandard1.3/CacheManager.Microsoft.Extensions.Caching.Memory.dll": {}
         }
       },
-      "Dynamic.Core/2.1.5.8": {
+      "Dynamic.Core/2.1.5.9": {
         "type": "package",
         "dependencies": {
           "CacheManager.Microsoft.Extensions.Caching.Memory": "1.1.2",
@@ -1397,11 +1397,11 @@
           "ref/netstandard1.2/System.Threading.Timer.dll": {}
         }
       },
-      "Geek.Net.MQ/1.0.0": {
+      "Geek.Net.MQ/1.0.0.1": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Dynamic.Core": "2.1.5.8"
+          "Dynamic.Core": "2.1.5.9"
         },
         "compile": {
           "bin/placeholder/Geek.Net.MQ.dll": {}
@@ -1441,12 +1441,12 @@
         "lib/netstandard1.3/CacheManager.Microsoft.Extensions.Caching.Memory.xml"
       ]
     },
-    "Dynamic.Core/2.1.5.8": {
-      "sha512": "1W40yfpEk68fuSfaBMf7NQZYRYclMUoR6pmzido4IKbz1s2BSAxKOXFvSZV2ObQCuDr4ng4nf02A3b3OjObqdA==",
+    "Dynamic.Core/2.1.5.9": {
+      "sha512": "g4qC1qi1g86KEXOBxjJxyVsMtEPGM2OCHETjeGpmrzA0q7MH3F6IWeGzm+B3FJK5V4ItBzQWfUtIMnUrx6y8QA==",
       "type": "package",
-      "path": "dynamic.core/2.1.5.8",
+      "path": "dynamic.core/2.1.5.9",
       "files": [
-        "dynamic.core.2.1.5.8.nupkg.sha512",
+        "dynamic.core.2.1.5.9.nupkg.sha512",
         "dynamic.core.nuspec",
         "lib/netstandard2.0/Dynamic.Core.dll"
       ]
@@ -4860,7 +4860,7 @@
         "system.threading.timer.nuspec"
       ]
     },
-    "Geek.Net.MQ/1.0.0": {
+    "Geek.Net.MQ/1.0.0.1": {
       "type": "project",
       "path": "../Geek.Net.MQ/Geek.Net.MQ.csproj",
       "msbuildProject": "../Geek.Net.MQ/Geek.Net.MQ.csproj"
@@ -4868,7 +4868,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Geek.Net.MQ >= 1.0.0",
+      "Geek.Net.MQ >= 1.0.0.1",
       "NETStandard.Library >= 2.0.3",
       "RabbitMQ.Client >= 5.1.0"
     ]
@@ -4879,7 +4879,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.0.5",
+    "version": "1.0.0.6",
     "restoreSettings": {
       "hideWarningsAndErrors": true
     },

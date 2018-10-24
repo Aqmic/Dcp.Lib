@@ -98,7 +98,7 @@ namespace Dcp.Net.MQ.Rpc.Default
         {
             MethodInfo callMethodInfo = null;
             Type actionType = ConstractInterfaceCache.Get(actionDes.TargetTypeFullName);
-            var serviceValue = IocUnity.Get(actionType);
+            dynamic serviceValue = IocUnity.Get(actionType);
             string actionKey = actionDes.GetRouteAddress();
             callMethodInfo = ActionMethodInfoCache.GetOrAdd(actionKey, key =>
              {
@@ -119,6 +119,7 @@ namespace Dcp.Net.MQ.Rpc.Default
             {
                 throw new KeyNotFoundException($"路由地址没有找到【{actionKey}】！");
             }
+          
             var rtnObj = callMethodInfo.Invoke(serviceValue, actionDes.GetParamters());
             return rtnObj;
         }

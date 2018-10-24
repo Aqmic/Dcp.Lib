@@ -8,8 +8,8 @@
     ".NETCoreApp,Version=v2.1": {
       "Dcp.Net.MQ.Rpc.TestIn/1.0.0": {
         "dependencies": {
-          "Dcp.Net.MQ.Rpc": "1.0.0.6",
-          "PolicyCalculator.Plugin.Contract": "1.0.0.0"
+          "Dcp.Net.MQ.Rpc": "1.0.0.8",
+          "PolicyCalculator.Plugin.Contract": "1.0.0.1"
         },
         "runtime": {
           "Dcp.Net.MQ.Rpc.TestIn.dll": {}
@@ -952,7 +952,7 @@
           "Dcp.Net.MQ.RabbitMQ.dll": {}
         }
       },
-      "Dcp.Net.MQ.Rpc/1.0.0.6": {
+      "Dcp.Net.MQ.Rpc/1.0.0.8": {
         "dependencies": {
           "Dcp.Net.MQ.RabbitMQ": "1.0.0.5",
           "System.Reflection.Emit": "4.3.0"
@@ -969,11 +969,11 @@
           "Geek.Net.MQ.dll": {}
         }
       },
-      "PolicyCalculator.Plugin.Contract/1.0.0.0": {
+      "PolicyCalculator.Plugin.Contract/1.0.0.1": {
         "runtime": {
           "PolicyCalculator.Plugin.Contract.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.0.0.1",
+            "fileVersion": "1.0.0.1"
           }
         }
       }
@@ -1592,7 +1592,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Dcp.Net.MQ.Rpc/1.0.0.6": {
+    "Dcp.Net.MQ.Rpc/1.0.0.8": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1602,7 +1602,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "PolicyCalculator.Plugin.Contract/1.0.0.0": {
+    "PolicyCalculator.Plugin.Contract/1.0.0.1": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

@@ -10,6 +10,7 @@ using Dynamic.Core.Comm;
 using Newtonsoft.Json.Linq;
 using System.Reflection;
 using Dynamic.Core.Service;
+using Dynamic.Core.Reflection;
 
 namespace Dcp.Net.MQ.Rpc.Extions
 {
@@ -51,7 +52,7 @@ namespace Dcp.Net.MQ.Rpc.Extions
             }
             return routeAddress;
         }
-        public static object[] GetParamters(this ActionSerDes actionSerDes,MethodInfo methodInfo=null)
+        public static object[] GetParamters(this ActionSerDes actionSerDes, MethodInfo methodInfo = null)
         {
             IList<object> paramterList = new List<object>();
             if (actionSerDes != null && actionSerDes.ParamterInfoArray != null)
@@ -72,12 +73,9 @@ namespace Dcp.Net.MQ.Rpc.Extions
                         {
                             MethodInfo _JsonMethod = typeof(SerializationUtility).GetMethods().FirstOrDefault(f => f.Name == "JsonToObject" && f.IsGenericMethodDefinition);
                             _JsonMethod = _JsonMethod.MakeGenericMethod(itemType);
-                            itemValue= _JsonMethod.Invoke(null,new object[] { jResult.ToString() });
-                            //  var dmd= Dynamic.Core.Reflection.DynamicMethodTool.GetDynamicMethodDelegate(_JsonMethod, _JsonMethod.GetGenericArguments());
-                            // itemValue=dmd.DynamicInvoke(jResult.ToString());
-                            Type type = itemValue.GetType();
-                            Console.WriteLine(type.FullName);
-
+                            //itemValue= _JsonMethod.Invoke(null,new object[] { jResult.ToString() });
+                            var dynamicDelegate = DynamicMethodTool.GetMethodInvoker(_JsonMethod);
+                            itemValue = dynamicDelegate(null, new object[] { jResult.ToString() });
                         }
                     }
                     paramterList.Add(itemValue);
@@ -101,7 +99,6 @@ namespace Dcp.Net.MQ.Rpc.Extions
 
         public static Type GetRType(this ParamterInfoDes paramterInfoDes, MethodInfo methodInfo = null)
         {
-
             Type itemType = null;
 
             if (methodInfo != null)

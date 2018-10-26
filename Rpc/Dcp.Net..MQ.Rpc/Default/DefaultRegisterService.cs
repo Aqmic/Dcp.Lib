@@ -123,13 +123,12 @@ namespace Dcp.Net.MQ.Rpc.Default
                 throw new KeyNotFoundException($"路由地址没有找到【{actionKey}】！");
             }
 
-          
             var actionParamters = actionDes.GetParamters(callMethodInfo);
             object rtnObj = null;
             try
             {
                 var dynamicDelegate = DynamicMethodTool.GetMethodInvoker(callMethodInfo);
-                rtnObj = dynamicDelegate(serviceValue,actionDes.GetParamters());
+                rtnObj = dynamicDelegate(serviceValue,actionParamters);
             }
             catch (Exception ex)
             {

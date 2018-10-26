@@ -1,1 +1,0 @@
-dotnet Dcp.Net.MQ.Rpc.TestIn.dll

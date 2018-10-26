@@ -1,15 +1,15 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "ed385387d9d025e171b051b83c7403dd2cd36052"
+    "signature": "5b1da2e9f4e8208a7a6a06747af77b464aa2244a"
   },
   "compilationOptions": {},
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "Geek.Net.MQ/1.0.0": {
+      "Geek.Net.MQ/1.0.0.3": {
         "dependencies": {
-          "Dynamic.Core": "2.1.5.8",
+          "Dynamic.Core": "2.1.6.2",
           "NETStandard.Library": "2.0.3"
         },
         "runtime": {
@@ -40,7 +40,7 @@
           }
         }
       },
-      "Dynamic.Core/2.1.5.8": {
+      "Dynamic.Core/2.1.6.2": {
         "dependencies": {
           "CacheManager.Microsoft.Extensions.Caching.Memory": "1.1.2",
           "Microsoft.CSharp": "4.4.1",
@@ -55,8 +55,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/Dynamic.Core.dll": {
-            "assemblyVersion": "2.1.5.8",
-            "fileVersion": "2.1.5.8"
+            "assemblyVersion": "2.1.6.2",
+            "fileVersion": "2.1.6.2"
           }
         }
       },
@@ -549,7 +549,7 @@
     }
   },
   "libraries": {
-    "Geek.Net.MQ/1.0.0": {
+    "Geek.Net.MQ/1.0.0.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -568,12 +568,12 @@
       "path": "cachemanager.microsoft.extensions.caching.memory/1.1.2",
       "hashPath": "cachemanager.microsoft.extensions.caching.memory.1.1.2.nupkg.sha512"
     },
-    "Dynamic.Core/2.1.5.8": {
+    "Dynamic.Core/2.1.6.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1W40yfpEk68fuSfaBMf7NQZYRYclMUoR6pmzido4IKbz1s2BSAxKOXFvSZV2ObQCuDr4ng4nf02A3b3OjObqdA==",
-      "path": "dynamic.core/2.1.5.8",
-      "hashPath": "dynamic.core.2.1.5.8.nupkg.sha512"
+      "sha512": "sha512-RVgdk/RgrMohFipM0oHLaOE8XyBNTbeqVVqDASz60rZvm6nybb+DeZonrDSnTouS8JcN5O5FpsvTEegB3Ugs5A==",
+      "path": "dynamic.core/2.1.6.2",
+      "hashPath": "dynamic.core.2.1.6.2.nupkg.sha512"
     },
     "Microsoft.CSharp/4.4.1": {
       "type": "package",

@@ -1,18 +1,29 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "290102d2dc0105c4db2b0e716aa78104261a1a13"
+    "signature": "de1d5e92e6ccd8e7517c366b58b348820748eaa4"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.1": {
       "Dcp.Net.MQ.Rpc.TestIn/1.0.0": {
         "dependencies": {
-          "Dcp.Net.MQ.Rpc": "1.0.0.8",
-          "PolicyCalculator.Plugin.Contract": "1.0.0.1"
+          "Acb.Plugin.PrivilegeManage.Constract": "1.0.0.16",
+          "Dcp.Net.MQ.Rpc": "1.0.1.1"
         },
         "runtime": {
           "Dcp.Net.MQ.Rpc.TestIn.dll": {}
+        }
+      },
+      "Acb.Plugin.PrivilegeManage.Constract/1.0.0.16": {
+        "dependencies": {
+          "Dcp.Net.MQ.Rpc": "1.0.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Acb.Plugin.PrivilegeManage.Constract.dll": {
+            "assemblyVersion": "1.0.0.16",
+            "fileVersion": "1.0.0.16"
+          }
         }
       },
       "CacheManager.Core/1.1.2": {
@@ -35,7 +46,7 @@
           }
         }
       },
-      "Dynamic.Core/2.1.5.8": {
+      "Dynamic.Core/2.1.6.1": {
         "dependencies": {
           "CacheManager.Microsoft.Extensions.Caching.Memory": "1.1.2",
           "Microsoft.CSharp": "4.4.1",
@@ -50,8 +61,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/Dynamic.Core.dll": {
-            "assemblyVersion": "2.1.5.8",
-            "fileVersion": "2.1.5.8"
+            "assemblyVersion": "2.1.6.1",
+            "fileVersion": "2.1.6.1"
           }
         }
       },
@@ -943,38 +954,30 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "Dcp.Net.MQ.RabbitMQ/1.0.0.5": {
+      "Dcp.Net.MQ.RabbitMQ/1.0.0.6": {
         "dependencies": {
-          "Geek.Net.MQ": "1.0.0",
+          "Geek.Net.MQ": "1.0.0.2",
           "RabbitMQ.Client": "5.1.0"
         },
         "runtime": {
           "Dcp.Net.MQ.RabbitMQ.dll": {}
         }
       },
-      "Dcp.Net.MQ.Rpc/1.0.0.8": {
+      "Dcp.Net.MQ.Rpc/1.0.1.1": {
         "dependencies": {
-          "Dcp.Net.MQ.RabbitMQ": "1.0.0.5",
+          "Dcp.Net.MQ.RabbitMQ": "1.0.0.6",
           "System.Reflection.Emit": "4.3.0"
         },
         "runtime": {
           "Dcp.Net.MQ.Rpc.dll": {}
         }
       },
-      "Geek.Net.MQ/1.0.0": {
+      "Geek.Net.MQ/1.0.0.2": {
         "dependencies": {
-          "Dynamic.Core": "2.1.5.8"
+          "Dynamic.Core": "2.1.6.1"
         },
         "runtime": {
           "Geek.Net.MQ.dll": {}
-        }
-      },
-      "PolicyCalculator.Plugin.Contract/1.0.0.1": {
-        "runtime": {
-          "PolicyCalculator.Plugin.Contract.dll": {
-            "assemblyVersion": "1.0.0.1",
-            "fileVersion": "1.0.0.1"
-          }
         }
       }
     }
@@ -984,6 +987,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Acb.Plugin.PrivilegeManage.Constract/1.0.0.16": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IkWQ1CYicnoO57PcsU8bfo/0mwcgcFE/K/tf2LpROm7kegv4tAJ5VfDMOVd5drmx5gnX0ctg/zYINIYWoOrkcA==",
+      "path": "acb.plugin.privilegemanage.constract/1.0.0.16",
+      "hashPath": "acb.plugin.privilegemanage.constract.1.0.0.16.nupkg.sha512"
     },
     "CacheManager.Core/1.1.2": {
       "type": "package",
@@ -999,12 +1009,12 @@
       "path": "cachemanager.microsoft.extensions.caching.memory/1.1.2",
       "hashPath": "cachemanager.microsoft.extensions.caching.memory.1.1.2.nupkg.sha512"
     },
-    "Dynamic.Core/2.1.5.8": {
+    "Dynamic.Core/2.1.6.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1W40yfpEk68fuSfaBMf7NQZYRYclMUoR6pmzido4IKbz1s2BSAxKOXFvSZV2ObQCuDr4ng4nf02A3b3OjObqdA==",
-      "path": "dynamic.core/2.1.5.8",
-      "hashPath": "dynamic.core.2.1.5.8.nupkg.sha512"
+      "sha512": "sha512-Uz9zZ1VB8EYE2ZJLVOmqEtsivSb9+9th7iIgIt0uoxNtA+tuQ8ZF2azy8r8Zp+ROUVvm79UBI3awobQFCoW5XA==",
+      "path": "dynamic.core/2.1.6.1",
+      "hashPath": "dynamic.core.2.1.6.1.nupkg.sha512"
     },
     "Microsoft.CSharp/4.4.1": {
       "type": "package",
@@ -1587,23 +1597,18 @@
       "path": "system.threading.timer/4.3.0",
       "hashPath": "system.threading.timer.4.3.0.nupkg.sha512"
     },
-    "Dcp.Net.MQ.RabbitMQ/1.0.0.5": {
+    "Dcp.Net.MQ.RabbitMQ/1.0.0.6": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Dcp.Net.MQ.Rpc/1.0.0.8": {
+    "Dcp.Net.MQ.Rpc/1.0.1.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Geek.Net.MQ/1.0.0": {
+    "Geek.Net.MQ/1.0.0.2": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "PolicyCalculator.Plugin.Contract/1.0.0.1": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

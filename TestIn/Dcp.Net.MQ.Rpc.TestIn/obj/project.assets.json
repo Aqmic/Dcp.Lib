@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "Acb.Plugin.PrivilegeManage.Constract/1.0.0.16": {
+        "type": "package",
+        "dependencies": {
+          "Dcp.Net.MQ.Rpc": "1.0.1.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Acb.Plugin.PrivilegeManage.Constract.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Acb.Plugin.PrivilegeManage.Constract.dll": {}
+        }
+      },
       "CacheManager.Core/1.1.2": {
         "type": "package",
         "dependencies": {
@@ -28,7 +40,7 @@
           "lib/netstandard1.3/CacheManager.Microsoft.Extensions.Caching.Memory.dll": {}
         }
       },
-      "Dynamic.Core/2.1.5.9": {
+      "Dynamic.Core/2.1.6.2": {
         "type": "package",
         "dependencies": {
           "CacheManager.Microsoft.Extensions.Caching.Memory": "1.1.2",
@@ -1565,11 +1577,11 @@
           "ref/netstandard1.2/System.Threading.Timer.dll": {}
         }
       },
-      "Dcp.Net.MQ.RabbitMQ/1.0.0.6": {
+      "Dcp.Net.MQ.RabbitMQ/1.0.0.7": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Geek.Net.MQ": "1.0.0.1",
+          "Geek.Net.MQ": "1.0.0.3",
           "RabbitMQ.Client": "5.1.0"
         },
         "compile": {
@@ -1579,11 +1591,11 @@
           "bin/placeholder/Dcp.Net.MQ.RabbitMQ.dll": {}
         }
       },
-      "Dcp.Net.MQ.Rpc/1.0.0.9": {
+      "Dcp.Net.MQ.Rpc/1.0.1.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Dcp.Net.MQ.RabbitMQ": "1.0.0.6",
+          "Dcp.Net.MQ.RabbitMQ": "1.0.0.7",
           "System.Reflection.Emit": "4.3.0"
         },
         "compile": {
@@ -1593,11 +1605,11 @@
           "bin/placeholder/Dcp.Net.MQ.Rpc.dll": {}
         }
       },
-      "Geek.Net.MQ/1.0.0.1": {
+      "Geek.Net.MQ/1.0.0.3": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Dynamic.Core": "2.1.5.9"
+          "Dynamic.Core": "2.1.6.2"
         },
         "compile": {
           "bin/placeholder/Geek.Net.MQ.dll": {}
@@ -1609,6 +1621,16 @@
     }
   },
   "libraries": {
+    "Acb.Plugin.PrivilegeManage.Constract/1.0.0.16": {
+      "sha512": "IkWQ1CYicnoO57PcsU8bfo/0mwcgcFE/K/tf2LpROm7kegv4tAJ5VfDMOVd5drmx5gnX0ctg/zYINIYWoOrkcA==",
+      "type": "package",
+      "path": "acb.plugin.privilegemanage.constract/1.0.0.16",
+      "files": [
+        "acb.plugin.privilegemanage.constract.1.0.0.16.nupkg.sha512",
+        "acb.plugin.privilegemanage.constract.nuspec",
+        "lib/netstandard2.0/Acb.Plugin.PrivilegeManage.Constract.dll"
+      ]
+    },
     "CacheManager.Core/1.1.2": {
       "sha512": "deSLMAgnf1sNpX7R2sDGGbpxvw1+yiyK180dYSadtJjCpXBgMiTkwGpmC1RI15ZmDjUAf6uv9kS28DTOVAlNlg==",
       "type": "package",
@@ -1637,12 +1659,12 @@
         "lib/netstandard1.3/CacheManager.Microsoft.Extensions.Caching.Memory.xml"
       ]
     },
-    "Dynamic.Core/2.1.5.9": {
-      "sha512": "g4qC1qi1g86KEXOBxjJxyVsMtEPGM2OCHETjeGpmrzA0q7MH3F6IWeGzm+B3FJK5V4ItBzQWfUtIMnUrx6y8QA==",
+    "Dynamic.Core/2.1.6.2": {
+      "sha512": "RVgdk/RgrMohFipM0oHLaOE8XyBNTbeqVVqDASz60rZvm6nybb+DeZonrDSnTouS8JcN5O5FpsvTEegB3Ugs5A==",
       "type": "package",
-      "path": "dynamic.core/2.1.5.9",
+      "path": "dynamic.core/2.1.6.2",
       "files": [
-        "dynamic.core.2.1.5.9.nupkg.sha512",
+        "dynamic.core.2.1.6.2.nupkg.sha512",
         "dynamic.core.nuspec",
         "lib/netstandard2.0/Dynamic.Core.dll"
       ]
@@ -5370,17 +5392,17 @@
         "system.threading.timer.nuspec"
       ]
     },
-    "Dcp.Net.MQ.RabbitMQ/1.0.0.6": {
+    "Dcp.Net.MQ.RabbitMQ/1.0.0.7": {
       "type": "project",
       "path": "../../MQ/Dcp.Net.MQ.RabbitMQ/Dcp.Net.MQ.RabbitMQ.csproj",
       "msbuildProject": "../../MQ/Dcp.Net.MQ.RabbitMQ/Dcp.Net.MQ.RabbitMQ.csproj"
     },
-    "Dcp.Net.MQ.Rpc/1.0.0.9": {
+    "Dcp.Net.MQ.Rpc/1.0.1.2": {
       "type": "project",
       "path": "../../Rpc/Dcp.Net..MQ.Rpc/Dcp.Net.MQ.Rpc.csproj",
       "msbuildProject": "../../Rpc/Dcp.Net..MQ.Rpc/Dcp.Net.MQ.Rpc.csproj"
     },
-    "Geek.Net.MQ/1.0.0.1": {
+    "Geek.Net.MQ/1.0.0.3": {
       "type": "project",
       "path": "../../MQ/Geek.Net.MQ/Geek.Net.MQ.csproj",
       "msbuildProject": "../../MQ/Geek.Net.MQ/Geek.Net.MQ.csproj"
@@ -5388,7 +5410,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "Dcp.Net.MQ.Rpc >= 1.0.0.9",
+      "Acb.Plugin.PrivilegeManage.Constract >= 1.0.0.16",
+      "Dcp.Net.MQ.Rpc >= 1.0.1.2",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
@@ -5444,6 +5467,10 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "Acb.Plugin.PrivilegeManage.Constract": {
+            "target": "Package",
+            "version": "[1.0.0.16, )"
+          },
           "Microsoft.NETCore.App": {
             "target": "Package",
             "version": "[2.1.0, )",

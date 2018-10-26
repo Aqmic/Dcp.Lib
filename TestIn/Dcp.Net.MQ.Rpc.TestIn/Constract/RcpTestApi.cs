@@ -20,6 +20,16 @@ namespace Dcp.Net.MQ.Rpc.TestIn.Constract
             //  throw new NotImplementedException();
         }
 
+        public async Task<ResultModel> Test(UserInfo userInfo)
+        {
+            Console.WriteLine(userInfo.Name);
+            return new ResultModel() {
+                data=userInfo,
+                state=true,
+                msg="ok"
+            };
+        }
+
         public Task<ResultModel> WriteLine(string contentStr)
         {
             return (new TaskFactory()).StartNew<ResultModel>(() =>

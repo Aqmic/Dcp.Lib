@@ -12,5 +12,8 @@ namespace Dcp.Net.MQ.Rpc.TestIn.Constract
        Task<string> ConsoleTest();
 
        Task<ResultModel> WriteLine(string contentStr);
+
+
+        Task<ResultModel> Test(UserInfo userInfo);
     }
 }

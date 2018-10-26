@@ -9,11 +9,14 @@ using Dynamic.Core.Service;
 using Dcp.Net.MQ.Rpc.Core;
 using Dcp.Net.MQ.Rpc.Handler;
 using Dcp.Net.MQ.Rpc.Extions;
+using Dynamic.Core.Log;
+using Dynamic.Core.Reflection;
 
 namespace Dcp.Net.MQ.Rpc.Default
 {
     public class DefaultRegisterService : IRegisterService
     {
+        private static readonly ILogger _logger=LoggerManager.GetLogger("DefaultRegisterService");
         private static readonly object _lockRouteObj = new object();
         private static readonly object _lockRegisterObj = new object();
         private static readonly IList<string> ActionRouteKeyList = new List<string>();
@@ -119,8 +122,21 @@ namespace Dcp.Net.MQ.Rpc.Default
             {
                 throw new KeyNotFoundException($"路由地址没有找到【{actionKey}】！");
             }
+
           
-            var rtnObj = callMethodInfo.Invoke(serviceValue, actionDes.GetParamters());
+            var actionParamters = actionDes.GetParamters(callMethodInfo);
+            object rtnObj = null;
+            try
+            {
+                var dynamicDelegate = DynamicMethodTool.GetMethodInvoker(callMethodInfo);
+                rtnObj = dynamicDelegate(serviceValue,actionDes.GetParamters());
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex.ToString());
+                throw;
+            }
+            
             return rtnObj;
         }
     }

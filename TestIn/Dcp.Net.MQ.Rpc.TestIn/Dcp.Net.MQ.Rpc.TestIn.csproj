@@ -6,13 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Rpc\Dcp.Net..MQ.Rpc\Dcp.Net.MQ.Rpc.csproj" />
+    <PackageReference Include="Acb.Plugin.PrivilegeManage.Constract" Version="1.0.0.16" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Acb.Plugin.PrivilegeManage.Constract">
-      <HintPath>..\..\..\..\..\ICB\ACB\Acb.Library.Framework\Acb.MiddleWare\WebApi\Acb.MiddleWare.Web\publish\DynamicLib\Acb.Plugin.PrivilegeManage.Constract.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\Rpc\Dcp.Net..MQ.Rpc\Dcp.Net.MQ.Rpc.csproj" />
   </ItemGroup>
 
 </Project>

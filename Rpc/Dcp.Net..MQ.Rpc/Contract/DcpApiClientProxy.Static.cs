@@ -2,6 +2,7 @@
 using Dcp.Net.MQ.Rpc.Core;
 using Dcp.Net.MQ.Rpc.Extions;
 using Dcp.Net.MQ.Rpc.Handler.Internal;
+using Dynamic.Core.Service;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -119,6 +120,12 @@ namespace Dcp.Net.MQ.Rpc.Contract
         {
             var config = new DcpApiConfig();
             config.BatInitProperty(_DefaultConfig);
+
+            var dcpService=IocUnity.Get<TInterface>();
+            if (dcpService != null)
+            {
+                return dcpService;
+            }
             return Create<TInterface>(config);
         }
 

@@ -7,6 +7,9 @@ using System.Linq;
 using Geek.Net.MQ;
 using Dynamic.Core.Runtime;
 using Dynamic.Core.Comm;
+using Newtonsoft.Json.Linq;
+using System.Reflection;
+using Dynamic.Core.Service;
 
 namespace Dcp.Net.MQ.Rpc.Extions
 {
@@ -48,19 +51,86 @@ namespace Dcp.Net.MQ.Rpc.Extions
             }
             return routeAddress;
         }
-        public static object[] GetParamters(this ActionSerDes actionSerDes)
+        public static object[] GetParamters(this ActionSerDes actionSerDes,MethodInfo methodInfo=null)
         {
             IList<object> paramterList = new List<object>();
             if (actionSerDes != null && actionSerDes.ParamterInfoArray != null)
             {
                 foreach (var item in actionSerDes.ParamterInfoArray)
                 {
-                    paramterList.Add(item.Value);
+                    Type itemType = item.GetRType(methodInfo);
+                    object itemValue = item.Value;
+                    if (itemType.IsValueType)
+                    {
+                        //值类型
+                        itemValue = Convert.ChangeType(item.Value, itemType);
+                    }
+                    else if (itemValue != null)
+                    {
+                        JObject jResult = itemValue as JObject;
+                        if (jResult != null)
+                        {
+                            MethodInfo _JsonMethod = typeof(SerializationUtility).GetMethods().FirstOrDefault(f => f.Name == "JsonToObject" && f.IsGenericMethodDefinition);
+                            _JsonMethod = _JsonMethod.MakeGenericMethod(itemType);
+                            itemValue= _JsonMethod.Invoke(null,new object[] { jResult.ToString() });
+                            //  var dmd= Dynamic.Core.Reflection.DynamicMethodTool.GetDynamicMethodDelegate(_JsonMethod, _JsonMethod.GetGenericArguments());
+                            // itemValue=dmd.DynamicInvoke(jResult.ToString());
+                            Type type = itemValue.GetType();
+                            Console.WriteLine(type.FullName);
+
+                        }
+                    }
+                    paramterList.Add(itemValue);
+                }
+            }
+            return paramterList.ToArray();
+        }
+        public static Type[] GetParamterTypes(this ActionSerDes actionSerDes, MethodInfo methodInfo = null)
+        {
+            IList<Type> paramterList = new List<Type>();
+            if (actionSerDes != null && actionSerDes.ParamterInfoArray != null)
+            {
+                foreach (var item in actionSerDes.ParamterInfoArray)
+                {
+                    paramterList.Add(item.GetRType(methodInfo));
                 }
             }
             return paramterList.ToArray();
         }
 
-       
+
+        public static Type GetRType(this ParamterInfoDes paramterInfoDes, MethodInfo methodInfo = null)
+        {
+
+            Type itemType = null;
+
+            if (methodInfo != null)
+            {
+                var parameterInfo = methodInfo.GetParameters().FirstOrDefault(f => f.ParameterType.FullName == paramterInfoDes.TypeFullName);
+                if (parameterInfo == null)
+                {
+                    throw new NullReferenceException($"{methodInfo.Name},无法被路由！");
+                }
+                itemType = parameterInfo.ParameterType;
+            }
+            else
+            {
+                if (paramterInfoDes.Value != null)
+                {
+                    itemType = paramterInfoDes.Value.GetType();
+                }
+                else
+                {
+                    itemType = Type.GetType(paramterInfoDes.TypeFullName);
+                }
+                if (itemType.IsValueType)
+                {
+                    itemType = Type.GetType(paramterInfoDes.TypeFullName);
+                }
+            }
+            return itemType;
+        }
+
+
     }
 }

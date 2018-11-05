@@ -7,29 +7,34 @@ namespace Dcp.Net.MQ.Rpc.Exceptions
 {
     public class RpcRemotingException : Exception
     {
-        private string messagePro;
-        private string stackTrace;
         public ActionSerDes CallInfo { get; set; }
+
+       public string OriMessage { get; set; }
         public override string Message
         {
             get
             {
-                return messagePro;
+                return this.OriMessage;
             }
         }
         public override string Source { get; set; }
+
+        public  string OriInnerExceptionStr { get; set; }
+
+        public string OriStackTrace { get; set; }
         public override string StackTrace
         {
             get
             {
-                return stackTrace;
+                return this.OriStackTrace;
             }
         }
         public RpcRemotingException(string msg, string source, string stackTrace)
         {
-            this.messagePro = msg;
+          
             this.Source = source;
-            this.stackTrace = stackTrace;
+            this.OriMessage = msg;
+            this.OriStackTrace = source;
         }
     }
 }

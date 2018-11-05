@@ -141,7 +141,7 @@ namespace Dcp.Net.MQ.Rpc
                 RpcRemotingException rpcRemotingException = new RpcRemotingException(ex.Message, ex.Source, ex.StackTrace)
                 {
                     CallInfo = msgRequest.ActionInfo,
-                    Source = ex.ToString(),
+                    OriInnerExceptionStr = ex.ToString(),
 
                 };
                 dcpResponseMessage.RemotingException = rpcRemotingException;

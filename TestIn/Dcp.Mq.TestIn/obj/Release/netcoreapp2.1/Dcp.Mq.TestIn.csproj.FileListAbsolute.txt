@@ -21,3 +21,4 @@ D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Mq.TestIn\obj\Release\netcoreapp2
 D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Mq.TestIn\obj\Release\netcoreapp2.1\Dcp.Mq.TestIn.AssemblyInfo.cs
 D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Mq.TestIn\obj\Release\netcoreapp2.1\Dcp.Mq.TestIn.dll
 D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Mq.TestIn\obj\Release\netcoreapp2.1\Dcp.Mq.TestIn.pdb
+D:\WorkSpace\opensource\Dcp\Dcp.Lib\TestIn\Dcp.Mq.TestIn\bin\Release\netcoreapp2.1\Acb.Contracts.IntegralShop.dll

@@ -103,10 +103,9 @@ namespace Dcp.Net.MQ.Rpc.Core
                 this.Result = await apiAction.Return.Attribute.GetTaskResult(this).ConfigureAwait(false);
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
-                this.Exception = ex;
-                return false;
+                throw;
             }
         }
 

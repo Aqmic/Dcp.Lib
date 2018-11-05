@@ -29,7 +29,18 @@ namespace Dcp.Net.MQ.Rpc.TestIn.Constract
                 msg="ok"
             };
         }
-
+        public Task<ResultModel> WriteLineList(List<string> contentStr)
+        {
+            contentStr = null;
+            foreach (var item in contentStr)
+            {
+                Console.WriteLine(item);
+            }
+            return (new TaskFactory()).StartNew<ResultModel>(() =>
+            {
+                return new ResultModel();
+            });
+        }
         public Task<ResultModel> WriteLine(string contentStr)
         {
             return (new TaskFactory()).StartNew<ResultModel>(() =>

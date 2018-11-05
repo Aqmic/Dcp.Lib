@@ -68,7 +68,7 @@ namespace Dcp.Net.MQ.Rpc.Extions
                     }
                     else if (itemValue != null)
                     {
-                        JObject jResult = itemValue as JObject;
+                        JContainer jResult = itemValue as JContainer;
                         if (jResult != null)
                         {
                             MethodInfo _JsonMethod = typeof(SerializationUtility).GetMethods().FirstOrDefault(f => f.Name == "JsonToObject" && f.IsGenericMethodDefinition);

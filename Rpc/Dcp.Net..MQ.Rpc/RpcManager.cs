@@ -138,9 +138,11 @@ namespace Dcp.Net.MQ.Rpc
             catch (Exception ex)
             {
                 _logger.Error(ex.ToString());
-                RpcRemotingException rpcRemotingException = new RpcRemotingException() {
-                    CallInfo= msgRequest.ActionInfo,                    
+                RpcRemotingException rpcRemotingException = new RpcRemotingException(ex.Message, ex.Source, ex.StackTrace)
+                {
+                    CallInfo = msgRequest.ActionInfo,
                     Source = ex.ToString(),
+
                 };
                 dcpResponseMessage.RemotingException = rpcRemotingException;
                 dcpResponseMessage.StatusCode = System.Net.HttpStatusCode.InternalServerError;

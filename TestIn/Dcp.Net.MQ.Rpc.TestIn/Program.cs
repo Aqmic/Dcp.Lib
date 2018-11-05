@@ -1,5 +1,6 @@
 ﻿namespace Dcp.Net.MQ.Rpc.TestIn
 {
+    using Acb.Contracts.IntegralShop;
     using Acb.Plugin.PrivilegeManage.Constract;
     using Dcp.Net.MQ.Rpc;
     using Dcp.Net.MQ.Rpc.Config;
@@ -17,6 +18,7 @@
     using Geek.Net.MQ.Config;
     
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.IO;
     using System.Net.Http;
@@ -45,39 +47,57 @@
                 rpcManager.RegisterAssembly(typeof(Program).Assembly);
                 rpcManager.StartServer();
                 rpcManager.CreateClient();
-                var rpcTestApi = DcpApiClientProxy.Create<IRpcTestApi>();
+                var rpcTestApi = DcpApiClientProxy.Create<IRpcTestApi>(true);
 
-                rpcTestApi.Test(new UserInfo() {
+                //rpcTestApi.Test(new UserInfo() {
 
-                    Name="asdfsadfsdf",
-                    Des="234234234"
+                //    Name="asdfsadfsdf",
+                //    Des="234234234"
 
-                });
-
-                var jsqApi = DcpApiClientProxy.Create<IPrivilegeManageConstract>();
-
-               
-
-                while (Console.ReadLine()!="exit")
+                // });
+                while (Console.ReadLine() != "exit")
                 {
                     try
                     {
-                        //rpcTestApi.Test(new UserInfo()
-                        //{
-
-                        //    Name = "asdfsadfsdf",
-                        //    Des = "234234234"
-
-                        //});
-
-                         var abc = jsqApi.AddUser(new Acb.Plugin.PrivilegeManage.Constract.Models.Dtos.User.UserAddDto() {
-                             Name="testwefawerfrgldljkd"
-                         }).Result;
+                        var xxx = rpcTestApi.WriteLineList(new List<string>() { "23423423", "gfgdaggf" }).Result;
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.ToString());
+                        var ere = ex.ToString();
                     }
+                 
+
+                    var abc = DcpApiClientProxy.Create<IPrivilegeManageConstract>(true);
+                }
+             //   var jjj= abc.GetUsers(new List<string>() { "488985845b4fc00512f008d6433dd29c" });
+               // var jjj= abc.Assets("rinidaye", "10000",100).Result;
+
+             //   var abcdef = Dynamic.Core.Runtime.SerializationUtility.ObjectToJson(jjj);
+
+                //var jsqApi = DcpApiClientProxy.Create<IPrivilegeManageConstract>();
+
+               
+
+                //while (Console.ReadLine()!="exit")
+                //{
+                //    try
+                //    {
+                //        //rpcTestApi.Test(new UserInfo()
+                //        //{
+
+                //        //    Name = "asdfsadfsdf",
+                //        //    Des = "234234234"
+
+                //        //});
+
+                //         var abc = jsqApi.AddUser(new Acb.Plugin.PrivilegeManage.Constract.Models.Dtos.User.UserAddDto() {
+                //             Name="testwefawerfrgldljkd"
+                //         }).Result;
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        Console.WriteLine(ex.ToString());
+                //    }
                     
                    // var jjj = jsqApi.GetSubOrganizationAsPage("2792bab385f8cf2ed8ae08d639059b59", 1, 100);
                     //var abc = jsqApi.GetSubOrganization().Result;
@@ -86,10 +106,10 @@
                     //{
                     //    Console.WriteLine(item.NiceName + $"【{item.Id}】");
                     //}
-                    Console.WriteLine();
+                  //  Console.WriteLine();
                  //   var result=rpcTestApi.WriteLine("测试WriteLine方法=》" + DateTime.Now).Result;
                  /// Console.WriteLine("client"+result.data);
-                }
+              //  }
                 
             }
             catch (Exception ex)

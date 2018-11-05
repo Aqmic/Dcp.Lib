@@ -116,15 +116,18 @@ namespace Dcp.Net.MQ.Rpc.Contract
         /// <exception cref="NotSupportedException"></exception>
         /// <exception cref="TypeLoadException"></exception>
         /// <returns></returns>
-        public static TInterface Create<TInterface>() where TInterface : class, IDcpApi
+        public static TInterface Create<TInterface>(bool isForceProxy=false) where TInterface : class, IDcpApi
         {
             var config = new DcpApiConfig();
             config.BatInitProperty(_DefaultConfig);
 
-            var dcpService=IocUnity.Get<TInterface>();
-            if (dcpService != null)
+            if (!isForceProxy)
             {
-                return dcpService;
+                var dcpService = IocUnity.Get<TInterface>();
+                if (dcpService != null)
+                {
+                    return dcpService;
+                }
             }
             return Create<TInterface>(config);
         }

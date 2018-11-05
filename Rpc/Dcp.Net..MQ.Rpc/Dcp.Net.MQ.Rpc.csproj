@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.1.4</Version>
+    <Version>1.0.1.6</Version>
     <Description>RpcManager rpcManager = new RpcManager(_mqAddress, "demo测试131243");
                 rpcManager.RegisterAssembly(typeof(Program).Assembly);
                 rpcManager.StartServer();
@@ -15,9 +15,11 @@
                   var result=rpcTestApi.WriteLine("测试WriteLine方法=》" + DateTime.Now).Result;
                   Console.WriteLine("client"+result.data);
                 }</Description>
-    <PackageReleaseNotes>优化反射性能，通过动态构建表达式树替代反射，json反射优化</PackageReleaseNotes>
-    <AssemblyVersion>1.0.1.4</AssemblyVersion>
-    <FileVersion>1.0.1.4</FileVersion>
+    <PackageReleaseNotes>优化反射性能，通过动态构建表达式树替代反射，json反射优化
+
+优化异常抛出</PackageReleaseNotes>
+    <AssemblyVersion>1.0.1.6</AssemblyVersion>
+    <FileVersion>1.0.1.6</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -145,7 +145,7 @@ namespace Dcp.Net.MQ.Rpc.Core
                 await context.ExecFiltersAsync(filter => filter.OnBeginRequestAsync).ConfigureAwait(false);
                 var state = await context.ExecRequestAsync().ConfigureAwait(false);
                 await context.ExecFiltersAsync(filter => filter.OnEndRequestAsync).ConfigureAwait(false);
-                JObject jResult = context.Result as JObject;
+                JContainer jResult = context.Result as JContainer;
                 if (jResult != null)
                 {
                    return Dynamic.Core.Runtime.SerializationUtility.JsonToObject<TResult>(jResult.ToString());

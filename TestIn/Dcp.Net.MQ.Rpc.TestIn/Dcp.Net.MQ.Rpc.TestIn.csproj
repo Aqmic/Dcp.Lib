@@ -6,11 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Acb.Plugin.PrivilegeManage.Constract" Version="1.0.0.16" />
+    <PackageReference Include="Acb.Core" Version="1.5.5" />
+    <PackageReference Include="Acb.Plugin.PrivilegeManage.Constract" Version="1.0.0.27" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Rpc\Dcp.Net..MQ.Rpc\Dcp.Net.MQ.Rpc.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Acb.Contracts.IntegralShop">
+      <HintPath>bin\Debug\netcoreapp2.1\Acb.Contracts.IntegralShop.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

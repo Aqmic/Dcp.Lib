@@ -12,6 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Acb.Core" Version="1.5.5" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.2.1" />
     <PackageReference Include="MSTest.TestFramework" Version="1.2.1" />
@@ -21,6 +22,12 @@
   <ItemGroup>
     <ProjectReference Include="..\..\MQ\Dcp.Net.MQ.RabbitMQ\Dcp.Net.MQ.RabbitMQ.csproj" />
     <ProjectReference Include="..\..\MQ\Dcp.Net.MQ.RocketMQ\Dcp.Net.MQ.RocketMQ.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Acb.Contracts.IntegralShop">
+      <HintPath>bin\Debug\netcoreapp2.1\Acb.Contracts.IntegralShop.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

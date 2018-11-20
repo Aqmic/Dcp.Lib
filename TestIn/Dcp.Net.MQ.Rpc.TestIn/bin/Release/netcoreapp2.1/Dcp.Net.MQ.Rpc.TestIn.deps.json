@@ -10,7 +10,7 @@
         "dependencies": {
           "Acb.Core": "1.5.5",
           "Acb.Plugin.PrivilegeManage.Constract": "1.0.0.27",
-          "Dcp.Net.MQ.Rpc": "1.0.1.6",
+          "Dcp.Net.MQ.Rpc": "1.0.1.7",
           "Acb.Contracts.IntegralShop": "1.0.0.0"
         },
         "runtime": {
@@ -51,7 +51,7 @@
           "Acb.MiddleWare.Data": "1.0.0.6",
           "Acb.MiddleWare.Net": "1.0.0",
           "AutoMapper": "7.0.1",
-          "Dcp.Net.MQ.Rpc": "1.0.1.6",
+          "Dcp.Net.MQ.Rpc": "1.0.1.7",
           "Dynamic.Core": "2.1.6.2",
           "Microsoft.AspNetCore.Cors": "2.1.1",
           "Microsoft.AspNetCore.Http.Abstractions": "2.1.1",
@@ -92,7 +92,7 @@
       "Acb.Plugin.PrivilegeManage.Constract/1.0.0.27": {
         "dependencies": {
           "Acb.MiddleWare.Core": "1.0.2.3",
-          "Dcp.Net.MQ.Rpc": "1.0.1.6"
+          "Dcp.Net.MQ.Rpc": "1.0.1.7"
         },
         "runtime": {
           "lib/netstandard2.0/Acb.Plugin.PrivilegeManage.Constract.dll": {
@@ -2081,7 +2081,7 @@
           "Dcp.Net.MQ.RabbitMQ.dll": {}
         }
       },
-      "Dcp.Net.MQ.Rpc/1.0.1.6": {
+      "Dcp.Net.MQ.Rpc/1.0.1.7": {
         "dependencies": {
           "Dcp.Net.MQ.RabbitMQ": "1.0.0.7",
           "System.Reflection.Emit": "4.3.0"
@@ -3365,7 +3365,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Dcp.Net.MQ.Rpc/1.0.1.6": {
+    "Dcp.Net.MQ.Rpc/1.0.1.7": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

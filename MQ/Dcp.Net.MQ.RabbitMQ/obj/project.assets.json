@@ -28,7 +28,7 @@
           "lib/netstandard1.3/CacheManager.Microsoft.Extensions.Caching.Memory.dll": {}
         }
       },
-      "Dynamic.Core/2.1.6.2": {
+      "Dynamic.Core/2.1.6.3": {
         "type": "package",
         "dependencies": {
           "CacheManager.Microsoft.Extensions.Caching.Memory": "1.1.2",
@@ -1397,11 +1397,11 @@
           "ref/netstandard1.2/System.Threading.Timer.dll": {}
         }
       },
-      "Geek.Net.MQ/1.0.0.3": {
+      "Geek.Net.MQ/1.0.0.4": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Dynamic.Core": "2.1.6.2"
+          "Dynamic.Core": "2.1.6.3"
         },
         "compile": {
           "bin/placeholder/Geek.Net.MQ.dll": {}
@@ -1441,12 +1441,12 @@
         "lib/netstandard1.3/CacheManager.Microsoft.Extensions.Caching.Memory.xml"
       ]
     },
-    "Dynamic.Core/2.1.6.2": {
-      "sha512": "RVgdk/RgrMohFipM0oHLaOE8XyBNTbeqVVqDASz60rZvm6nybb+DeZonrDSnTouS8JcN5O5FpsvTEegB3Ugs5A==",
+    "Dynamic.Core/2.1.6.3": {
+      "sha512": "9C1Xrr9RHBRNQ8+V8SOg0904PlMIqll/85GMIKeSegD4xCgtUBlGv/UMxls69RiaRmYm6BF5QUl1cPQ4qeGwnw==",
       "type": "package",
-      "path": "dynamic.core/2.1.6.2",
+      "path": "dynamic.core/2.1.6.3",
       "files": [
-        "dynamic.core.2.1.6.2.nupkg.sha512",
+        "dynamic.core.2.1.6.3.nupkg.sha512",
         "dynamic.core.nuspec",
         "lib/netstandard2.0/Dynamic.Core.dll"
       ]
@@ -4860,7 +4860,7 @@
         "system.threading.timer.nuspec"
       ]
     },
-    "Geek.Net.MQ/1.0.0.3": {
+    "Geek.Net.MQ/1.0.0.4": {
       "type": "project",
       "path": "../Geek.Net.MQ/Geek.Net.MQ.csproj",
       "msbuildProject": "../Geek.Net.MQ/Geek.Net.MQ.csproj"
@@ -4868,7 +4868,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Geek.Net.MQ >= 1.0.0.3",
+      "Geek.Net.MQ >= 1.0.0.4",
       "NETStandard.Library >= 2.0.3",
       "RabbitMQ.Client >= 5.1.0"
     ]

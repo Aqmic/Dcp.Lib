@@ -66,7 +66,7 @@
           "lib/netstandard1.6/Castle.Windsor.dll": {}
         }
       },
-      "Dynamic.Core/2.1.6.2": {
+      "Dynamic.Core/2.1.6.3": {
         "type": "package",
         "dependencies": {
           "CacheManager.Microsoft.Extensions.Caching.Memory": "1.1.2",
@@ -1673,7 +1673,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Dcp.Net": "2.0.1",
-          "Geek.Net.MQ": "1.0.0.3"
+          "Geek.Net.MQ": "1.0.0.4"
         },
         "compile": {
           "bin/placeholder/Dcp.Net.MQ.RocketMQ.dll": {}
@@ -1682,11 +1682,11 @@
           "bin/placeholder/Dcp.Net.MQ.RocketMQ.dll": {}
         }
       },
-      "Geek.Net.MQ/1.0.0.3": {
+      "Geek.Net.MQ/1.0.0.4": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Dynamic.Core": "2.1.6.2"
+          "Dynamic.Core": "2.1.6.3"
         },
         "compile": {
           "bin/placeholder/Geek.Net.MQ.dll": {}
@@ -1760,12 +1760,12 @@
         "readme.txt"
       ]
     },
-    "Dynamic.Core/2.1.6.2": {
-      "sha512": "RVgdk/RgrMohFipM0oHLaOE8XyBNTbeqVVqDASz60rZvm6nybb+DeZonrDSnTouS8JcN5O5FpsvTEegB3Ugs5A==",
+    "Dynamic.Core/2.1.6.3": {
+      "sha512": "9C1Xrr9RHBRNQ8+V8SOg0904PlMIqll/85GMIKeSegD4xCgtUBlGv/UMxls69RiaRmYm6BF5QUl1cPQ4qeGwnw==",
       "type": "package",
-      "path": "dynamic.core/2.1.6.2",
+      "path": "dynamic.core/2.1.6.3",
       "files": [
-        "dynamic.core.2.1.6.2.nupkg.sha512",
+        "dynamic.core.2.1.6.3.nupkg.sha512",
         "dynamic.core.nuspec",
         "lib/netstandard2.0/Dynamic.Core.dll"
       ]
@@ -5758,7 +5758,7 @@
       "path": "../../MQ/Dcp.Net.MQ.RocketMQ/Dcp.Net.MQ.RocketMQ.csproj",
       "msbuildProject": "../../MQ/Dcp.Net.MQ.RocketMQ/Dcp.Net.MQ.RocketMQ.csproj"
     },
-    "Geek.Net.MQ/1.0.0.3": {
+    "Geek.Net.MQ/1.0.0.4": {
       "type": "project",
       "path": "../../MQ/Geek.Net.MQ/Geek.Net.MQ.csproj",
       "msbuildProject": "../../MQ/Geek.Net.MQ/Geek.Net.MQ.csproj"
@@ -5767,7 +5767,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Dcp.Net.MQ.RocketMQ >= 1.0.0.1",
-      "Geek.Net.MQ >= 1.0.0.3",
+      "Geek.Net.MQ >= 1.0.0.4",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },

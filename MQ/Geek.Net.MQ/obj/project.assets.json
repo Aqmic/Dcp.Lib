@@ -28,7 +28,7 @@
           "lib/netstandard1.3/CacheManager.Microsoft.Extensions.Caching.Memory.dll": {}
         }
       },
-      "Dynamic.Core/2.1.6.2": {
+      "Dynamic.Core/2.1.6.3": {
         "type": "package",
         "dependencies": {
           "CacheManager.Microsoft.Extensions.Caching.Memory": "1.1.2",
@@ -698,12 +698,12 @@
         "lib/netstandard1.3/CacheManager.Microsoft.Extensions.Caching.Memory.xml"
       ]
     },
-    "Dynamic.Core/2.1.6.2": {
-      "sha512": "RVgdk/RgrMohFipM0oHLaOE8XyBNTbeqVVqDASz60rZvm6nybb+DeZonrDSnTouS8JcN5O5FpsvTEegB3Ugs5A==",
+    "Dynamic.Core/2.1.6.3": {
+      "sha512": "9C1Xrr9RHBRNQ8+V8SOg0904PlMIqll/85GMIKeSegD4xCgtUBlGv/UMxls69RiaRmYm6BF5QUl1cPQ4qeGwnw==",
       "type": "package",
-      "path": "dynamic.core/2.1.6.2",
+      "path": "dynamic.core/2.1.6.3",
       "files": [
-        "dynamic.core.2.1.6.2.nupkg.sha512",
+        "dynamic.core.2.1.6.3.nupkg.sha512",
         "dynamic.core.nuspec",
         "lib/netstandard2.0/Dynamic.Core.dll"
       ]
@@ -2814,7 +2814,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Dynamic.Core >= 2.1.6.2",
+      "Dynamic.Core >= 2.1.6.3",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -2824,7 +2824,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.0.3",
+    "version": "1.0.0.4",
     "restoreSettings": {
       "hideWarningsAndErrors": true
     },
@@ -2871,7 +2871,7 @@
         "dependencies": {
           "Dynamic.Core": {
             "target": "Package",
-            "version": "[2.1.6.2, )"
+            "version": "[2.1.6.3, )"
           },
           "NETStandard.Library": {
             "suppressParent": "All",

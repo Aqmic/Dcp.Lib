@@ -9,12 +9,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dynamic.Core" Version="2.1.6.2" />
+    <PackageReference Include="Dynamic.Core" Version="2.1.6.3" />
   </ItemGroup>
 
   <PropertyGroup>
     <NoWarn>$(NoWarn);NU1605</NoWarn>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0.3</Version>
+    <Version>1.0.0.4</Version>
+    <PackageReleaseNotes>update core</PackageReleaseNotes>
   </PropertyGroup>
 </Project>

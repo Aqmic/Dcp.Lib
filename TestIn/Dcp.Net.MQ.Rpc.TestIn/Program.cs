@@ -16,7 +16,7 @@
     using Dynamic.Core.Service;
     using Geek.Net.MQ;
     using Geek.Net.MQ.Config;
-    
+    using GlobPermissionVerificationPlugin.Constract;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
@@ -49,34 +49,59 @@
                 rpcManager.CreateClient();
                 var rpcTestApi = DcpApiClientProxy.Create<IRpcTestApi>(true);
 
-                //rpcTestApi.Test(new UserInfo() {
+                //var abc = rpcTestApi.Test(new UserInfo()
+                //{
 
-                //    Name="asdfsadfsdf",
-                //    Des="234234234"
+                //    Name = "asdfsadfsdf",
+                //    Des = "234234234"
 
-                // });
+                //});
+                //var jj = abc.Result;
+
+
                 while (Console.ReadLine() != "exit")
                 {
+
+
                     try
                     {
-                        var xxx = rpcTestApi.WriteLineList(new List<string>() { "23423423", "gfgdaggf" }).Result;
+                        //var xxx=DcpApiClientProxy.Create<IGlobPermissionVerificationPluginConstract>();
+                        // var xxxxxx = xxx.GetSession("5ebebb04-0caa-415d-b8bd-68bc716ec5be");
+                        var ewrer = DcpApiClientProxy.Create<IPrivilegeManageConstract>(true);
+                        var wer333 = ewrer.GetUsersOfInfo(new Acb.Plugin.PrivilegeManage.Constract.Models.Dtos.User.UserQueryPageDto()
+                        {
+                            Page = 1,
+                            Size = 1000,
+                            userQuery = new Acb.Plugin.PrivilegeManage.Constract.Models.Dtos.User.UserQueryDto()
+                            {
+                                OpenId = "o9MuI0-fi_eL8aKSlyTc1Bgjpprs",
+                                SystemId = "161722f8658fc420c26408d635cd7f66",
+                                State = 1
+                            }
+
+                        });
+                        var jjj = wer333.Result;
+                        var JJJsTR = Dynamic.Core.Runtime.SerializationUtility.ObjectToJson(jjj);
+                        Console.WriteLine(JJJsTR);
+                        // var xxx = rpcTestApi.WriteLineList(new List<string>() { "23423423", "gfgdaggf" }).Result;
                     }
                     catch (Exception ex)
                     {
                         var ere = ex.ToString();
+                        Console.WriteLine(ere);
                     }
-                 
+
 
                     var abc = DcpApiClientProxy.Create<IPrivilegeManageConstract>(true);
                 }
-             //   var jjj= abc.GetUsers(new List<string>() { "488985845b4fc00512f008d6433dd29c" });
-               // var jjj= abc.Assets("rinidaye", "10000",100).Result;
+                //   var jjj= abc.GetUsers(new List<string>() { "488985845b4fc00512f008d6433dd29c" });
+                // var jjj= abc.Assets("rinidaye", "10000",100).Result;
 
-             //   var abcdef = Dynamic.Core.Runtime.SerializationUtility.ObjectToJson(jjj);
+                //   var abcdef = Dynamic.Core.Runtime.SerializationUtility.ObjectToJson(jjj);
 
                 //var jsqApi = DcpApiClientProxy.Create<IPrivilegeManageConstract>();
 
-               
+
 
                 //while (Console.ReadLine()!="exit")
                 //{
@@ -98,19 +123,19 @@
                 //    {
                 //        Console.WriteLine(ex.ToString());
                 //    }
-                    
-                   // var jjj = jsqApi.GetSubOrganizationAsPage("2792bab385f8cf2ed8ae08d639059b59", 1, 100);
-                    //var abc = jsqApi.GetSubOrganization().Result;
 
-                    //foreach (var item in abc.Data)
-                    //{
-                    //    Console.WriteLine(item.NiceName + $"【{item.Id}】");
-                    //}
-                  //  Console.WriteLine();
-                 //   var result=rpcTestApi.WriteLine("测试WriteLine方法=》" + DateTime.Now).Result;
-                 /// Console.WriteLine("client"+result.data);
-              //  }
-                
+                // var jjj = jsqApi.GetSubOrganizationAsPage("2792bab385f8cf2ed8ae08d639059b59", 1, 100);
+                //var abc = jsqApi.GetSubOrganization().Result;
+
+                //foreach (var item in abc.Data)
+                //{
+                //    Console.WriteLine(item.NiceName + $"【{item.Id}】");
+                //}
+                //  Console.WriteLine();
+                //   var result=rpcTestApi.WriteLine("测试WriteLine方法=》" + DateTime.Now).Result;
+                /// Console.WriteLine("client"+result.data);
+                //  }
+
             }
             catch (Exception ex)
             {

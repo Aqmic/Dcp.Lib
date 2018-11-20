@@ -7,7 +7,8 @@
 
   <ItemGroup>
     <PackageReference Include="Acb.Core" Version="1.5.5" />
-    <PackageReference Include="Acb.Plugin.PrivilegeManage.Constract" Version="1.0.0.27" />
+    <PackageReference Include="Acb.Plugin.PrivilegeManage.Constract" Version="1.0.0.38" />
+    <PackageReference Include="GlobPermissionVerificationPluginConstract.Constract" Version="1.0.0.2" />
   </ItemGroup>
 
   <ItemGroup>

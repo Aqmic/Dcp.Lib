@@ -49,6 +49,18 @@
           "lib/netstandard2.0/Dynamic.Core.dll": {}
         }
       },
+      "Geek.Net.MQ/1.0.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Dynamic.Core": "2.1.6.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Geek.Net.MQ.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Geek.Net.MQ.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.4.1": {
         "type": "package",
         "compile": {
@@ -1565,7 +1577,7 @@
           "ref/netstandard1.2/System.Threading.Timer.dll": {}
         }
       },
-      "Dcp.Net.MQ.RabbitMQ/1.0.0.7": {
+      "Dcp.Net.MQ.RabbitMQ/1.0.0.8": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1577,19 +1589,6 @@
         },
         "runtime": {
           "bin/placeholder/Dcp.Net.MQ.RabbitMQ.dll": {}
-        }
-      },
-      "Geek.Net.MQ/1.0.0.4": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Dynamic.Core": "2.1.6.3"
-        },
-        "compile": {
-          "bin/placeholder/Geek.Net.MQ.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Geek.Net.MQ.dll": {}
         }
       }
     }
@@ -1631,6 +1630,16 @@
         "dynamic.core.2.1.6.3.nupkg.sha512",
         "dynamic.core.nuspec",
         "lib/netstandard2.0/Dynamic.Core.dll"
+      ]
+    },
+    "Geek.Net.MQ/1.0.0.4": {
+      "sha512": "l8iZDw9Uu9NLxNqsP42SDinRchUxjaLLssToVkvX5z9hgpgiFSQYS9TuoPsVMfFcVfMpdAGbDJcnlJgOnVAmGA==",
+      "type": "package",
+      "path": "geek.net.mq/1.0.0.4",
+      "files": [
+        "geek.net.mq.1.0.0.4.nupkg.sha512",
+        "geek.net.mq.nuspec",
+        "lib/netstandard2.0/Geek.Net.MQ.dll"
       ]
     },
     "Microsoft.CSharp/4.4.1": {
@@ -5352,20 +5361,15 @@
         "system.threading.timer.nuspec"
       ]
     },
-    "Dcp.Net.MQ.RabbitMQ/1.0.0.7": {
+    "Dcp.Net.MQ.RabbitMQ/1.0.0.8": {
       "type": "project",
       "path": "../../MQ/Dcp.Net.MQ.RabbitMQ/Dcp.Net.MQ.RabbitMQ.csproj",
       "msbuildProject": "../../MQ/Dcp.Net.MQ.RabbitMQ/Dcp.Net.MQ.RabbitMQ.csproj"
-    },
-    "Geek.Net.MQ/1.0.0.4": {
-      "type": "project",
-      "path": "../../MQ/Geek.Net.MQ/Geek.Net.MQ.csproj",
-      "msbuildProject": "../../MQ/Geek.Net.MQ/Geek.Net.MQ.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "Dcp.Net.MQ.RabbitMQ >= 1.0.0.7",
+      "Dcp.Net.MQ.RabbitMQ >= 1.0.0.8",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },

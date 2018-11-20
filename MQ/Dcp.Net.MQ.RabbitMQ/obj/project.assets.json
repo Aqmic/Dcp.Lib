@@ -49,6 +49,18 @@
           "lib/netstandard2.0/Dynamic.Core.dll": {}
         }
       },
+      "Geek.Net.MQ/1.0.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Dynamic.Core": "2.1.6.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Geek.Net.MQ.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Geek.Net.MQ.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.4.1": {
         "type": "package",
         "compile": {
@@ -1396,19 +1408,6 @@
         "compile": {
           "ref/netstandard1.2/System.Threading.Timer.dll": {}
         }
-      },
-      "Geek.Net.MQ/1.0.0.4": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Dynamic.Core": "2.1.6.3"
-        },
-        "compile": {
-          "bin/placeholder/Geek.Net.MQ.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Geek.Net.MQ.dll": {}
-        }
       }
     }
   },
@@ -1449,6 +1448,16 @@
         "dynamic.core.2.1.6.3.nupkg.sha512",
         "dynamic.core.nuspec",
         "lib/netstandard2.0/Dynamic.Core.dll"
+      ]
+    },
+    "Geek.Net.MQ/1.0.0.4": {
+      "sha512": "l8iZDw9Uu9NLxNqsP42SDinRchUxjaLLssToVkvX5z9hgpgiFSQYS9TuoPsVMfFcVfMpdAGbDJcnlJgOnVAmGA==",
+      "type": "package",
+      "path": "geek.net.mq/1.0.0.4",
+      "files": [
+        "geek.net.mq.1.0.0.4.nupkg.sha512",
+        "geek.net.mq.nuspec",
+        "lib/netstandard2.0/Geek.Net.MQ.dll"
       ]
     },
     "Microsoft.CSharp/4.4.1": {
@@ -4859,11 +4868,6 @@
         "system.threading.timer.4.3.0.nupkg.sha512",
         "system.threading.timer.nuspec"
       ]
-    },
-    "Geek.Net.MQ/1.0.0.4": {
-      "type": "project",
-      "path": "../Geek.Net.MQ/Geek.Net.MQ.csproj",
-      "msbuildProject": "../Geek.Net.MQ/Geek.Net.MQ.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4879,7 +4883,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.0.7",
+    "version": "1.0.0.8",
     "restoreSettings": {
       "hideWarningsAndErrors": true
     },
@@ -4909,11 +4913,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {
-            "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Geek.Net.MQ\\Geek.Net.MQ.csproj": {
-              "projectPath": "D:\\WorkSpace\\opensource\\Dcp\\Dcp.Lib\\MQ\\Geek.Net.MQ\\Geek.Net.MQ.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -4925,6 +4925,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "Geek.Net.MQ": {
+            "target": "Package",
+            "version": "[1.0.0.4, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",

@@ -2685,7 +2685,6 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Geek.Net.MQ": "1.0.0.4",
           "RabbitMQ.Client": "5.1.0"
         },
         "compile": {

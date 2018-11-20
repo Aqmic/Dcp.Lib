@@ -13,11 +13,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dcp.Net.MQ.RabbitMQ")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.7")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0.7")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0.8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dcp.Net.MQ.RabbitMQ")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dcp.Net.MQ.RabbitMQ")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.7")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.8")]
 
 // 由 MSBuild WriteCodeFragment 类生成。
 

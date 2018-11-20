@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.1.8</Version>
+    <Version>1.0.1.9</Version>
     <Description>RpcManager rpcManager = new RpcManager(_mqAddress, "demo测试131243");
                 rpcManager.RegisterAssembly(typeof(Program).Assembly);
                 rpcManager.StartServer();
@@ -18,8 +18,8 @@
     <PackageReleaseNotes>优化反射性能，通过动态构建表达式树替代反射，json反射优化
 
 优化异常抛出</PackageReleaseNotes>
-    <AssemblyVersion>1.0.1.8</AssemblyVersion>
-    <FileVersion>1.0.1.8</FileVersion>
+    <AssemblyVersion>1.0.1.9</AssemblyVersion>
+    <FileVersion>1.0.1.9</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -33,13 +33,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dcp.Net.MQ.RabbitMQ" Version="1.0.0.8" />
     <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
-  </ItemGroup>
-
- 
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\MQ\Dcp.Net.MQ.RabbitMQ\Dcp.Net.MQ.RabbitMQ.csproj" />
   </ItemGroup>
 
  

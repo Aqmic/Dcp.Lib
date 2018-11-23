@@ -29,11 +29,11 @@
         private static RpcClient _rpcClient;
         private static RpcServer _rpcServer;
 
-        //private static string _mqAddress = "amqp://icb:icb158@10.10.10.2:13043/";// "amqp://icb:icb158@220.167.101.49:13043/";// File.ReadAllText(@"d:\mqaddress.txt");
-        private static string _mqAddress = "amqp://icb:icb158@220.167.101.49:13043/";// File.ReadAllText(@"d:\mqaddress.txt");
+        private static string _mqAddress = File.ReadAllText(@"d:\mqaddress.txt");
    
         private  static void Main(string[] args)
         {
+            //日志初始化，必须要加这句（rpc内部依赖该日志组件）
             LoggerManager.InitLogger(new LogConfig() { });
             try
             {
@@ -49,24 +49,25 @@
                 rpcManager.CreateClient();
                 var rpcTestApi = DcpApiClientProxy.Create<IRpcTestApi>(true);
 
-                //var abc = rpcTestApi.Test(new UserInfo()
-                //{
+                var nativeTestInterface = rpcTestApi.Test(new UserInfo()
+                {
 
-                //    Name = "asdfsadfsdf",
-                //    Des = "234234234"
+                    Name = "asdfsadfsdf",
+                    Des = "234234234"
 
-                //});
-                //var jj = abc.Result;
+                });
+                var jj = nativeTestInterface.Result;
+
+
+
+                Console.WriteLine(Dynamic.Core.Runtime.SerializationUtility.ObjectToJson(jj));
 
 
                 while (Console.ReadLine() != "exit")
                 {
 
-
                     try
                     {
-                        //var xxx=DcpApiClientProxy.Create<IGlobPermissionVerificationPluginConstract>();
-                        // var xxxxxx = xxx.GetSession("5ebebb04-0caa-415d-b8bd-68bc716ec5be");
                         var ewrer = DcpApiClientProxy.Create<IPrivilegeManageConstract>(true);
                         var wer333 = ewrer.GetUsersOfInfo(new Acb.Plugin.PrivilegeManage.Constract.Models.Dtos.User.UserQueryPageDto()
                         {
@@ -83,7 +84,6 @@
                         var jjj = wer333.Result;
                         var JJJsTR = Dynamic.Core.Runtime.SerializationUtility.ObjectToJson(jjj);
                         Console.WriteLine(JJJsTR);
-                        // var xxx = rpcTestApi.WriteLineList(new List<string>() { "23423423", "gfgdaggf" }).Result;
                     }
                     catch (Exception ex)
                     {
@@ -94,48 +94,6 @@
 
                     var abc = DcpApiClientProxy.Create<IPrivilegeManageConstract>(true);
                 }
-                //   var jjj= abc.GetUsers(new List<string>() { "488985845b4fc00512f008d6433dd29c" });
-                // var jjj= abc.Assets("rinidaye", "10000",100).Result;
-
-                //   var abcdef = Dynamic.Core.Runtime.SerializationUtility.ObjectToJson(jjj);
-
-                //var jsqApi = DcpApiClientProxy.Create<IPrivilegeManageConstract>();
-
-
-
-                //while (Console.ReadLine()!="exit")
-                //{
-                //    try
-                //    {
-                //        //rpcTestApi.Test(new UserInfo()
-                //        //{
-
-                //        //    Name = "asdfsadfsdf",
-                //        //    Des = "234234234"
-
-                //        //});
-
-                //         var abc = jsqApi.AddUser(new Acb.Plugin.PrivilegeManage.Constract.Models.Dtos.User.UserAddDto() {
-                //             Name="testwefawerfrgldljkd"
-                //         }).Result;
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        Console.WriteLine(ex.ToString());
-                //    }
-
-                // var jjj = jsqApi.GetSubOrganizationAsPage("2792bab385f8cf2ed8ae08d639059b59", 1, 100);
-                //var abc = jsqApi.GetSubOrganization().Result;
-
-                //foreach (var item in abc.Data)
-                //{
-                //    Console.WriteLine(item.NiceName + $"【{item.Id}】");
-                //}
-                //  Console.WriteLine();
-                //   var result=rpcTestApi.WriteLine("测试WriteLine方法=》" + DateTime.Now).Result;
-                /// Console.WriteLine("client"+result.data);
-                //  }
-
             }
             catch (Exception ex)
             {

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "bfe9271c6c7107b7408aa9e8c96341542e5f4510"
+    "signature": "8371b921466d5923c48fc34d48ce4008d907ddb6"
   },
   "compilationOptions": {},
   "targets": {
@@ -10,7 +10,7 @@
         "dependencies": {
           "Acb.Core": "1.5.5",
           "Acb.Plugin.PrivilegeManage.Constract": "1.0.0.38",
-          "Dcp.Net.MQ.Rpc": "1.0.1.7",
+          "Dcp.Net.MQ.Rpc": "1.0.1.9",
           "GlobPermissionVerificationPluginConstract.Constract": "1.0.0.2",
           "Acb.Contracts.IntegralShop": "1.0.0.0"
         },
@@ -37,7 +37,7 @@
       },
       "Acb.Plugin.PrivilegeManage.Constract/1.0.0.38": {
         "dependencies": {
-          "Dcp.Net.MQ.Rpc": "1.0.1.7"
+          "Dcp.Net.MQ.Rpc": "1.0.1.9"
         },
         "runtime": {
           "lib/netstandard2.0/Acb.Plugin.PrivilegeManage.Constract.dll": {
@@ -66,7 +66,19 @@
           }
         }
       },
-      "Dynamic.Core/2.1.6.2": {
+      "Dcp.Net.MQ.RabbitMQ/1.0.0.8": {
+        "dependencies": {
+          "Geek.Net.MQ": "1.0.0.4",
+          "RabbitMQ.Client": "5.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Dcp.Net.MQ.RabbitMQ.dll": {
+            "assemblyVersion": "1.0.0.8",
+            "fileVersion": "1.0.0.8"
+          }
+        }
+      },
+      "Dynamic.Core/2.1.6.3": {
         "dependencies": {
           "CacheManager.Microsoft.Extensions.Caching.Memory": "1.1.2",
           "Microsoft.CSharp": "4.4.1",
@@ -81,15 +93,26 @@
         },
         "runtime": {
           "lib/netstandard2.0/Dynamic.Core.dll": {
-            "assemblyVersion": "2.1.6.2",
-            "fileVersion": "2.1.6.2"
+            "assemblyVersion": "2.1.6.3",
+            "fileVersion": "2.1.6.3"
+          }
+        }
+      },
+      "Geek.Net.MQ/1.0.0.4": {
+        "dependencies": {
+          "Dynamic.Core": "2.1.6.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Geek.Net.MQ.dll": {
+            "assemblyVersion": "1.0.0.4",
+            "fileVersion": "1.0.0.4"
           }
         }
       },
       "GlobPermissionVerificationPluginConstract.Constract/1.0.0.2": {
         "dependencies": {
           "Acb.Plugin.PrivilegeManage.Constract": "1.0.0.38",
-          "Dcp.Net.MQ.Rpc": "1.0.1.7"
+          "Dcp.Net.MQ.Rpc": "1.0.1.9"
         },
         "runtime": {
           "lib/netstandard2.0/GlobPermissionVerificationPluginConstract.Constract.dll": {
@@ -1151,30 +1174,13 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "Dcp.Net.MQ.RabbitMQ/1.0.0.7": {
+      "Dcp.Net.MQ.Rpc/1.0.1.9": {
         "dependencies": {
-          "Geek.Net.MQ": "1.0.0.3",
-          "RabbitMQ.Client": "5.1.0"
-        },
-        "runtime": {
-          "Dcp.Net.MQ.RabbitMQ.dll": {}
-        }
-      },
-      "Dcp.Net.MQ.Rpc/1.0.1.7": {
-        "dependencies": {
-          "Dcp.Net.MQ.RabbitMQ": "1.0.0.7",
+          "Dcp.Net.MQ.RabbitMQ": "1.0.0.8",
           "System.Reflection.Emit": "4.3.0"
         },
         "runtime": {
           "Dcp.Net.MQ.Rpc.dll": {}
-        }
-      },
-      "Geek.Net.MQ/1.0.0.3": {
-        "dependencies": {
-          "Dynamic.Core": "2.1.6.2"
-        },
-        "runtime": {
-          "Geek.Net.MQ.dll": {}
         }
       },
       "Acb.Contracts.IntegralShop/1.0.0.0": {
@@ -1221,12 +1227,26 @@
       "path": "cachemanager.microsoft.extensions.caching.memory/1.1.2",
       "hashPath": "cachemanager.microsoft.extensions.caching.memory.1.1.2.nupkg.sha512"
     },
-    "Dynamic.Core/2.1.6.2": {
+    "Dcp.Net.MQ.RabbitMQ/1.0.0.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-RVgdk/RgrMohFipM0oHLaOE8XyBNTbeqVVqDASz60rZvm6nybb+DeZonrDSnTouS8JcN5O5FpsvTEegB3Ugs5A==",
-      "path": "dynamic.core/2.1.6.2",
-      "hashPath": "dynamic.core.2.1.6.2.nupkg.sha512"
+      "sha512": "sha512-EirGlMBCgu5GSKVt3Sf9VV7E5hc7ZY1zt/z9kss7V3NDUKx3WJhq2vQDZSp/xiPIpxfRWzhgChpaOkU1d1uytg==",
+      "path": "dcp.net.mq.rabbitmq/1.0.0.8",
+      "hashPath": "dcp.net.mq.rabbitmq.1.0.0.8.nupkg.sha512"
+    },
+    "Dynamic.Core/2.1.6.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9C1Xrr9RHBRNQ8+V8SOg0904PlMIqll/85GMIKeSegD4xCgtUBlGv/UMxls69RiaRmYm6BF5QUl1cPQ4qeGwnw==",
+      "path": "dynamic.core/2.1.6.3",
+      "hashPath": "dynamic.core.2.1.6.3.nupkg.sha512"
+    },
+    "Geek.Net.MQ/1.0.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-l8iZDw9Uu9NLxNqsP42SDinRchUxjaLLssToVkvX5z9hgpgiFSQYS9TuoPsVMfFcVfMpdAGbDJcnlJgOnVAmGA==",
+      "path": "geek.net.mq/1.0.0.4",
+      "hashPath": "geek.net.mq.1.0.0.4.nupkg.sha512"
     },
     "GlobPermissionVerificationPluginConstract.Constract/1.0.0.2": {
       "type": "package",
@@ -1928,17 +1948,7 @@
       "path": "system.threading.timer/4.3.0",
       "hashPath": "system.threading.timer.4.3.0.nupkg.sha512"
     },
-    "Dcp.Net.MQ.RabbitMQ/1.0.0.7": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Dcp.Net.MQ.Rpc/1.0.1.7": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Geek.Net.MQ/1.0.0.3": {
+    "Dcp.Net.MQ.Rpc/1.0.1.9": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

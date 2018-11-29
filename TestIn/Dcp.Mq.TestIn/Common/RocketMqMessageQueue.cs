@@ -18,7 +18,7 @@ namespace Dcp.Mq.TestIn.Common
             //220.167.101.61  10911   9876
             a = new Dcp.Net.MQ.RocketMQ.RocketMQManager(new Dcp.Net.MQ.RocketMQ.Configuration.RocketMQItemConfig()
             {
-                Server = "220.167.101.49:9876",// "220.167.101.61:9876", //"118.24.153.159:9876",//
+                Server = "220.167.103.49:9873",
                 ConsumeThreadNums = Environment.ProcessorCount * 2,
                 ProducerID = "testProducerID",
                 ConsumerID = "testConsumerID",

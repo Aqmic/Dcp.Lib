@@ -28,8 +28,10 @@
     {
         private static RpcClient _rpcClient;
         private static RpcServer _rpcServer;
-
-        private static string _mqAddress = File.ReadAllText(@"d:\mqaddress.txt");
+        /// <summary>
+        /// 文件里面放mq连接地址，形如：amqp://username:password@serverip:serverport/
+        /// </summary>
+        private static string _mqAddress = File.ReadAllText(@"D:\mqaddress.txt");
    
         private  static void Main(string[] args)
         {

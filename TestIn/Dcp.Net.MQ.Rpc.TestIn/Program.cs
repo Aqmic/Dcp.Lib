@@ -63,7 +63,7 @@
 
 
                 Console.WriteLine(Dynamic.Core.Runtime.SerializationUtility.ObjectToJson(jj));
-
+                ///下面的是调用外部组件
 
                 while (Console.ReadLine() != "exit")
                 {
